@@ -1,0 +1,1009 @@
+fileFormatVersion: 2
+guid: 9bacfe9d478c3904e97fc127da0e0509
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: wand_Frame_0
+    originalName: 
+    pivot: {x: 0.37499994, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 212
+      width: 16
+      height: 14
+    spriteID: c9d3f2cd810cbb94db58d4e1b3bf8fcc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 212}
+  - name: wand_Frame_1
+    originalName: 
+    pivot: {x: 0.31578943, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 53
+      width: 19
+      height: 14
+    spriteID: 33887274b2f86d94a9d5d01b7cc9de2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 53}
+  - name: wand_Frame_2
+    originalName: 
+    pivot: {x: 0.35294113, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 142
+      width: 17
+      height: 14
+    spriteID: 69527e5d4dae4bc40b430a08907db6f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 142}
+  - name: wand_Frame_3
+    originalName: 
+    pivot: {x: 0.4999999, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 180
+      width: 12
+      height: 14
+    spriteID: fe7f8a7c4ae835c499bafe0541efd198
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 180}
+  - name: wand_Frame_4
+    originalName: 
+    pivot: {x: 0.50000006, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 128
+      width: 14
+      height: 14
+    spriteID: 1d0ecdb98a6b2444ba79a0e4d274bfee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 128}
+  - name: wand_Frame_5
+    originalName: 
+    pivot: {x: 0.49999997, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 96
+      width: 16
+      height: 15
+    spriteID: a50c79c333a79704f9171a5819d62eeb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 96}
+  - name: wand_Frame_6
+    originalName: 
+    pivot: {x: 0.2631579, y: -2.5384614}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 75
+      width: 19
+      height: 13
+    spriteID: 2ed44d48d1db43f44a0a22f0e0cffdc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 75}
+  - name: wand_Frame_7
+    originalName: 
+    pivot: {x: 0.23809524, y: -2.0666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 4
+      width: 21
+      height: 15
+    spriteID: d68161b935b71724991bba74e73cf068
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 4}
+  - name: wand_Frame_8
+    originalName: 
+    pivot: {x: 0.42857137, y: -2.5384614}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 217
+      width: 14
+      height: 13
+    spriteID: 18d47e23d0f05bb43a026f871749ca45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 217}
+  - name: wand_Frame_9
+    originalName: 
+    pivot: {x: 0.4615384, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 238
+      width: 13
+      height: 14
+    spriteID: efb1bcd16f400de44aa00edba33680be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 238}
+  - name: wand_Frame_10
+    originalName: 
+    pivot: {x: 0.50000006, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 150
+      width: 14
+      height: 14
+    spriteID: 5907efb8cde97dc49b25542f819a5f59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 150}
+  - name: wand_Frame_13
+    originalName: 
+    pivot: {x: 0.4666667, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 4
+      width: 15
+      height: 14
+    spriteID: dc07214703b1d3f4497c9d020a2b78e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 4}
+  - name: wand_Frame_14
+    originalName: 
+    pivot: {x: 0.47058824, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 164
+      width: 17
+      height: 14
+    spriteID: f07fda8f2a5704e4cbbd69ddb87dc472
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 164}
+  - name: wand_Frame_15
+    originalName: 
+    pivot: {x: 0.52941185, y: -1.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 27
+      width: 17
+      height: 18
+    spriteID: ffec835b16d2d384ab1ab0ca9532a246
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 27}
+  - name: wand_Frame_16
+    originalName: 
+    pivot: {x: 0.57142854, y: -0.99999994}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 37
+      width: 14
+      height: 23
+    spriteID: 698a20167cce9f8408ab7807ece147cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 37}
+  - name: wand_Frame_17
+    originalName: 
+    pivot: {x: 0.57142854, y: -0.84}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 14
+      height: 25
+    spriteID: f7880286bb33c104faec997e27413c03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: wand_Frame_18
+    originalName: 
+    pivot: {x: 0.53846157, y: -1.5555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 186
+      width: 13
+      height: 18
+    spriteID: e0a82503bb424eb4b816b5364a8534eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 186}
+  - name: wand_Frame_19
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.1333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 194
+      width: 13
+      height: 15
+    spriteID: 12face3b7e0fea847b4d175eaa7e8ee8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 194}
+  - name: wand_Frame_20
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 26
+      width: 13
+      height: 14
+    spriteID: 73698cc1e7edecf4893da4f23f911ad5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 26}
+  - name: wand_Frame_21
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 48
+      width: 13
+      height: 14
+    spriteID: 50d2cd7744525a54680b87ba966daf76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 48}
+  - name: wand_Frame_22
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 70
+      width: 13
+      height: 14
+    spriteID: c0e82b982ae49994085b60d62efd3297
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 70}
+  - name: wand_Frame_23
+    originalName: 
+    pivot: {x: 0.57142854, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 14
+      height: 14
+    spriteID: c7a38d4ff246dc647a58456a7e5a159c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: wand_Frame_24
+    originalName: 
+    pivot: {x: 0.56250006, y: -2.2857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 234
+      width: 16
+      height: 14
+    spriteID: 0fd3f4d7566feeb4baf1904ab524c6ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 234}
+  - name: wand_Frame_25
+    originalName: 
+    pivot: {x: 0.49999997, y: -2.1333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 119
+      width: 16
+      height: 15
+    spriteID: 870cb86a819a30e4eb0d8de45a6c64cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 119}
+  - name: wand_Frame_26
+    originalName: 
+    pivot: {x: 0.50000006, y: -1.5714285}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 99
+      width: 14
+      height: 21
+    spriteID: bcd0de9de65c0f04a805054ed57c90b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 99}
+  - name: wand_Frame_27
+    originalName: 
+    pivot: {x: 0.50000006, y: -1.4347825}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 68
+      width: 14
+      height: 23
+    spriteID: b2b70bf5f0142bc4c97445d67a329c2f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 68}
+  - name: wand_Frame_28
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 92
+      width: 13
+      height: 14
+    spriteID: 460ef52f355e08344b242260dbebad29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 92}
+  - name: wand_Frame_29
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 114
+      width: 13
+      height: 14
+    spriteID: 5d3455de409102742a0e91a6b5111c3d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 114}
+  - name: wand_Frame_11
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 136
+      width: 13
+      height: 14
+    spriteID: ba8d24e8b6eaf1147ab790c0bd056d37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 136}
+  - name: wand_Frame_12
+    originalName: 
+    pivot: {x: 0.53846157, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 158
+      width: 13
+      height: 14
+    spriteID: 820f369af339f3040b99c5d026f5ee66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 158}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1920012908
+    name: wand
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: wand_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 16
+        height: 14
+      spriteId: c9d3f2cd810cbb94db58d4e1b3bf8fcc
+    - name: wand_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 19
+        height: 14
+      spriteId: 33887274b2f86d94a9d5d01b7cc9de2a
+    - name: wand_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 17
+        height: 14
+      spriteId: 69527e5d4dae4bc40b430a08907db6f1
+    - name: wand_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 12
+        height: 14
+      spriteId: fe7f8a7c4ae835c499bafe0541efd198
+    - name: wand_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 14
+        height: 14
+      spriteId: 1d0ecdb98a6b2444ba79a0e4d274bfee
+    - name: wand_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 16
+        height: 15
+      spriteId: a50c79c333a79704f9171a5819d62eeb
+    - name: wand_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 33
+        width: 19
+        height: 13
+      spriteId: 2ed44d48d1db43f44a0a22f0e0cffdc8
+    - name: wand_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 31
+        width: 21
+        height: 15
+      spriteId: d68161b935b71724991bba74e73cf068
+    - name: wand_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 14
+        height: 13
+      spriteId: 18d47e23d0f05bb43a026f871749ca45
+    - name: wand_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 13
+        height: 14
+      spriteId: efb1bcd16f400de44aa00edba33680be
+    - name: wand_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 14
+        height: 14
+      spriteId: 5907efb8cde97dc49b25542f819a5f59
+    - name: wand_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 15
+        height: 14
+      spriteId: dc07214703b1d3f4497c9d020a2b78e8
+    - name: wand_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 17
+        height: 14
+      spriteId: f07fda8f2a5704e4cbbd69ddb87dc472
+    - name: wand_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 33
+        width: 17
+        height: 18
+      spriteId: ffec835b16d2d384ab1ab0ca9532a246
+    - name: wand_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 23
+        width: 14
+        height: 23
+      spriteId: 698a20167cce9f8408ab7807ece147cb
+    - name: wand_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 21
+        width: 14
+        height: 25
+      spriteId: f7880286bb33c104faec997e27413c03
+    - name: wand_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 28
+        width: 13
+        height: 18
+      spriteId: e0a82503bb424eb4b816b5364a8534eb
+    - name: wand_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 32
+        width: 13
+        height: 15
+      spriteId: 12face3b7e0fea847b4d175eaa7e8ee8
+    - name: wand_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: 73698cc1e7edecf4893da4f23f911ad5
+    - name: wand_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: 50d2cd7744525a54680b87ba966daf76
+    - name: wand_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: c0e82b982ae49994085b60d62efd3297
+    - name: wand_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 14
+        height: 14
+      spriteId: c7a38d4ff246dc647a58456a7e5a159c
+    - name: wand_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 32
+        width: 16
+        height: 14
+      spriteId: 0fd3f4d7566feeb4baf1904ab524c6ce
+    - name: wand_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 32
+        width: 16
+        height: 15
+      spriteId: 870cb86a819a30e4eb0d8de45a6c64cf
+    - name: wand_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 14
+        height: 21
+      spriteId: bcd0de9de65c0f04a805054ed57c90b7
+    - name: wand_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 14
+        height: 23
+      spriteId: b2b70bf5f0142bc4c97445d67a329c2f
+    - name: wand_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: 460ef52f355e08344b242260dbebad29
+    - name: wand_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: 5d3455de409102742a0e91a6b5111c3d
+    - name: wand_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: ba8d24e8b6eaf1147ab790c0bd056d37
+    - name: wand_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 13
+        height: 14
+      spriteId: 820f369af339f3040b99c5d026f5ee66
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 80, y: 80}

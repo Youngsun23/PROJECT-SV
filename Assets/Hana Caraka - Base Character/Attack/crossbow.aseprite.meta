@@ -1,0 +1,661 @@
+fileFormatVersion: 2
+guid: 7e65cf82c8b72d148aa1622a52174559
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: crossbow_Frame_6
+    originalName: 
+    pivot: {x: 0.07526882, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 93
+      height: 26
+    spriteID: 174a0c96281621a439ba4f9334817b66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: crossbow_Frame_7
+    originalName: 
+    pivot: {x: 0.07526882, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 110
+      width: 93
+      height: 26
+    spriteID: feec702de52f19c40b1acaeb12f372e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 110}
+  - name: crossbow_Frame_8
+    originalName: 
+    pivot: {x: 0.07526882, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 144
+      width: 93
+      height: 26
+    spriteID: 1f1de3915ac30b149a21f7d55f330aa4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 144}
+  - name: crossbow_Frame_9
+    originalName: 
+    pivot: {x: 0.07526882, y: -0.71428573}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 93
+      height: 28
+    spriteID: 760cc2e9de40a874b8fe8fb4b82e67b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: crossbow_Frame_10
+    originalName: 
+    pivot: {x: 0.07526882, y: -0.71428573}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 40
+      width: 93
+      height: 28
+    spriteID: f62a4d10c1e4abc47b4b961452d10c76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 40}
+  - name: crossbow_Frame_11
+    originalName: 
+    pivot: {x: 0.07526882, y: -1.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 178
+      width: 93
+      height: 18
+    spriteID: fe37caa32e9f3e24a84167bd275c133e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 178}
+  - name: crossbow_Frame_12
+    originalName: 
+    pivot: {x: 0.6000001, y: -1.7368422}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 226
+      width: 15
+      height: 19
+    spriteID: 126821990cdfcaa41877f975edbdef33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 108, y: 226}
+  - name: crossbow_Frame_13
+    originalName: 
+    pivot: {x: 0.57142854, y: -1.7368422}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 105
+      y: 76
+      width: 14
+      height: 19
+    spriteID: 2d11c77dbc815b143ae5c026965231ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 76}
+  - name: crossbow_Frame_14
+    originalName: 
+    pivot: {x: 0.57142854, y: -1.7368422}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 105
+      y: 110
+      width: 14
+      height: 19
+    spriteID: 419d37baf81f8e04cb9afb697c7e3ead
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 110}
+  - name: crossbow_Frame_15
+    originalName: 
+    pivot: {x: 0.6000001, y: -1.1034483}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 204
+      width: 15
+      height: 29
+    spriteID: 333f9b24642205643a17120eb9ffa5f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 204}
+  - name: crossbow_Frame_16
+    originalName: 
+    pivot: {x: 0.6000001, y: -1.1034483}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 27
+      y: 204
+      width: 15
+      height: 29
+    spriteID: a19e64bb7ccab724f9a4ea6bc78093ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 27, y: 204}
+  - name: crossbow_Frame_17
+    originalName: 
+    pivot: {x: 0.6000001, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 105
+      y: 4
+      width: 15
+      height: 15
+    spriteID: a083318d78f57ea428436e232fd80ec3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 4}
+  - name: crossbow_Frame_0
+    originalName: 
+    pivot: {x: 0.31578943, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 105
+      y: 178
+      width: 19
+      height: 14
+    spriteID: 0d17fc8b403918f4ca8da937e64249b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 178}
+  - name: crossbow_Frame_1
+    originalName: 
+    pivot: {x: 0.28571424, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 226
+      width: 21
+      height: 14
+    spriteID: ab7a8e0a6ab655e439283733e01eaa0a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 226}
+  - name: crossbow_Frame_2
+    originalName: 
+    pivot: {x: 0.28571424, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 79
+      y: 226
+      width: 21
+      height: 14
+    spriteID: 50e2e2bb9fad80f45892db2400c4eda2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 79, y: 226}
+  - name: crossbow_Frame_3
+    originalName: 
+    pivot: {x: 0.25806448, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 204
+      width: 31
+      height: 14
+    spriteID: e06872913895683499c097e367de8fc0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 204}
+  - name: crossbow_Frame_4
+    originalName: 
+    pivot: {x: 0.23333335, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 89
+      y: 204
+      width: 30
+      height: 14
+    spriteID: a098b3b4385d795459d1b73db55a3886
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 89, y: 204}
+  - name: crossbow_Frame_5
+    originalName: 
+    pivot: {x: 0.33333328, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 105
+      y: 144
+      width: 18
+      height: 14
+    spriteID: 2f1a87d76c007024fb8c006134972bea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 144}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1486787454
+    name: crossbow
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: crossbow_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 26
+        width: 93
+        height: 26
+      spriteId: 174a0c96281621a439ba4f9334817b66
+    - name: crossbow_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 26
+        width: 93
+        height: 26
+      spriteId: feec702de52f19c40b1acaeb12f372e2
+    - name: crossbow_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 26
+        width: 93
+        height: 26
+      spriteId: 1f1de3915ac30b149a21f7d55f330aa4
+    - name: crossbow_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 20
+        width: 93
+        height: 28
+      spriteId: 760cc2e9de40a874b8fe8fb4b82e67b7
+    - name: crossbow_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 20
+        width: 93
+        height: 28
+      spriteId: f62a4d10c1e4abc47b4b961452d10c76
+    - name: crossbow_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 30
+        width: 93
+        height: 18
+      spriteId: fe37caa32e9f3e24a84167bd275c133e
+    - name: crossbow_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 33
+        width: 15
+        height: 19
+      spriteId: 126821990cdfcaa41877f975edbdef33
+    - name: crossbow_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 14
+        height: 19
+      spriteId: 2d11c77dbc815b143ae5c026965231ee
+    - name: crossbow_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 14
+        height: 19
+      spriteId: 419d37baf81f8e04cb9afb697c7e3ead
+    - name: crossbow_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 32
+        width: 15
+        height: 29
+      spriteId: 333f9b24642205643a17120eb9ffa5f6
+    - name: crossbow_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 32
+        width: 15
+        height: 29
+      spriteId: a19e64bb7ccab724f9a4ea6bc78093ba
+    - name: crossbow_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 33
+        width: 15
+        height: 15
+      spriteId: a083318d78f57ea428436e232fd80ec3
+    - name: crossbow_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 19
+        height: 14
+      spriteId: 0d17fc8b403918f4ca8da937e64249b2
+    - name: crossbow_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 21
+        height: 14
+      spriteId: ab7a8e0a6ab655e439283733e01eaa0a
+    - name: crossbow_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 21
+        height: 14
+      spriteId: 50e2e2bb9fad80f45892db2400c4eda2
+    - name: crossbow_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 31
+        height: 14
+      spriteId: e06872913895683499c097e367de8fc0
+    - name: crossbow_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 33
+        width: 30
+        height: 14
+      spriteId: a098b3b4385d795459d1b73db55a3886
+    - name: crossbow_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 33
+        width: 18
+        height: 14
+      spriteId: 2f1a87d76c007024fb8c006134972bea
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 80, y: 80}
