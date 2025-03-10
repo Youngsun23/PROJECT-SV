@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
 
     private PlayerInput playerInput;
 
+    public System.Action OnUseToolPerformed;
+
     public Vector2 MovementInput { get; private set; }
 
     private void Awake()
@@ -20,6 +22,11 @@ public class InputManager : MonoBehaviour
     private void OnDestroy()
     {
         Instance = null;
+    }
+
+    public void OnUseTool()
+    {
+        OnUseToolPerformed?.Invoke();
     }
 
     public void OnMove(InputValue input)
