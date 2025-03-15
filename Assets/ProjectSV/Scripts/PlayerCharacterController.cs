@@ -8,6 +8,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     public Animator animator;
     public PlayerCharacterToolController toolController;
+    public PlayerCharacterInteraction interaction;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
 
@@ -30,11 +31,17 @@ public class PlayerCharacterController : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.OnUseToolPerformed += ExecuteUseTool;
+        InputManager.Instance.OnInteractPerformed += ExecuteInteract;
     }
 
     private void ExecuteUseTool()
     {
         toolController.UseTool();
+    }
+
+    private void ExecuteInteract()
+    {
+        interaction.Interact();
     }
 
     private void Update()

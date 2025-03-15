@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55e17dabe18df874ab2b6cf939d08054
+guid: a0cc435a696c5084c95043715dc9fa0b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638776757033020359
+  platformSettingsDirtyTick: 638776773350676345
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: idle_Frame_0
+  - name: Fishing_idle_Frame_8
     originalName: 
-    pivot: {x: 0.5454545, y: 0.50000006}
+    pivot: {x: 0.53846157, y: 0.28000003}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 25
-      y: 67
-      width: 11
-      height: 14
-    spriteID: 6d496f50fe1c5af4283b5b5e1f0aa52b
+      x: 88
+      y: 63
+      width: 13
+      height: 25
+    spriteID: 1ba624ef4cb269a44be2921694d10078
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,19 +140,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 25, y: 67}
-  - name: idle_Frame_1
+    uvTransform: {x: 88, y: 63}
+  - name: Fishing_idle_Frame_9
     originalName: 
-    pivot: {x: 0.5454545, y: 0.50000006}
+    pivot: {x: 0.53846157, y: 0.28000003}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 25
-      y: 89
-      width: 11
-      height: 14
-    spriteID: 233174731e78517428ff0b9051ff26a3
+      x: 88
+      y: 96
+      width: 13
+      height: 25
+    spriteID: 6ed9d4e6b825d9545839df1611364975
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 25, y: 89}
-  - name: idle_Frame_2
+    uvTransform: {x: 88, y: 96}
+  - name: Fishing_idle_Frame_10
     originalName: 
-    pivot: {x: 0.5454545, y: 0.53846157}
+    pivot: {x: 0.53846157, y: 0.28000003}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 25
-      y: 111
-      width: 11
-      height: 13
-    spriteID: a3e40d82a6440d14288256920f3141b0
+      x: 109
+      y: 63
+      width: 13
+      height: 25
+    spriteID: 1df0bb4d3c14be449a73e85cb15c4855
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,19 +180,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 25, y: 111}
-  - name: idle_Frame_3
+    uvTransform: {x: 109, y: 63}
+  - name: Fishing_idle_Frame_11
     originalName: 
-    pivot: {x: 0.5454545, y: 0.53846157}
+    pivot: {x: 0.53846157, y: 0.28000003}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
-      y: 4
-      width: 11
-      height: 13
-    spriteID: d03ece318da50234aa4f20237f777c44
+      x: 109
+      y: 96
+      width: 13
+      height: 25
+    spriteID: 695c582d3c5aea2419d7a63043dc61de
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,19 +200,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 4}
-  - name: idle_Frame_4
+    uvTransform: {x: 109, y: 96}
+  - name: Fishing_idle_Frame_0
     originalName: 
-    pivot: {x: 0.53846157, y: 0.50000006}
+    pivot: {x: 0.19999997, y: 0.6818182}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 13
-      height: 14
-    spriteID: 210a49d6e37d4bd49b1879680c2c7af1
+      width: 30
+      height: 22
+    spriteID: 98703c4ae1723744887f35d35215149f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -221,58 +221,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: idle_Frame_5
+  - name: Fishing_idle_Frame_1
     originalName: 
-    pivot: {x: 0.53846157, y: 0.50000006}
+    pivot: {x: 0.19999997, y: 0.6818182}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 26
-      width: 13
-      height: 14
-    spriteID: 21a098a63635af24ab075f6425ac30f2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 26}
-  - name: idle_Frame_6
-    originalName: 
-    pivot: {x: 0.53846157, y: 0.53846157}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 92
-      width: 13
-      height: 13
-    spriteID: a2e0815229cb1e84abecf1cae6a78b7b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 92}
-  - name: idle_Frame_7
-    originalName: 
-    pivot: {x: 0.53846157, y: 0.53846157}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 25
+      x: 42
       y: 4
-      width: 13
-      height: 13
-    spriteID: 3ab9346a9c17e134cad3d203d17e236a
+      width: 30
+      height: 22
+    spriteID: 9114190861ee72a49bdd1611e3fceb42
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -280,19 +240,39 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 25, y: 4}
-  - name: idle_Frame_8
+    uvTransform: {x: 42, y: 4}
+  - name: Fishing_idle_Frame_2
     originalName: 
-    pivot: {x: 0.53846157, y: 0.50000006}
+    pivot: {x: 0.19999997, y: 0.71428573}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 4
+      width: 30
+      height: 21
+    spriteID: 3435b0b215c589b4498644c807b4cd63
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 80, y: 4}
+  - name: Fishing_idle_Frame_3
+    originalName: 
+    pivot: {x: 0.19999997, y: 0.71428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 48
-      width: 13
-      height: 14
-    spriteID: 5d4a4dbf02d118f4089c06cb0040bc8c
+      y: 34
+      width: 30
+      height: 21
+    spriteID: 06e519cfd09336144beea0b76e6c9071
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -300,19 +280,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 48}
-  - name: idle_Frame_9
+    uvTransform: {x: 4, y: 34}
+  - name: Fishing_idle_Frame_4
     originalName: 
-    pivot: {x: 0.53846157, y: 0.50000006}
+    pivot: {x: 0.53846157, y: 0.8}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 70
+      y: 63
       width: 13
-      height: 14
-    spriteID: d6f0d3f79b601c94eaa47579c973b190
+      height: 35
+    spriteID: 6dde4770c6b928e4ba2bac3565ce9eb4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -320,19 +300,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 70}
-  - name: idle_Frame_10
+    uvTransform: {x: 4, y: 63}
+  - name: Fishing_idle_Frame_5
     originalName: 
-    pivot: {x: 0.53846157, y: 0.53846157}
+    pivot: {x: 0.53846157, y: 0.8}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 25
-      y: 25
+      y: 63
       width: 13
-      height: 13
-    spriteID: 3e6966205e6e0814fbd676ac68c10529
+      height: 35
+    spriteID: e8b66fb44d72d484f9cf2e91a7d2e6af
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -340,19 +320,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 25, y: 25}
-  - name: idle_Frame_11
+    uvTransform: {x: 25, y: 63}
+  - name: Fishing_idle_Frame_6
     originalName: 
-    pivot: {x: 0.53846157, y: 0.53846157}
+    pivot: {x: 0.53846157, y: 0.8235294}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 25
-      y: 46
+      x: 46
+      y: 63
       width: 13
-      height: 13
-    spriteID: 156d4a78a722edc4196ce30b27777770
+      height: 34
+    spriteID: f030e0deb86bc79419257831a28487ff
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -360,124 +340,144 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 25, y: 46}
+    uvTransform: {x: 46, y: 63}
+  - name: Fishing_idle_Frame_7
+    originalName: 
+    pivot: {x: 0.53846157, y: 0.8235294}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 63
+      width: 13
+      height: 34
+    spriteID: 5e303378993548742a252f1ad929d62b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 63}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 160719012
-    name: idle
+    guid: 581699731
+    name: Fishing_idle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: idle_Frame_0
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 34
-        y: 33
-        width: 11
-        height: 14
-      spriteId: 6d496f50fe1c5af4283b5b5e1f0aa52b
-    - name: idle_Frame_1
-      frameIndex: 1
-      additiveSortOrder: 0
-      cellRect:
-        x: 34
-        y: 33
-        width: 11
-        height: 14
-      spriteId: 233174731e78517428ff0b9051ff26a3
-    - name: idle_Frame_2
-      frameIndex: 2
-      additiveSortOrder: 0
-      cellRect:
-        x: 34
-        y: 33
-        width: 11
-        height: 13
-      spriteId: a3e40d82a6440d14288256920f3141b0
-    - name: idle_Frame_3
-      frameIndex: 3
-      additiveSortOrder: 0
-      cellRect:
-        x: 34
-        y: 33
-        width: 11
-        height: 13
-      spriteId: d03ece318da50234aa4f20237f777c44
-    - name: idle_Frame_4
-      frameIndex: 4
-      additiveSortOrder: 0
-      cellRect:
-        x: 33
-        y: 33
-        width: 13
-        height: 14
-      spriteId: 210a49d6e37d4bd49b1879680c2c7af1
-    - name: idle_Frame_5
-      frameIndex: 5
-      additiveSortOrder: 0
-      cellRect:
-        x: 33
-        y: 33
-        width: 13
-        height: 14
-      spriteId: 21a098a63635af24ab075f6425ac30f2
-    - name: idle_Frame_6
-      frameIndex: 6
-      additiveSortOrder: 0
-      cellRect:
-        x: 33
-        y: 33
-        width: 13
-        height: 13
-      spriteId: a2e0815229cb1e84abecf1cae6a78b7b
-    - name: idle_Frame_7
-      frameIndex: 7
-      additiveSortOrder: 0
-      cellRect:
-        x: 33
-        y: 33
-        width: 13
-        height: 13
-      spriteId: 3ab9346a9c17e134cad3d203d17e236a
-    - name: idle_Frame_8
+    - name: Fishing_idle_Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
         x: 33
         y: 33
         width: 13
-        height: 14
-      spriteId: 5d4a4dbf02d118f4089c06cb0040bc8c
-    - name: idle_Frame_9
+        height: 25
+      spriteId: 1ba624ef4cb269a44be2921694d10078
+    - name: Fishing_idle_Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
         x: 33
         y: 33
         width: 13
-        height: 14
-      spriteId: d6f0d3f79b601c94eaa47579c973b190
-    - name: idle_Frame_10
+        height: 25
+      spriteId: 6ed9d4e6b825d9545839df1611364975
+    - name: Fishing_idle_Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
         x: 33
         y: 33
         width: 13
-        height: 13
-      spriteId: 3e6966205e6e0814fbd676ac68c10529
-    - name: idle_Frame_11
+        height: 25
+      spriteId: 1df0bb4d3c14be449a73e85cb15c4855
+    - name: Fishing_idle_Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
         x: 33
         y: 33
         width: 13
-        height: 13
-      spriteId: 156d4a78a722edc4196ce30b27777770
+        height: 25
+      spriteId: 695c582d3c5aea2419d7a63043dc61de
+    - name: Fishing_idle_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 25
+        width: 30
+        height: 22
+      spriteId: 98703c4ae1723744887f35d35215149f
+    - name: Fishing_idle_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 25
+        width: 30
+        height: 22
+      spriteId: 9114190861ee72a49bdd1611e3fceb42
+    - name: Fishing_idle_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 25
+        width: 30
+        height: 21
+      spriteId: 3435b0b215c589b4498644c807b4cd63
+    - name: Fishing_idle_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 25
+        width: 30
+        height: 21
+      spriteId: 06e519cfd09336144beea0b76e6c9071
+    - name: Fishing_idle_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 12
+        width: 13
+        height: 35
+      spriteId: 6dde4770c6b928e4ba2bac3565ce9eb4
+    - name: Fishing_idle_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 12
+        width: 13
+        height: 35
+      spriteId: e8b66fb44d72d484f9cf2e91a7d2e6af
+    - name: Fishing_idle_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 12
+        width: 13
+        height: 34
+      spriteId: f030e0deb86bc79419257831a28487ff
+    - name: Fishing_idle_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 12
+        width: 13
+        height: 34
+      spriteId: 5e303378993548742a252f1ad929d62b
     linkedCells: []
     parentIndex: -1
   platformSettings:

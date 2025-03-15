@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     private PlayerInput playerInput;
 
     public System.Action OnUseToolPerformed;
+    public System.Action OnInteractPerformed;
 
     public Vector2 MovementInput { get; private set; }
 
@@ -27,6 +28,11 @@ public class InputManager : MonoBehaviour
     public void OnUseTool()
     {
         OnUseToolPerformed?.Invoke();
+    }
+
+    public void OnInteract()
+    {
+        OnInteractPerformed?.Invoke();
     }
 
     public void OnMove(InputValue input)
