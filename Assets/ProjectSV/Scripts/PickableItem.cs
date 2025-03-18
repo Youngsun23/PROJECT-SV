@@ -8,6 +8,9 @@ public class PickableItem : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float pickableRange = 2f;
 
+    [SerializeField] private Item item;
+    [SerializeField] private int count = 1;
+
     private void Awake()
     {
         player = GameManager.Instance.player.transform;
@@ -23,7 +26,24 @@ public class PickableItem : MonoBehaviour
 
         if(distance < 0.1f)
         {
+            if (GameManager.Instance.inventory != null)
+            {
+                GameManager.Instance.inventory.AddItem(item, count);
+            }
+            else
+            {
+                Debug.LogWarning("No Inventory Attached To The GameManager");
+            }
+
             Destroy(gameObject);
         }
+    }
+
+    public void Set(Item _item, int _count)
+    {
+        item = _item;   
+        count = _count;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = item.Icon;
     }
 }

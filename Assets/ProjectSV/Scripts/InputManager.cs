@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 
     public System.Action OnUseToolPerformed;
     public System.Action OnInteractPerformed;
+    public System.Action OnInventoryTogglePerformed;
 
     public Vector2 MovementInput { get; private set; }
 
@@ -33,6 +34,11 @@ public class InputManager : MonoBehaviour
     public void OnInteract()
     {
         OnInteractPerformed?.Invoke();
+    }
+
+    public void OnInventoryToggle()
+    {
+        OnInventoryTogglePerformed?.Invoke();
     }
 
     public void OnMove(InputValue input)

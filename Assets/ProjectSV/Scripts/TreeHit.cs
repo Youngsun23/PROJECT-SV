@@ -15,6 +15,7 @@ public class TreeHit : ToolHit
             Vector3 position = transform.position;
             position.x += spread * Random.value * 2 - spread;
             position.y += spread * Random.value * 2 - spread;
+
             GameObject drop = Instantiate(pickableDrop);
             drop.transform.position = position;
         }
