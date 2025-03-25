@@ -29,7 +29,7 @@ public class ItemPanel : MonoBehaviour
 
     public void Show()
     {
-        for (int i = 0; i < Inventory.ItemSlots.Count && i < buttons.Count; i++)
+        for (int i = 0; i < Inventory.ItemSlots.Count && i < buttons.Count; i++) // 툴바, 인벤의 버튼 개수 다르니까 버튼 최대 개수만큼만 인벤이랑 연동해야지
         {
             if (Inventory.ItemSlots[i].Item == null)
             {

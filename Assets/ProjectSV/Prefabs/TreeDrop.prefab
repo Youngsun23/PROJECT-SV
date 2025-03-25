@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2349117239016619149}
   - component: {fileID: 8400795254156835987}
   - component: {fileID: 6293642669713767514}
+  - component: {fileID: 8726016856630514678}
   m_Layer: 0
   m_Name: TreeDrop
   m_TagString: Untagged
@@ -74,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -2052389084, guid: a7de2742ef1b04b49876fc80e75377b9, type: 3}
+  m_Sprite: {fileID: -676822336, guid: e3ae41787212bb94f8e2af78b644bd77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.12, y: 0.11}
+  m_Size: {x: 0.9, y: 0.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,3 +102,24 @@ MonoBehaviour:
   pickableRange: 2
   item: {fileID: 11400000, guid: 21e795d246b16ba4587f686828709d5d, type: 2}
   count: 2
+--- !u!95 &8726016856630514678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682084966323865982}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd4ed6df158ea7e41aba5b57f760c995, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
