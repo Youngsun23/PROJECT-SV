@@ -58,18 +58,5 @@ public class TileMapReadManager : MonoBehaviour
         }
 
         return null;
-
-        if (tileBase == null) return null;
-
-        // Dictionary에서 직접 찾지 말고, 등록된 TileData 목록에서 검색
-        foreach (var tileData in tileData)
-        {
-            if (tileData.Tiles.Contains(tileBase))  // 개별 팔레트 타일이 포함되어 있는지 확인
-            {
-                return tileData;
-            }
-        }
-
-        return null;
     }
 }
