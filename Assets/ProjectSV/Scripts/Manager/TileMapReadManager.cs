@@ -24,20 +24,21 @@ public class TileMapReadManager : MonoBehaviour
         }
     }
 
-    public Vector3Int GetGridPosition(Vector2 pos, bool mousePos = true)
+    public Vector3Int GetGridPosition(Vector2 mousePos, bool useMouse = true)
     {
         Vector3 worldPos;
 
-        if (mousePos)
+        if (useMouse)
         {
-            worldPos = Camera.main.ScreenToWorldPoint(pos);
+            worldPos = Camera.main.ScreenToWorldPoint(mousePos);
         }
-        else
+        else // 얘가 필요한 때가?
         {
-            worldPos = pos;
+            worldPos = mousePos;
         }
 
         Vector3Int gridPos = readTargetTileMap.WorldToCell(worldPos);
+        // Debug.Log($"WorldToCell: {worldPos} -> {gridPos}");
         return gridPos;
     }
 
@@ -52,11 +53,12 @@ public class TileMapReadManager : MonoBehaviour
 
     public TileData GetTileData(TileBase tileBase)
     {
-        if (tileBase != null && dataFromTiles.ContainsKey(tileBase))
+        if (tileBase != null)
         {
-            return dataFromTiles[tileBase];
+            // Debug.Log($"TileData: {dataFromTiles[tileBase].name}");
+            dataFromTiles.TryGetValue(tileBase, out TileData tileData);
+            return tileData;
         }
-
         return null;
     }
 }

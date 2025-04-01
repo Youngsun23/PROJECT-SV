@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPanel : MonoBehaviour
 {
-    protected ItemContainer Inventory => GameManager.Instance.inventory;
+    protected ItemContainer Inventory => GameManager.Instance.Inventory;
     [SerializeField] protected List<InventoryButton> buttons;
 
     protected virtual void Start()
@@ -29,7 +29,7 @@ public class ItemPanel : MonoBehaviour
 
     public void Show()
     {
-        for (int i = 0; i < Inventory.ItemSlots.Count && i < buttons.Count; i++) // Åø¹Ù, ÀÎº¥ÀÇ ¹öÆ° °³¼ö ´Ù¸£´Ï±î ¹öÆ° ÃÖ´ë °³¼ö¸¸Å­¸¸ ÀÎº¥ÀÌ¶û ¿¬µ¿ÇØ¾ßÁö
+        for (int i = 0; i < Inventory.ItemSlots.Count && i < buttons.Count; i++) // ï¿½ï¿½ï¿½ï¿½, ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½Æ° ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ï¿½ï¿½ ï¿½Îºï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
         {
             if (Inventory.ItemSlots[i].Item == null)
             {

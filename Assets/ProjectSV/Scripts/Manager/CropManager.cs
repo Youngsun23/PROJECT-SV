@@ -15,21 +15,21 @@ public class CropManager : MonoBehaviour
     [SerializeField] private TileBase planted;
     [SerializeField] private Tilemap plowTargetTileMap;
     [SerializeField] private Tilemap plantTargetTileMap;
-    private Dictionary<Vector2Int, Crop> plowedTiles;
+    private Dictionary<Vector3Int, Crop> plowedTiles;
 
     private void Start()
     {
-        plowedTiles = new Dictionary<Vector2Int, Crop>();
+        plowedTiles = new Dictionary<Vector3Int, Crop>();
     }
 
-    public bool Check(Vector3Int pos)
+    public bool plowedCheck(Vector3Int pos)
     {
-        return plowedTiles.ContainsKey((Vector2Int)pos);
+        return plowedTiles.ContainsKey(pos);
     }
 
     public void Plow(Vector3Int pos)
     {
-        if (plowedTiles.ContainsKey((Vector2Int)pos))
+        if (plowedTiles.ContainsKey(pos))
             return;
 
         CreatePlowedTile(pos);
@@ -43,7 +43,7 @@ public class CropManager : MonoBehaviour
     private void CreatePlowedTile(Vector3Int pos)
     {
         Crop crop = new Crop();
-        plowedTiles.Add((Vector2Int)pos, crop);
+        plowedTiles.Add(pos, crop);
 
         plowTargetTileMap.SetTile(pos, plowed);
     }

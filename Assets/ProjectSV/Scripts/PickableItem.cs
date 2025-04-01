@@ -13,7 +13,7 @@ public class PickableItem : MonoBehaviour
 
     private void Awake()
     {
-        player = GameManager.Instance.player.transform;
+        player = GameManager.Instance.Player.transform;
     }
 
     private void Update()
@@ -26,9 +26,9 @@ public class PickableItem : MonoBehaviour
 
         if(distance < 0.1f)
         {
-            if (GameManager.Instance.inventory != null)
+            if (GameManager.Instance.Inventory != null)
             {
-                GameManager.Instance.inventory.AddItem(item, count);
+                GameManager.Instance.Inventory.AddItem(item, count);
             }
             else
             {

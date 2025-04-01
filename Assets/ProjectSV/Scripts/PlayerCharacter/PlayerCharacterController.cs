@@ -40,7 +40,7 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (toolController.UseToolWorld())
             return;
-       
+
         toolController.UseToolGrid();
     }
 
