@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneHit : ToolHit
+[RequireComponent(typeof(BoxCollider2D))]
+public class HitNode : ToolHit
 {
-    [SerializeField] Item item;
-    [SerializeField] int dropCount = 3;
-    [SerializeField] float spread = 1f;
+    [SerializeField] private Item item;
+    [SerializeField] private int dropCount = 3;
+    [SerializeField] private float spread = 1f;
+    [SerializeField] private HitNodeType nodeType;
 
     public override void Hit()
     {
@@ -20,5 +22,10 @@ public class StoneHit : ToolHit
         }
 
         Destroy(gameObject);
+    }
+
+    public override bool IsHittable(List<HitNodeType> hitNodeType)
+    {
+        return hitNodeType.Contains(nodeType);   
     }
 }

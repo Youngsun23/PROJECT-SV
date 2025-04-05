@@ -10,9 +10,11 @@ public class Item : ScriptableObject
     public bool Stackable => stackable;
     public Sprite Icon => icon;
     public ToolAction OnToolAction => onToolAction;
+    public ToolAction OnToolActionTileMap => onToolActionTileMap;
 
     [SerializeField] private string itemName;
     [SerializeField] private bool stackable;
     [SerializeField] private Sprite icon;
     [SerializeField] private ToolAction onToolAction;
+    [SerializeField] private ToolAction onToolActionTileMap;
 }

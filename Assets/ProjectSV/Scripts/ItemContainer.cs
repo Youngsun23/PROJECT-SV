@@ -31,6 +31,10 @@ public class ItemSlot
     public void ChangeCount(int val)
     {
         count += val;
+        if(count <= 0)
+        {
+            Clear();
+        }
     }
 
     public void Copy(ItemSlot slot)
@@ -57,7 +61,7 @@ public class ItemContainer : ScriptableObject
 
     public void AddItem(Item item, int count = 1)
     {
-        if(item.Stackable)
+        if (item.Stackable)
         {
             ItemSlot itemSlot = itemSlots.Find(x => x.Item == item);
             if(itemSlot != null)
@@ -70,7 +74,7 @@ public class ItemContainer : ScriptableObject
                 if(itemSlot != null)
                 {
                     itemSlot.SetItem(item);
-                    itemSlot.ChangeCount(count);
+                    itemSlot.SetCount(count);
                 }
             }
         }
@@ -80,8 +84,20 @@ public class ItemContainer : ScriptableObject
             if(itemSlot != null)
             {
                 itemSlot.SetItem(item);
+                itemSlot.SetCount(count);
             }
         }
+
+        onChange?.Invoke();
+    }
+
+    public void RemoveItem(Item item, int count = 1)
+    {
+        ItemSlot itemSlot = itemSlots.Find(x => x.Item == item);
+        if (itemSlot == null)
+            return;
+
+        itemSlot.ChangeCount(-count);
 
         onChange?.Invoke();
     }

@@ -10,4 +10,9 @@ public class ToolHit : MonoBehaviour
     {
 
     }
+
+    public virtual bool IsHittable(List<HitNodeType> hitNodeType)
+    {
+        return true;
+    }
 }

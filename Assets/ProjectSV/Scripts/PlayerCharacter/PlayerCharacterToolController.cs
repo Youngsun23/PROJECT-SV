@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class PlayerCharacterToolController : MonoBehaviour
 {
     private PlayerCharacterController character;
+    private Animator animator;
     private ToolBarController toolBarController;
     [SerializeField] private MarkerManager markerManager;
     [SerializeField] private TileMapReadManager tileMapReadManager;
-    [SerializeField] private CropManager cropManager;
     private Rigidbody2D rigidBody;
 
     [SerializeField] private float offsetDistance = 1f;
@@ -18,11 +19,12 @@ public class PlayerCharacterToolController : MonoBehaviour
     private Vector3Int selectedTilePos;
     private bool isTileSelectable;
     [SerializeField] private float maxDistance = 3f;
-    [SerializeField] private TileData plowableTile;
+    // [SerializeField] private TileData plowableTile;
 
     private void Awake()
     {
         character = GetComponent<PlayerCharacterController>();
+        animator = GetComponent<Animator>();
         toolBarController = GetComponent<ToolBarController>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -61,26 +63,28 @@ public class PlayerCharacterToolController : MonoBehaviour
         if (item == null || item.OnToolAction == null)
             return false;
 
-        bool isActionHit = item.OnToolAction.OnApply(position);
-        return isActionHit;
+        // animator.SetTrigger("Act");
+        bool actionComplete = item.OnToolAction.OnApply(position);
+        return actionComplete;
     }
 
     public void UseToolGrid()
     {
         if(isTileSelectable)
         {
+            Item item = toolBarController.GetCurrentHoldingItem();
+            if (item == null || item.OnToolActionTileMap == null)
+                return;
             TileBase tileBase = tileMapReadManager.GetTileBase(selectedTilePos);
             TileData tileData = tileMapReadManager.GetTileData(tileBase);
-            if (tileData == null || tileData != plowableTile)
+            if(tileData == null)
                 return;
 
-            if (cropManager.plowedCheck(selectedTilePos))
+            // animator.SetTrigger("Act");
+            bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData, tileMapReadManager);
+            if(actionComplete)
             {
-                cropManager.Plant(selectedTilePos);
-            }
-            else
-            {
-                cropManager.Plow(selectedTilePos);
+                item.OnToolActionTileMap.OnItemUsed(item, GameManager.Instance.Inventory);
             }
         }
     }

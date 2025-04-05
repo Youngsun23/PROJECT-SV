@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 126540356497569602}
   - component: {fileID: 2647749662295312175}
   - component: {fileID: 1654989579338195515}
-  - component: {fileID: 3355449445349668156}
+  - component: {fileID: 248508502215260784}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.205389, y: 1.0588231}
   m_EdgeRadius: 0
---- !u!114 &3355449445349668156
+--- !u!114 &248508502215260784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3645114646323432775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3291b07ab06394aa9ad71a110d3f44, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d6dcf3c3cc7a0141bd257ea7149cbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b104f4547dff86f479156f19baf8e61e, type: 2}
   dropCount: 3
   spread: 1
+  nodeType: 2

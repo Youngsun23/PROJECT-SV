@@ -7,9 +7,17 @@ using UnityEngine.WSA;
 
 public class TileMapReadManager : MonoBehaviour
 {
+    public CropManager CropManager => cropManager;
+    private CropManager cropManager;
     [SerializeField] private Tilemap readTargetTileMap;
     [SerializeField] private List<TileData> tileData;
     private Dictionary<TileBase, TileData> dataFromTiles;
+
+    private void Awake()
+    {
+        cropManager = GetComponent<CropManager>();
+    }
+
 
     private void Start()
     {

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: AxeAction
   m_EditorClassIdentifier: 
   interactableDistance: 1
+  isHittableTypes: 01000000

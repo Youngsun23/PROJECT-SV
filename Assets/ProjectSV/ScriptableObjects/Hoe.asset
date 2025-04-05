@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
-  m_Name: Axe
+  m_Name: Hoe
   m_EditorClassIdentifier: 
-  itemName: Axe
+  itemName: Hoe
   stackable: 0
-  icon: {fileID: 21300000, guid: 21fc7e007201f49479bf635e293a9a81, type: 3}
-  onToolAction: {fileID: 11400000, guid: 90835ffc930303d4c823e8ad9367dcfd, type: 2}
+  icon: {fileID: 21300000, guid: 37d4212c6dcd56743bc737ae4b297f07, type: 3}
+  onToolAction: {fileID: 0}
+  onToolActionTileMap: {fileID: 11400000, guid: 31267ca283b1b644c86f73da6cbb3f3a, type: 2}
