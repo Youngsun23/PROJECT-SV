@@ -9,4 +9,15 @@ public class ToolAction : ScriptableObject
         Debug.LogWarning("OnApply() Override Needed");
         return true;
     }
+
+    public virtual bool OnApplyTileMap(Vector3Int pos, TileData tile, TileMapReadManager tileMapReadManager)
+    {
+        Debug.LogWarning("OnApplyTileMap() Override Needed");
+        return true;
+    }
+
+    public virtual void OnItemUsed(Item usedItem, ItemContainer inventory)
+    {
+
+    }
 }

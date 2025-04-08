@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2275102647162131717}
   - component: {fileID: 3951122128796499439}
   - component: {fileID: 7983980956057318081}
-  - component: {fileID: 8406192016462247590}
+  - component: {fileID: 8207793296987174093}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 20
-  m_Sprite: {fileID: 1213444167, guid: 4a2f7fe9a01e23c40ba1b7172644af5d, type: 3}
+  m_SortingLayerID: 507809901
+  m_SortingLayer: 5
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1213444167, guid: f2c6daeed84daa145b4ee15ea6a463e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98423004, y: 0.4009679}
   m_EdgeRadius: 0
---- !u!114 &8406192016462247590
+--- !u!114 &8207793296987174093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7051517507899296387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd72130346480394c92f6ff62a428598, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d6dcf3c3cc7a0141bd257ea7149cbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 21e795d246b16ba4587f686828709d5d, type: 2}
   dropCount: 5
   spread: 1
+  nodeType: 1
