@@ -25,4 +25,21 @@ public class GameManager : MonoBehaviour
     {
         Instance = null;
     }
+
+    private void Start()
+    {
+        // 데이터 관리 시스템 안정화 전까지 버튼으로 대체
+        // Initialize();
+    }
+
+    private void Initialize()
+    {
+        UserDataManager.Instance.Load();
+    }
+
+    // 빌드용 임시 함수
+    public void TempGameQuit()
+    {
+        Application.Quit();
+    }
 }
