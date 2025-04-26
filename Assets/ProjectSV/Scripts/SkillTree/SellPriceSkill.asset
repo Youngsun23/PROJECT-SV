@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb3ec50a188fdd4ba51a1f1179de21e, type: 3}
+  m_Name: SellPriceSkill
+  m_EditorClassIdentifier: 
+  skillName: "\uC2E0\uB8B0 \uBC1B\uB294 \uD310\uB9E4\uC790"
+  tag: 1
+  maxLevel: 5
+  levelScaler: 0300000005000000070000000a0000000f000000
+  levelUpCost: 0200000001000000010000000200000003000000
+  icon: {fileID: -808763294, guid: 7a4d14b95c404014795fbe7cf0dbff40, type: 3}
+  info: "\uBC30\uC1A1\uD568 \uC218\uC775"
+  scalerUnit: '%'
+  childSkills:
+  - {fileID: 11400000, guid: 59457aed20331d341b84f11e734c26a7, type: 2}
+  - {fileID: 11400000, guid: 6f7defe29addbee4bacbe53dc283ee7f, type: 2}
+  requiredUnlockPoint: 0
+  ID: 12

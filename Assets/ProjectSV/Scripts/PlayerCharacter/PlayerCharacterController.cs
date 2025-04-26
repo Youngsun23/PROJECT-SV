@@ -9,7 +9,8 @@ public class PlayerCharacterController : MonoBehaviour
     public Animator animator;
     public PlayerCharacterToolController toolController;
     public PlayerCharacterInteraction interaction;
-    public InventoryController inventoryController;
+    public UITabController uiTabController;
+    
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
 
@@ -34,6 +35,7 @@ public class PlayerCharacterController : MonoBehaviour
         InputManager.Instance.OnUseToolPerformed += ExecuteUseTool;
         InputManager.Instance.OnInteractPerformed += ExecuteInteract;
         InputManager.Instance.OnInventoryTogglePerformed += ExecuteInventoryToggle;
+        InputManager.Instance.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
     }
 
     private void ExecuteUseTool()
@@ -51,7 +53,12 @@ public class PlayerCharacterController : MonoBehaviour
 
     private void ExecuteInventoryToggle()
     {
-        inventoryController.ToggleInventory();
+        uiTabController.ToggleInventory();
+    }
+
+    private void ExecuteSkillTabToggle()
+    {
+        uiTabController.ToggleSkillTab();
     }
 
     private void Update()

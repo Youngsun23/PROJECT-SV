@@ -29,7 +29,7 @@ public class ItemPanel : MonoBehaviour
 
     public void Show()
     {
-        for (int i = 0; i < Inventory.ItemSlots.Count && i < buttons.Count; i++) // ����, �κ��� ��ư ���� �ٸ��ϱ� ��ư �ִ� ������ŭ�� �κ��̶� �����ؾ���
+        for (int i = 0; i < Inventory.ItemSlots.Count && i < buttons.Count; i++)
         {
             if (Inventory.ItemSlots[i].Item == null)
             {
