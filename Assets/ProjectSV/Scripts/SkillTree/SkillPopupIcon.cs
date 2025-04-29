@@ -11,9 +11,9 @@ public class SkillPopupIcon : MonoBehaviour
 
     public void Set(SkillTag skillTag)
     {
-        Skill skill = GameDataManager.Instance.GetSkillGameData(skillTag);
+        Skill skill = GameDataManager.Singleton.GetSkillGameData(skillTag);
         icon.sprite = skill.Icon;
-        int currentLevel = UserDataManager.Instance.UserData.skillLevelDictionary[skillTag];
+        int currentLevel = UserDataManager.Singleton.GetUserDataSkillLevelDictionary(skillTag);
 
         if(currentLevel <= 0)
         {

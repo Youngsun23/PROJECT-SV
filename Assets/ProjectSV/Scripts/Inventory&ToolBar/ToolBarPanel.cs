@@ -15,6 +15,11 @@ public class ToolBarPanel : ItemPanel
         HighlightButton(0);
     }
 
+    private void OnDestroy()
+    {
+        toolBarController.onChange -= HighlightButton;
+    }
+
     public override void OnClick(int id)
     {
         toolBarController.SetPreviousSelectedTool(toolBarController.SelectedTool);

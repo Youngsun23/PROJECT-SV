@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToolHit : MonoBehaviour
 {
-    public ItemSpawnManager ItemSpawnManager => GameManager.Instance.GetComponent<ItemSpawnManager>();
+    public ItemSpawnManager ItemSpawnManager => GameManager.Singleton.GetComponent<ItemSpawnManager>();
 
     public virtual void Hit()
     {

@@ -40,9 +40,9 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler
 
     public void Set(SkillTag skillTag)
     {
-        Skill skill = GameDataManager.Instance.GetSkillGameData(skillTag);
+        Skill skill = GameDataManager.Singleton.GetSkillGameData(skillTag);
         icon.sprite = skill.Icon;
-        int currentLevel = UserDataManager.Instance.UserData.skillLevelDictionary[skillTag];
+        int currentLevel = UserDataManager.Singleton.GetUserDataSkillLevelDictionary(skillTag);
         lockedSkillIcon.SetActive(false);
 
         if (currentLevel <= 0)
@@ -64,7 +64,6 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler
             levelText.color = Color.green;
         }
 
-        // юс╫ц
         //if (skill.RequiredUnlockPoint == UserDataManager.Instance.UserData.skillCurrentUnlockPointDictionary[skill.SkillTag])
         //{
         //    lockedSkillIcon.SetActive(false);

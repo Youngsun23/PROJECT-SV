@@ -8,12 +8,12 @@ public class PlowAction : ToolAction
 {
     [SerializeField] private TileData plowableTile;
 
-    public override bool OnApplyTileMap(Vector3Int pos, TileData tile, TileMapReadManager tileMapReadManager)
+    public override bool OnApplyTileMap(Vector3Int pos, TileData tile)
     {
         if (tile != plowableTile)
             return false;
 
-        tileMapReadManager.CropManager.Plow(pos);
+        CropManager.Singleton.Plow(pos);
         return true;
     }
 }

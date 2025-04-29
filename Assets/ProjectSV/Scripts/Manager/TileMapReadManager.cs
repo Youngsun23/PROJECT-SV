@@ -1,20 +1,13 @@
+using HAD;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TileMapReadManager : MonoBehaviour
+public class TileMapReadManager : SingletonBase<TileMapReadManager>
 {
-    public CropManager CropManager => cropManager;
-    private CropManager cropManager;
     [SerializeField] private Tilemap readTargetTileMap;
     [SerializeField] private List<TileData> tileData;
     private Dictionary<TileBase, TileData> dataFromTiles;
-
-    private void Awake()
-    {
-        cropManager = GetComponent<CropManager>();
-    }
-
 
     private void Start()
     {

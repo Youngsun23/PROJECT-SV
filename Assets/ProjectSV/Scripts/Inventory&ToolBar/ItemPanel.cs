@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class ItemPanel : MonoBehaviour
 {
-    protected ItemContainer Inventory => GameManager.Instance.Inventory;
+    protected ItemContainer Inventory => GameManager.Singleton.Inventory;
     [SerializeField] protected List<InventoryButton> buttons;
 
     protected virtual void Start()
     {
         Inventory.onChange += Show;
         Initialize();
+    }
+
+    private void OnDestroy()
+    {
+        Inventory.onChange -= Show;
     }
 
     public void Initialize()

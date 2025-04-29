@@ -10,7 +10,7 @@ public class ToolAction : ScriptableObject
         return true;
     }
 
-    public virtual bool OnApplyTileMap(Vector3Int pos, TileData tile, TileMapReadManager tileMapReadManager)
+    public virtual bool OnApplyTileMap(Vector3Int pos, TileData tile)
     {
         Debug.LogWarning("OnApplyTileMap() Override Needed");
         return true;

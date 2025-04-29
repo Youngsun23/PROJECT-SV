@@ -1,12 +1,11 @@
+using HAD;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+public class InputManager : SingletonBase<InputManager>
 {
-    public static InputManager Instance { get; private set; }
-
     private PlayerInput playerInput;
 
     public System.Action OnUseToolPerformed;
@@ -16,15 +15,9 @@ public class InputManager : MonoBehaviour
 
     public Vector2 MovementInput { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
         playerInput = GetComponent<PlayerInput>();
-    }
-
-    private void OnDestroy()
-    {
-        Instance = null;
     }
 
     public void OnUseTool()

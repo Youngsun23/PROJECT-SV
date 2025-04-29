@@ -9,12 +9,16 @@ public class SkillBarPanel : SkillPanel
     {
         base.Start();
 
-        PlayerCharacterAbilityComponent.Instance.OnLevelUp += UIUpdate;
+        PlayerCharacterAbilityComponent.Singleton.OnLevelUp += UIUpdate;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerCharacterAbilityComponent.Singleton.OnLevelUp -= UIUpdate;
     }
 
     public override void UIUpdate()
     {
-        // 임시 -> UserData Load를 버튼 아닌 GameManager 코드로 옮기고 나서, 초기화 단계에서 모든 UI 갱신, UIUpdate()에 남길 것과 분리할 것 구분하기
         UnlockBarSlot();
 
         for (int i = 0; i < buttons.Count; i++)
@@ -29,20 +33,19 @@ public class SkillBarPanel : SkillPanel
             }
         }
 
-        spText.text = $"SP:{UserDataManager.Instance.UserData.skillPoint.ToString()}";
+        spText.text = $"SP:{UserDataManager.Singleton.GetUserDataSkillPoint().ToString()}";
     }
 
     public override void OnClick(int id)
     {
         base.OnClick(id);
 
-        SkillPopup.Instance.UIUpdate(activatedSkillSet[id]);
+        SkillPopup.Singleton.UIUpdate(activatedSkillSet[id]);
     }
 
-    // 플레이어 레벨 세팅 -> 호출 (레벨=사용 가능한 슬롯 수)
     public void UnlockBarSlot()
     {
-        for (int i = 0; i < UserDataManager.Instance.UserData.level; i++)
+        for (int i = 0; i < UserDataManager.Singleton.GetUserDataLevel(); i++)
         {
             buttons[i].UnlockSlot();
         }

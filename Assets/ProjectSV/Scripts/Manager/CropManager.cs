@@ -1,3 +1,4 @@
+using HAD;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ public class Crop
     
 }
 
-public class CropManager : MonoBehaviour
+public class CropManager : SingletonBase<CropManager>
 {
     [SerializeField] private TileBase plowed;
     [SerializeField] private TileBase planted;
@@ -24,8 +25,8 @@ public class CropManager : MonoBehaviour
 
     public bool IsPlantable(Vector3Int pos)
     {
-        // 1. plowedµÇÁö ¾Ê¾ÒÀ¸¸é -> farmingTiles¿¡ µî·ÏµÇ¾îÀÖÁö¾ÊÀ½ -> return
-        // 2. ÀÌ¹Ì cropÀÌ µî·ÏµÇ¾î ÀÖÀ¸¸é -> ÀÌ¹Ì ´Ù¸¥ ÀÛ¹° ÀÖ´Â °Å -> farmingTiles[pos]°¡ nullÀÌ ¾Æ´Ô -> return
+        // 1. plowedï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ -> farmingTilesï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> return
+        // 2. ï¿½Ì¹ï¿½ cropï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½Ì¹ï¿½ ï¿½Ù¸ï¿½ ï¿½Û¹ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ -> farmingTiles[pos]ï¿½ï¿½ nullï¿½ï¿½ ï¿½Æ´ï¿½ -> return
         if (!farmingTiles.ContainsKey(pos) || farmingTiles[pos] != null)
             return false;
         else

@@ -1,12 +1,11 @@
+using HAD;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonBase<GameManager>
 {
-    public static GameManager Instance { get;  private set; }
-
     public GameObject Player => player;
     public ItemContainer Inventory => inventory;
     [SerializeField] private GameObject player;
@@ -14,30 +13,22 @@ public class GameManager : MonoBehaviour
     public ItemDragDropController ItemDragDropController { get; private set; }
     [SerializeField] private ItemContainer inventory;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
         ItemDragDropController = GetComponent<ItemDragDropController>();
         inventory = Instantiate(origin_inventory);
     }
 
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
-
     private void Start()
     {
-        // 데이터 관리 시스템 안정화 전까지 버튼으로 대체
         // Initialize();
     }
 
     private void Initialize()
     {
-        UserDataManager.Instance.Load();
+        UserDataManager.Singleton.Load();
     }
 
-    // 빌드용 임시 함수
     public void TempGameQuit()
     {
         Application.Quit();

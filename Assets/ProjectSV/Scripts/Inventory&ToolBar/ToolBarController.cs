@@ -49,6 +49,6 @@ public class ToolBarController : MonoBehaviour
 
     public Item GetCurrentHoldingItem()
     {
-        return GameManager.Instance.Inventory.ItemSlots[selectedTool].Item;
+        return GameManager.Singleton.Inventory.ItemSlots[selectedTool].Item;
     }
 }

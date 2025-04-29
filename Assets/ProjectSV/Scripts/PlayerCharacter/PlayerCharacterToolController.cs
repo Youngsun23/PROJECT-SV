@@ -11,7 +11,6 @@ public class PlayerCharacterToolController : MonoBehaviour
     private Animator animator;
     private ToolBarController toolBarController;
     [SerializeField] private MarkerManager markerManager;
-    [SerializeField] private TileMapReadManager tileMapReadManager;
     private Rigidbody2D rigidBody;
 
     [SerializeField] private float offsetDistance = 1f;
@@ -38,7 +37,7 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     private void SelectTile()
     {
-        selectedTilePos = tileMapReadManager.GetGridPosition(Mouse.current.position.ReadValue());
+        selectedTilePos = TileMapReadManager.Singleton.GetGridPosition(Mouse.current.position.ReadValue());
     }
 
     private void tileSelectableCheck()
@@ -75,16 +74,16 @@ public class PlayerCharacterToolController : MonoBehaviour
             Item item = toolBarController.GetCurrentHoldingItem();
             if (item == null || item.OnToolActionTileMap == null)
                 return;
-            TileBase tileBase = tileMapReadManager.GetTileBase(selectedTilePos);
-            TileData tileData = tileMapReadManager.GetTileData(tileBase);
+            TileBase tileBase = TileMapReadManager.Singleton.GetTileBase(selectedTilePos);
+            TileData tileData = TileMapReadManager.Singleton.GetTileData(tileBase);
             if(tileData == null)
                 return;
 
             // animator.SetTrigger("Act");
-            bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData, tileMapReadManager);
+            bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData);
             if(actionComplete)
             {
-                item.OnToolActionTileMap.OnItemUsed(item, GameManager.Instance.Inventory);
+                item.OnToolActionTileMap.OnItemUsed(item, GameManager.Singleton.Inventory);
             }
         }
     }

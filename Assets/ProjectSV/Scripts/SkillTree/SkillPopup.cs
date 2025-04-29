@@ -2,12 +2,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using HAD;
 
-public class SkillPopup : MonoBehaviour
+public class SkillPopup : SingletonBase<SkillPopup>
 {
-    public static SkillPopup Instance { get; private set; }
-
-    private UserDataDTO UserData => UserDataManager.Instance.UserData;
+    private UserDataManager UserData => UserDataManager.Singleton;
 
     public Action onChange;
 
@@ -21,26 +20,20 @@ public class SkillPopup : MonoBehaviour
 
     private Skill selectedSkill;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
-
     private void Start()
     {
         onChange += UIUpdate;
     }
 
-    // Bar->Click ≥—æÓø¬ ∞ÊøÏ
+    private void OnDestory()
+    {
+        onChange -= UIUpdate;
+    }
+
     public void UIUpdate(SkillTag tag)
     {
-        selectedSkill = GameDataManager.Instance.GetSkillGameData(tag);
-        int currentLevel = UserData.skillLevelDictionary[tag];
+        selectedSkill = GameDataManager.Singleton.GetSkillGameData(tag);
+        int currentLevel = UserData.GetUserDataSkillLevelDictionary(tag);
 
         skillIcon.Set(tag);
 
@@ -59,7 +52,7 @@ public class SkillPopup : MonoBehaviour
         {
             if (currentLevel != selectedSkill.MaxLevel)
             {
-                infoText.text = $"{selectedSkill.Name}\n[{selectedSkill.Info}] +{selectedSkill.GetScalerAtLevel(currentLevel)}{selectedSkill.ScalerUnit} (¥Ÿ¿Ω ∑π∫ß: +{selectedSkill.GetScalerAtLevel(currentLevel + 1)}{selectedSkill.ScalerUnit})";
+                infoText.text = $"{selectedSkill.Name}\n[{selectedSkill.Info}] +{selectedSkill.GetScalerAtLevel(currentLevel)}{selectedSkill.ScalerUnit} (Îã§Ïùå Î†àÎ≤®: +{selectedSkill.GetScalerAtLevel(currentLevel + 1)}{selectedSkill.ScalerUnit})";
                 levelUpButton.SetText($"Learn({selectedSkill.GetCostAtLevel(currentLevel)}P)");
             }
             else
@@ -70,10 +63,8 @@ public class SkillPopup : MonoBehaviour
             }
         }
         
-        Debug.Log($"º±≈√µ» Ω∫≈≥: {selectedSkill.Name} / «ˆ¿Á ∑π∫ß: {currentLevel} / 1∑π∫ß »ø∞˙: {selectedSkill.GetScalerAtLevel(1)}");
 
-
-        if (UserData.skillSet.Count < UserData.level && currentLevel >= 1)
+        if (UserData.GetUserDataSkillSet().Count < UserData.GetUserDataLevel() && currentLevel >= 1)
         {
             equipButton.ButtonInteractableToggle(true);
         }
@@ -89,7 +80,6 @@ public class SkillPopup : MonoBehaviour
         unequipButton.gameObject.SetActive(false);
     }
 
-    // Tree->Click ≥—æÓø¬ ∞ÊøÏ
     public void UIUpdate()
     {
         UIUpdate(selectedSkill.SkillTag);
@@ -108,8 +98,7 @@ public class SkillPopup : MonoBehaviour
 
     public void LevelUpSkill()
     {
-        // levelupCost ¿ÃªÛ¿« skillPoint ∫∏¿Ø«œ∞Ì ¿÷¥¬¡ˆ √º≈©
-        int currentLevel = UserData.skillLevelDictionary[selectedSkill.SkillTag];
+        int currentLevel = UserData.GetUserDataSkillLevelDictionary(selectedSkill.SkillTag);
         int levelUpCost;
 
         if (currentLevel == 0)
@@ -118,38 +107,35 @@ public class SkillPopup : MonoBehaviour
         }
         else
         {
-            levelUpCost = selectedSkill.GetCostAtLevel(UserData.skillLevelDictionary[selectedSkill.SkillTag]);
+            levelUpCost = selectedSkill.GetCostAtLevel(UserData.GetUserDataSkillLevelDictionary(selectedSkill.SkillTag));
         }
-        if (UserData.skillPoint < levelUpCost)
+        if (UserData.GetUserDataSkillPoint() < levelUpCost)
         {
             levelUpButton.SetTextColorRed();
             return;
         }
-        UserDataManager.Instance.UpdateUserDataSkillPoint(-levelUpCost);
-        UserDataManager.Instance.UpdateUserDataSkillLevel(selectedSkill.SkillTag);
+        UserDataManager.Singleton.UpdateUserDataSkillPoint(-levelUpCost);
+        UserDataManager.Singleton.UpdateUserDataSkillLevel(selectedSkill.SkillTag);
 
         // Learn: 0->1
-        if (UserData.skillLevelDictionary[selectedSkill.SkillTag] == 1)
+        if (UserData.GetUserDataSkillLevelDictionary(selectedSkill.SkillTag) == 1)
         {
             selectedSkill.UnlockChildSkill();
         }
 
-        // ToDo: UI ∞ªΩ≈ - Bar, Tree, Popup ºº ∞≥ ¿¸∫Œ ∞ªΩ≈«ÿæﬂ«‘
         onChange?.Invoke();
     }
 
-    // ªÁøÎ/«ÿ¡¶
     public void EquipSkill()
     {
-        UserData.skillSet.Add(selectedSkill.SkillTag);
+        UserData.GetUserDataSkillSet().Add(selectedSkill.SkillTag);
 
         onChange?.Invoke();
     }
 
     public void UnequipSkill()
     {
-        // SkillSetø°º≠ «ÿ¥Á Ω∫≈≥ ¡¶∞≈, UI ∞ªΩ≈
-        UserData.skillSet.Remove(selectedSkill.SkillTag);
+        UserData.GetUserDataSkillSet().Remove(selectedSkill.SkillTag);
 
         onChange?.Invoke();
     }

@@ -33,7 +33,7 @@ public class ItemDragDropController : MonoBehaviour
                 {
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                     worldPosition.z = 0;
-                    ItemSpawnManager.Instance.SpawnItem(worldPosition, dragDropSlot.Item, dragDropSlot.Count);
+                    ItemSpawnManager.Singleton.SpawnItem(worldPosition, dragDropSlot.Item, dragDropSlot.Count);
 
                     dragDropSlot.Clear();
                     dragDropIcon.SetActive(false);

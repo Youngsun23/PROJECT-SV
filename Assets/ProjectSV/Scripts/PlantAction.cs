@@ -6,18 +6,18 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Data/Tool Action/Plant")]
 public class PlantAction : ToolAction
 {
-    public override bool OnApplyTileMap(Vector3Int pos, TileData tile, TileMapReadManager tileMapReadManager)
+    public override bool OnApplyTileMap(Vector3Int pos, TileData tile)
     {
-        if(tileMapReadManager.CropManager.IsPlantable(pos))
+        if(CropManager.Singleton.IsPlantable(pos))
         {
-            tileMapReadManager.CropManager.Plant(pos);
+            CropManager.Singleton.Plant(pos);
             return true;
         }
 
         return false;
     }
 
-    public override void OnItemUsed(Item usedItem, ItemContainer inventory) // ItemContainer가 PC인벤토리 외에도 생길거니까
+    public override void OnItemUsed(Item usedItem, ItemContainer inventory)
     {
         inventory.RemoveItem(usedItem);
     }

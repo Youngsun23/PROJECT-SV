@@ -1,11 +1,10 @@
+using HAD;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacterController : MonoBehaviour
+public class PlayerCharacterController : SingletonBase<PlayerCharacterController>
 {
-    public static PlayerCharacterController Instance { get; private set; }
-
     public Animator animator;
     public PlayerCharacterToolController toolController;
     public PlayerCharacterInteraction interaction;
@@ -18,24 +17,26 @@ public class PlayerCharacterController : MonoBehaviour
     public Vector2 lastMoveVector { get; private set; }
     public bool isMoving;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
-
     private void Start()
     {
-        InputManager.Instance.OnUseToolPerformed += ExecuteUseTool;
-        InputManager.Instance.OnInteractPerformed += ExecuteInteract;
-        InputManager.Instance.OnInventoryTogglePerformed += ExecuteInventoryToggle;
-        InputManager.Instance.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
+        InputManager.Singleton.OnUseToolPerformed += ExecuteUseTool;
+        InputManager.Singleton.OnInteractPerformed += ExecuteInteract;
+        InputManager.Singleton.OnInventoryTogglePerformed += ExecuteInventoryToggle;
+        InputManager.Singleton.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
+    }
+
+    private void OnDestroy()
+    {
+        InputManager.Singleton.OnUseToolPerformed -= ExecuteUseTool;
+        InputManager.Singleton.OnInteractPerformed -= ExecuteInteract;
+        InputManager.Singleton.OnInventoryTogglePerformed -= ExecuteInventoryToggle;
+        InputManager.Singleton.OnSkillTabTogglePerformed -= ExecuteSkillTabToggle;
     }
 
     private void ExecuteUseTool()
@@ -63,7 +64,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     private void Update()
     {
-        Vector2 input = InputManager.Instance.MovementInput;
+        Vector2 input = InputManager.Singleton.MovementInput;
         Move(input);
 
         float horizontal = input.x;

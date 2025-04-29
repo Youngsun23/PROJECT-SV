@@ -1,32 +1,20 @@
 using UnityEngine;
 using System.IO;
-using Sirenix.OdinInspector;
 using Newtonsoft.Json;
+using HAD;
 
-public partial class UserDataManager : MonoBehaviour
+public partial class UserDataManager : SingletonBase<UserDataManager>
 {
-    public static UserDataManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
-
-    [Button("Save")]
+    // [Button("Save")]
     public void Save()
     {
-        // string serializeUserData = JsonUtility.ToJson(UserData, true); // Dictionary Á÷·ÄÈ­ ºÒ°¡
+        // string serializeUserData = JsonUtility.ToJson(UserData, true); // Dictionary ï¿½ï¿½ï¿½ï¿½È­ ï¿½Ò°ï¿½
         string serializeUserData = JsonConvert.SerializeObject(UserData, Formatting.Indented);
 
         FileUtility.WriteFileFromString("Assets/Resources/UserData.txt", serializeUserData);
     }
 
-    [Button("Load")]
+    // [Button("Load")]
     public void Load()
     {
         if (FileUtility.ReadFileData("Assets/Resources/UserData.txt", out string loadedUserData))
@@ -35,7 +23,7 @@ public partial class UserDataManager : MonoBehaviour
         }
     }
 
-    [Button("Delete")]
+    // [Button("Delete")]
     public void Delete()
     {
         string filePath = "Assets/Resources/UserData.txt";
@@ -43,7 +31,7 @@ public partial class UserDataManager : MonoBehaviour
         if (File.Exists(filePath))
         {
             File.Delete(filePath);
-            Debug.Log("User Data »èÁ¦");
+            Debug.Log("User Data ï¿½ï¿½ï¿½ï¿½");
         }
     }
 }

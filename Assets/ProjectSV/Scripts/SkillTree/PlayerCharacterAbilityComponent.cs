@@ -1,43 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
 using System;
+using Unity.VisualScripting;
+using HAD;
 
-public class PlayerCharacterAbilityComponent : MonoBehaviour
+public class PlayerCharacterAbilityComponent : SingletonBase<PlayerCharacterAbilityComponent>
 {
-    public static PlayerCharacterAbilityComponent Instance;
-
-    private UserDataDTO UserData => UserDataManager.Instance.UserData;
+    private UserDataManager UserData => UserDataManager.Singleton;
 
     public event Action OnLevelUp;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
-
-    [Button]
+    // [Button]
     public void TestLevelUp()
     {
-        // 임시 코드 - MaxLevel 처리 필요
-        if (UserDataManager.Instance.UserData.level == 10)
+        if (UserData.GetUserDataLevel() == 10)
             return;
-        UserDataManager.Instance.UpdateUserDataLevel();
-        UserDataManager.Instance.UpdateUserDataSkillPoint(UserData.level);
+        UserData.UpdateUserDataLevel();
+        UserData.UpdateUserDataSkillPoint(UserData.GetUserDataLevel());
 
         OnLevelUp?.Invoke();
     }
 
     public void AddEXP(int val)
     {
-        UserDataManager.Instance.UpdateUserDataExp(val);
-        if(UserData.exp >= GameDataManager.Instance.GetRequiredEXP(UserData.level))
+        UserData.UpdateUserDataExp(val);
+        if(UserData.GetUserDataEXP() >= GameDataManager.Singleton.GetRequiredEXP(UserData.GetUserDataLevel()))
         {
             LevelUp();
         }
@@ -45,9 +31,9 @@ public class PlayerCharacterAbilityComponent : MonoBehaviour
 
     public void LevelUp()
     {
-        UserDataManager.Instance.UpdateUserDataExp(-GameDataManager.Instance.GetRequiredEXP(UserData.level));
-        UserDataManager.Instance.UpdateUserDataLevel();
-        UserDataManager.Instance.UpdateUserDataSkillPoint(UserData.level);
+        UserDataManager.Singleton.UpdateUserDataExp(-GameDataManager.Singleton.GetRequiredEXP(UserData.GetUserDataLevel()));
+        UserDataManager.Singleton.UpdateUserDataLevel();
+        UserDataManager.Singleton.UpdateUserDataSkillPoint(UserData.GetUserDataLevel());
 
         OnLevelUp?.Invoke();
     }

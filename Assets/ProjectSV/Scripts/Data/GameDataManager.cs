@@ -1,9 +1,9 @@
-using Sirenix.OdinInspector;
-using System.Collections;
+using HAD;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public partial class GameDataManager : MonoBehaviour
+public partial class GameDataManager : SingletonBase<GameDataManager>
 {
     public List<Skill> skillGameData = new List<Skill>();
     public List<int> expTable;

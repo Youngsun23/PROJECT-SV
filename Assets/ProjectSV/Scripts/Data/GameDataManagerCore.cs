@@ -1,27 +1,22 @@
+using HAD;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public partial class GameDataManager : MonoBehaviour
+public partial class GameDataManager : SingletonBase<GameDataManager>
 {
-    public static GameDataManager Instance { get; private set; }
-
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
         Initialize();
     }
 
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
     public void Initialize()
     {
 
     }
 
-    // CSV -> GameData? ... ³ªÁß¿¡ ÇÊ¿äÇÏ¸é ÀÛ¾÷
+    // CSV -> GameData? ... ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½Ê¿ï¿½ï¿½Ï¸ï¿½ ï¿½Û¾ï¿½
     //public T DataParsing<T, K>(string[] line) where T : GameDataSource, new() where K : new()
     //{
     //    T result = new T();
