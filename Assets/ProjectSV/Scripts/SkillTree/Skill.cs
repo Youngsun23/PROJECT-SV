@@ -32,6 +32,7 @@ public class Skill : ScriptableObject
     [SerializeField] private Sprite icon;
     [SerializeField] private string info;
     [SerializeField] private string scalerUnit;
+    // ToDo: 여기서 삭제!! Skill들관의 관계 관리하는 매니저 만들어서 이동
     [SerializeField] private List<Skill> childSkills;
     [SerializeField] private int requiredUnlockPoint;
     [SerializeField] private int ID;

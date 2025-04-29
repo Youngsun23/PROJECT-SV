@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SkillPanel : MonoBehaviour
 {
-    protected List<SkillTag> activatedSkillSet => UserDataManager.Singleton.GetUserDataSkillSet();
+    // protected List<SkillTag> activatedSkillSet => UserDataManager.Singleton.GetUserDataSkillSet();
     [SerializeField] protected List<SkillButton> buttons;
     private int previousSelectedButton;
 

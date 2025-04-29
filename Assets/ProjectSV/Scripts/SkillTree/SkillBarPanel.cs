@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class SkillBarPanel : SkillPanel
 {
-    [SerializeField] private TextMeshProUGUI spText; 
+    [SerializeField] private TextMeshProUGUI spText;
+
+    private List<SkillTag> activatedSkillSet => UserDataManager.Singleton.GetUserDataActivatedSkillSet();
 
     protected override void Start()
     {

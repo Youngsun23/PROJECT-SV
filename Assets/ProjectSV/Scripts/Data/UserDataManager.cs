@@ -27,9 +27,12 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         UserData.skillPoint += val;
     }
 
-    public void UpdateUserDataSkillSet(int id, SkillTag tag) 
+    public void UpdateUserDataSkillSet(SkillTag tag, bool equip) 
     {
-        UserData.skillSet[id] = tag;
+        if(equip)
+            UserData.equippedSkillSet.Add(tag);
+        else
+        UserData.equippedSkillSet.Remove(tag);
     }
 
     public void UpdateUserDataSkillLevel(SkillTag tag) 
@@ -48,7 +51,7 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
     public bool GetUserDataIsMaxLevel() => UserData.isMaxLevel;
     public int GetUserDataSkillLevelDictionary(SkillTag tag) => UserData.skillLevelDictionary[tag];
     public int GetUserDataSkillCurrentUnlockPointDictionary(SkillTag tag) => UserData.skillCurrentUnlockPointDictionary[tag];
-    public List<SkillTag> GetUserDataSkillSet() => UserData.skillSet;
+    public List<SkillTag> GetUserDataActivatedSkillSet() => UserData.equippedSkillSet;
 }
 
 [System.Serializable]
@@ -61,7 +64,7 @@ public class UserDataDTO
     public bool isMaxLevel;
     public Dictionary<SkillTag, int> skillLevelDictionary = new Dictionary<SkillTag, int>();
     public Dictionary<SkillTag, int> skillCurrentUnlockPointDictionary = new Dictionary<SkillTag, int>();
-    public List<SkillTag> skillSet = new List<SkillTag>();
+    public List<SkillTag> equippedSkillSet = new List<SkillTag>();
 
     public UserDataDTO()
     {
@@ -77,7 +80,7 @@ public class UserDataDTO
             skillCurrentUnlockPointDictionary[tag] = 0;
         }
 
-        skillSet.Clear();
+        equippedSkillSet.Clear();
     }
 }
 

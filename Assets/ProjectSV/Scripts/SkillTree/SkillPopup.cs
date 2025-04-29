@@ -64,7 +64,7 @@ public class SkillPopup : SingletonBase<SkillPopup>
         }
         
 
-        if (UserData.GetUserDataSkillSet().Count < UserData.GetUserDataLevel() && currentLevel >= 1)
+        if (UserData.GetUserDataActivatedSkillSet().Count < UserData.GetUserDataLevel() && currentLevel >= 1)
         {
             equipButton.ButtonInteractableToggle(true);
         }
@@ -128,14 +128,14 @@ public class SkillPopup : SingletonBase<SkillPopup>
 
     public void EquipSkill()
     {
-        UserData.GetUserDataSkillSet().Add(selectedSkill.SkillTag);
+        UserData.UpdateUserDataSkillSet(selectedSkill.SkillTag, true);
 
         onChange?.Invoke();
     }
 
     public void UnequipSkill()
     {
-        UserData.GetUserDataSkillSet().Remove(selectedSkill.SkillTag);
+        UserData.UpdateUserDataSkillSet(selectedSkill.SkillTag, false);
 
         onChange?.Invoke();
     }
