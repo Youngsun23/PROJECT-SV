@@ -28,7 +28,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         InputManager.Singleton.OnUseToolPerformed += ExecuteUseTool;
         InputManager.Singleton.OnInteractPerformed += ExecuteInteract;
         InputManager.Singleton.OnInventoryTogglePerformed += ExecuteInventoryToggle;
-        InputManager.Singleton.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
+        //InputManager.Singleton.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
     }
 
     private void OnDestroy()
@@ -36,7 +36,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         InputManager.Singleton.OnUseToolPerformed -= ExecuteUseTool;
         InputManager.Singleton.OnInteractPerformed -= ExecuteInteract;
         InputManager.Singleton.OnInventoryTogglePerformed -= ExecuteInventoryToggle;
-        InputManager.Singleton.OnSkillTabTogglePerformed -= ExecuteSkillTabToggle;
+        //InputManager.Singleton.OnSkillTabTogglePerformed -= ExecuteSkillTabToggle;
     }
 
     private void ExecuteUseTool()
@@ -57,10 +57,10 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         uiTabController.ToggleInventory();
     }
 
-    private void ExecuteSkillTabToggle()
-    {
-        uiTabController.ToggleSkillTab();
-    }
+    //private void ExecuteSkillTabToggle()
+    //{
+    //    uiTabController.ToggleSkillTab();
+    //}
 
     private void Update()
     {

@@ -6,10 +6,11 @@ public class UITabController : MonoBehaviour
     [SerializeField] private GameObject toolBarCanvas;
     [SerializeField] private ItemPanel toolBarPanel;
     [SerializeField] private GameObject dragDropIcon;
-    [SerializeField] private GameObject skillTreeCanvas;
-    [SerializeField] private SkillPanel skillBarPanel;
-    [SerializeField] private SkillPanel skillTreePanel;
-    [SerializeField] private SkillPopup skillPopup;
+    // 스킬트리 임시 해제
+    //[SerializeField] private GameObject skillTreeCanvas;
+    //[SerializeField] private SkillPanel skillBarPanel;
+    //[SerializeField] private SkillPanel skillTreePanel;
+    //[SerializeField] private SkillPopup skillPopup;
 
     public void ToggleInventory()
     {
@@ -21,14 +22,14 @@ public class UITabController : MonoBehaviour
         dragDropIcon.SetActive(false);
     }
 
-    public void ToggleSkillTab()
-    {
-        skillTreeCanvas.SetActive(!skillTreeCanvas.activeInHierarchy);
+    //public void ToggleSkillTab()
+    //{
+    //    skillTreeCanvas.SetActive(!skillTreeCanvas.activeInHierarchy);
 
-        skillBarPanel.UIUpdate();
-        skillTreePanel.UIUpdate();
-        skillPopup.Clear();
+    //    skillBarPanel.UIUpdate();
+    //    skillTreePanel.UIUpdate();
+    //    skillPopup.Clear();
 
-        toolBarCanvas.SetActive(!skillTreeCanvas.activeInHierarchy);
-    }
+    //    toolBarCanvas.SetActive(!skillTreeCanvas.activeInHierarchy);
+    //}
 }
