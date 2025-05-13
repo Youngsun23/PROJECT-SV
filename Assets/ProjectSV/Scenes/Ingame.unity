@@ -97,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f3e75dd76fd41a0408f11d58e31fb3b8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1730,13 +1730,13 @@ Tilemap:
   - first: {x: 3, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 13
-      m_TileSpriteIndex: 53
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741826
+      m_AllTileFlags: 1073741825
   - first: {x: 4, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -2121,7 +2121,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 52
+      m_TileSpriteIndex: 53
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2255,7 +2255,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 1312a515773b53145898a31e4ee339ac, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 2ac73ce481845fd46988b31b28ce1189, type: 2}
-  - m_RefCount: 35
+  - m_RefCount: 36
     m_Data: {fileID: 11400000, guid: 28dd2422842521f468eb2817eeb49408, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -2265,8 +2265,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 3ae2f3262c12ef942aebd479a521ea79, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 11a140aa0525f7c409107898c160c17f, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 20eedf53fe8dabb418b5baaed6597f45, type: 2}
   - m_RefCount: 1
@@ -2294,7 +2294,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 9
     m_Data: {fileID: -527862786, guid: 1e60397897eadbf4bbbb0de9db41311c, type: 3}
-  - m_RefCount: 35
+  - m_RefCount: 36
     m_Data: {fileID: 320314122, guid: 1e60397897eadbf4bbbb0de9db41311c, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -2382,10 +2382,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1228005587, guid: 1e60397897eadbf4bbbb0de9db41311c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1286435612, guid: 1e60397897eadbf4bbbb0de9db41311c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1266352898, guid: 40a3d04dbec399840bdf7b50763fb343, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 17273893, guid: 1e60397897eadbf4bbbb0de9db41311c, type: 3}
   - m_RefCount: 1
@@ -13200,6 +13200,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 253101940}
     m_Modifications:
+    - target: {fileID: 934638421163574385, guid: ebab03107be971043aa7af8db8f95db5, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1253119182750678209, guid: ebab03107be971043aa7af8db8f95db5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15929,8 +15933,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+    m_Center: {x: -0.00024998188, y: -0.000100016594, z: 0}
+    m_Extent: {x: 1.00045, y: 1.0009, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17025,7 +17029,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770143488}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00f6cf789a097704d83c2152d940e574, type: 3}
   m_Name: 
@@ -17039,17 +17043,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.041666668
-      outSlope: 0.041666668
-      tangentMode: 34
+      inSlope: 0.084195584
+      outSlope: 0.084195584
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
+      outWeight: 0.25833333
+    - serializedVersion: 3
+      time: 12
+      value: 1
+      inSlope: -0.0052875974
+      outSlope: -0.0052875974
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 24
-      value: 1
-      inSlope: 0.041666668
-      outSlope: 0.041666668
+      value: 0
+      inSlope: -0.083333336
+      outSlope: -0.083333336
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -17812,7 +17825,6 @@ GameObject:
   - component: {fileID: 1834016773}
   - component: {fileID: 1834016775}
   - component: {fileID: 1834016774}
-  - component: {fileID: 1834016776}
   m_Layer: 0
   m_Name: Temp_Up
   m_TagString: Untagged
@@ -17855,7 +17867,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18690,27 +18702,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!95 &1834016776
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834016772}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 1249910822120102693, guid: 28883ab502612344091b8ba9e8381945, type: 3}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1834758989
 PrefabInstance:
   m_ObjectHideFlags: 0
