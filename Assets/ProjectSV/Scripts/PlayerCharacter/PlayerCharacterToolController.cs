@@ -80,7 +80,7 @@ public class PlayerCharacterToolController : MonoBehaviour
                 return;
 
             // animator.SetTrigger("Act");
-            bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData);
+            bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData, item);
             if(actionComplete)
             {
                 item.OnToolActionTileMap.OnItemUsed(item, GameManager.Singleton.Inventory);

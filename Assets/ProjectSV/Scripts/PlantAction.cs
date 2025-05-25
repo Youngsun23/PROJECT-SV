@@ -6,11 +6,11 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Data/Tool Action/Plant")]
 public class PlantAction : ToolAction
 {
-    public override bool OnApplyTileMap(Vector3Int pos, TileData tile)
+    public override bool OnApplyTileMap(Vector3Int pos, TileData tile, Item usedItem)
     {
         if(CropManager.Singleton.IsPlantable(pos))
         {
-            CropManager.Singleton.Plant(pos);
+            CropManager.Singleton.Plant(pos, usedItem.CropData);
             return true;
         }
 
