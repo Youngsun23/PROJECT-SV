@@ -8,7 +8,7 @@ public class PlowAction : ToolAction
 {
     [SerializeField] private TileData plowableTile;
 
-    public override bool OnApplyTileMap(Vector3Int pos, TileData tile)
+    public override bool OnApplyTileMap(Vector3Int pos, TileData tile, Item usedItem)
     {
         if (tile != plowableTile)
             return false;

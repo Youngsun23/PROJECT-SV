@@ -9,9 +9,15 @@ public class HitNode : ToolHit
     [SerializeField] private int dropCount = 3;
     [SerializeField] private float spread = 1f;
     [SerializeField] private HitNodeType nodeType;
+    [SerializeField] private float probability = 0.5f;
 
     public override void Hit()
     {
+        if(Random.value < probability)
+        {
+
+        }
+
         for (int i = dropCount; i > 0; i--)
         {
             Vector3 position = transform.position;

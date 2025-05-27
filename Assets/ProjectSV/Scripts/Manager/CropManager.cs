@@ -5,9 +5,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Crop
+public class CropTile
 {
-    
+    public int growthTimer {  get; private set; }
+    public CropData crop {  get; private set; }
+    public int growthStage { get; private set; }
+    public SpriteRenderer renderer { get; private set; }
+
+    public void TickGrowthTimer(int time) {  this.growthTimer += time; }
+    public void SetCrop(CropData crop) {  this.crop = crop; }
+    public void TickGrowthStage(int stage) { this.growthStage += stage; }
+
+    public CropTile(CropData _crop, int _timer = 0, int _stage = 0) { growthTimer = _timer; crop = _crop; growthStage = _stage; }
 }
 
 public class CropManager : SingletonBase<CropManager>
@@ -16,17 +25,43 @@ public class CropManager : SingletonBase<CropManager>
     [SerializeField] private TileBase planted;
     [SerializeField] private Tilemap plowTargetTileMap;
     [SerializeField] private Tilemap plantTargetTileMap;
-    private Dictionary<Vector3Int, Crop> farmingTiles;
+    private Dictionary<Vector3Int, CropTile> farmingTiles;
+    [SerializeField] private GameObject cropSpritePrefab;
+    private TimeAgent timeAgent;
+
+    protected override void Awake()
+    {
+        timeAgent = GetComponent<TimeAgent>();
+    }
+
+    private void OnDestroy()
+    {
+        timeAgent.onTimeTick -= Tick;
+    }
 
     private void Start()
     {
-        farmingTiles = new Dictionary<Vector3Int, Crop>();
+        farmingTiles = new Dictionary<Vector3Int, CropTile>();
+        timeAgent.onTimeTick += Tick;
+    }
+
+    public void Tick()
+    {
+        foreach(CropTile cropTile in farmingTiles.Values)
+        {
+            if (cropTile.crop == null) continue;
+
+            cropTile.TickGrowthTimer(1);
+
+            if(cropTile.growthTimer >= cropTile.crop.GrowthTime)
+            {
+                Debug.Log("Crop Fully Grown");
+            }
+        }
     }
 
     public bool IsPlantable(Vector3Int pos)
     {
-        // 1. plowed���� �ʾ����� -> farmingTiles�� ��ϵǾ��������� -> return
-        // 2. �̹� crop�� ��ϵǾ� ������ -> �̹� �ٸ� �۹� �ִ� �� -> farmingTiles[pos]�� null�� �ƴ� -> return
         if (!farmingTiles.ContainsKey(pos) || farmingTiles[pos] != null)
             return false;
         else
@@ -41,10 +76,14 @@ public class CropManager : SingletonBase<CropManager>
         CreatePlowedTile(pos);
     }
 
-    public void Plant(Vector3Int pos)
+    public void Plant(Vector3Int pos, CropData seed)
     {
+        GameObject go = Instantiate(cropSpritePrefab);
+        go.transform.position = plantTargetTileMap.CellToWorld(pos);
+
         plantTargetTileMap.SetTile(pos, planted);
-        Crop crop = new Crop();
+
+        CropTile crop = new CropTile(seed);
         farmingTiles[pos] = crop;
     }
 
