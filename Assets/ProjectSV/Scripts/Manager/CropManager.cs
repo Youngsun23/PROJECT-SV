@@ -7,16 +7,18 @@ using UnityEngine.Tilemaps;
 
 public class CropTile
 {
-    public int growthTimer {  get; private set; }
-    public CropData crop {  get; private set; }
-    public int growthStage { get; private set; }
+    public int currentGrowthTimer {  get; private set; }
+    public CropData cropData {  get; private set; }
+    public int currentGrowthStage { get; private set; }
     public SpriteRenderer renderer { get; private set; }
+    public void SetRenderer(SpriteRenderer rd) {  renderer = rd; }
+    public void SetSprite(Sprite sprite) { renderer.sprite = sprite; }  
 
-    public void TickGrowthTimer(int time) {  this.growthTimer += time; }
-    public void SetCrop(CropData crop) {  this.crop = crop; }
-    public void TickGrowthStage(int stage) { this.growthStage += stage; }
+    public void TickGrowthTimer(int time) {  this.currentGrowthTimer += time; }
+    public void SetCrop(CropData crop) {  this.cropData = crop; }
+    public void TickGrowthStage(int stage) { this.currentGrowthStage += stage; }
 
-    public CropTile(CropData _crop, int _timer = 0, int _stage = 0) { growthTimer = _timer; crop = _crop; growthStage = _stage; }
+    public CropTile(CropData _crop, int _timer = 0, int _stage = 0) { cropData = _crop; currentGrowthTimer = _timer;  currentGrowthStage = _stage; }
 }
 
 public class CropManager : SingletonBase<CropManager>
@@ -47,15 +49,22 @@ public class CropManager : SingletonBase<CropManager>
 
     public void Tick()
     {
-        foreach(CropTile cropTile in farmingTiles.Values)
+        foreach(CropTile crop in farmingTiles.Values)
         {
-            if (cropTile.crop == null) continue;
+            if (crop == null) continue; // Values를 순회하는 상황에서 당연히 cropTile이 null인지를 먼저 체크 해야지 이 바보야~!~~!!~!~!!~~!~!~! 얘가 key가 아니고 value잖아!!!!!!
+            if (crop.cropData == null) continue;
+            if (crop.currentGrowthStage == crop.cropData.GetMaxGrowthStage()) continue;
 
-            cropTile.TickGrowthTimer(1);
+            crop.TickGrowthTimer(1);
 
-            if(cropTile.growthTimer >= cropTile.crop.GrowthTime)
+            if(crop.currentGrowthTimer >= crop.cropData.GetGrowthStageTimer(crop.currentGrowthStage))
             {
-                Debug.Log("Crop Fully Grown");
+                crop.TickGrowthStage(1);
+                Debug.Log($"Tick/CurrentTimer: {crop.currentGrowthTimer} // Tick/CurrentStage: {crop.currentGrowthStage}");
+                crop.SetSprite(crop.cropData.GetGrowthSprite(crop.currentGrowthStage));
+
+                if (crop.currentGrowthStage >= crop.cropData.GetMaxGrowthStage())
+                    Debug.Log($"{crop.cropData.name} 씨앗이 다 자랐습니다.");
             }
         }
     }
@@ -78,13 +87,17 @@ public class CropManager : SingletonBase<CropManager>
 
     public void Plant(Vector3Int pos, CropData seed)
     {
-        GameObject go = Instantiate(cropSpritePrefab);
-        go.transform.position = plantTargetTileMap.CellToWorld(pos);
-
-        plantTargetTileMap.SetTile(pos, planted);
-
         CropTile crop = new CropTile(seed);
         farmingTiles[pos] = crop;
+
+        GameObject cropSprite = Instantiate(cropSpritePrefab);
+        cropSprite.transform.position = plantTargetTileMap.GetCellCenterWorld(pos);
+
+        // plantTargetTileMap.SetTile(pos, planted); // planted -> cropSpritePrefab을 해당 seed의 0번째 이미지로
+        SpriteRenderer sr = cropSprite.GetComponent<SpriteRenderer>();
+        sr.sortingLayerName = "Player";
+        crop.SetRenderer(sr);
+        crop.SetSprite(seed.GetGrowthSprite(0));
     }
 
     private void CreatePlowedTile(Vector3Int pos)

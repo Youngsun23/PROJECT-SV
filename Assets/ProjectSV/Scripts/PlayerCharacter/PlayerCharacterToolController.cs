@@ -18,7 +18,7 @@ public class PlayerCharacterToolController : MonoBehaviour
     private Vector3Int selectedTilePos;
     private bool isTileSelectable;
     [SerializeField] private float maxDistance = 3f;
-    // [SerializeField] private TileData plowableTile;
+    [SerializeField] private ToolAction onTilePickup;
 
     private void Awake()
     {

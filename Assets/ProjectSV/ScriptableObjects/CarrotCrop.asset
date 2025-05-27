@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba82fd700f3f3b4d9070880b5b37e33, type: 3}
   m_Name: CarrotCrop
   m_EditorClassIdentifier: 
-  growthTime: 5
-  yeild: {fileID: 11400000, guid: 989857f83833dc244b53ef04f327439c, type: 2}
-  count: 2
-  sprites:
+  fullGrowthTime: 40
+  yield: {fileID: 0}
+  yieldCount: 1
+  growthSprites:
   - {fileID: -2019182477, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
   - {fileID: 1700238156, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
   - {fileID: 1851172993, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
-  growthStage: 010000000300000005000000
+  growthStageTimer: 0a0000001400000028000000

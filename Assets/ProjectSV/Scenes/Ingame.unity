@@ -5731,6 +5731,7 @@ MonoBehaviour:
   offsetDistance: 1
   interactableRange: 1.2
   maxDistance: 3
+  onTilePickup: {fileID: 0}
 --- !u!114 &572677910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7121,7 +7122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &657799033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7435,7 +7436,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &677040195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11889,7 +11890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1181448125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13399,7 +13400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1363277783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17235,7 +17236,7 @@ MonoBehaviour:
   planted: {fileID: 11400000, guid: e3dc51369ac0f4c45b94211d0a4cb319, type: 2}
   plowTargetTileMap: {fileID: 1997414794}
   plantTargetTileMap: {fileID: 670991666}
-  cropSpritePrefab: {fileID: 0}
+  cropSpritePrefab: {fileID: 3069238579223065650, guid: 84324961bffb64d4790d4fa5b4de43da, type: 3}
 --- !u!1 &1782650312
 GameObject:
   m_ObjectHideFlags: 0
@@ -23090,6 +23091,7 @@ MonoBehaviour:
   offsetDistance: 1
   interactableRange: 1.2
   maxDistance: 3
+  onTilePickup: {fileID: 0}
 --- !u!114 &7547625303910812657
 MonoBehaviour:
   m_ObjectHideFlags: 0

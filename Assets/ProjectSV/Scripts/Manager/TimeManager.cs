@@ -72,7 +72,7 @@ public class TimeManager : SingletonBase<TimeManager>
             oldPhase = currentPhase;
             for (int i = 0; i < agents.Count; i++)
             {
-                agents[i].InvokeTick();
+                agents[i]?.InvokeTick();
             }
         }
     }

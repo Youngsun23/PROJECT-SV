@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
+  m_Name: CabbageSeed
+  m_EditorClassIdentifier: 
+  itemName: CabbageSeed
+  stackable: 1
+  icon: {fileID: 173806550, guid: eed3a6f160999bc4590c1ed99e0199f3, type: 3}
+  onToolAction: {fileID: 0}
+  onToolActionTileMap: {fileID: 11400000, guid: cfdc9c765649e2c4dab34ee8c48aa11e, type: 2}
+  crop: {fileID: 11400000, guid: 501ae736b3fdae545a2fc355d907db4d, type: 2}
