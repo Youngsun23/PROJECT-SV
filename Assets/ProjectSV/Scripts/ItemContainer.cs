@@ -43,6 +43,21 @@ public class ItemSlot
         count = slot.count;
     }
 
+    public int CopyInHalf(ItemSlot slot)
+    {
+        item = slot.item;
+        if (slot.count % 2 == 0)
+        {
+            count = slot.count / 2;
+            return count;
+        }
+        else
+        {
+            count = slot.count / 2 + 1;
+            return count - 1;
+        }
+    }
+
     public void Clear()
     {
         item = null;
@@ -59,36 +74,54 @@ public class ItemContainer : ScriptableObject
 
     public Action onChange;
 
-    public void AddItem(Item item, int count = 1)
+    public bool AddItem(Item item, int count = 1)
     {
+        bool success = false;
+
         if (item.Stackable)
         {
             ItemSlot itemSlot = itemSlots.Find(x => x.Item == item);
             if(itemSlot != null)
             {
                 itemSlot.ChangeCount(count);
+                // ToDo: 최대 StackCount를 넘기는 경우, 최대치까지만 합치고, 나머지 개수만큼 드래그앤드랍슬롯에 남도록 처리 
+
+                success = true;
             }
             else
             {
                 itemSlot = itemSlots.Find(x => x.Item == null);
-                if(itemSlot != null)
+                if (itemSlot != null)
                 {
                     itemSlot.SetItem(item);
                     itemSlot.SetCount(count);
+                    success = true;
+                }
+                else
+                {
+                    Debug.Log("인벤토리가 꽉 찼습니다.");
+                    success = false;
                 }
             }
         }
         else
         {
             ItemSlot itemSlot = itemSlots.Find(x => x.Item == null);
-            if(itemSlot != null)
+            if (itemSlot != null)
             {
                 itemSlot.SetItem(item);
                 itemSlot.SetCount(count);
+                success = true;
+            }
+            else
+            {
+                Debug.Log("인벤토리가 꽉 찼습니다.");
+                success = false;
             }
         }
 
         onChange?.Invoke();
+        return success;
     }
 
     public void RemoveItem(Item item, int count = 1)
@@ -100,5 +133,22 @@ public class ItemContainer : ScriptableObject
         itemSlot.ChangeCount(-count);
 
         onChange?.Invoke();
+    }
+
+    public void RemoveItemGrid()
+    {
+        foreach(var item in itemSlots)
+        {
+            if(item != null)
+                item.ChangeCount(-1);
+        }
+    }
+
+    public void ClearContainer()
+    {
+        for (int i = 0; i < itemSlots.Count; i++)
+        {
+            itemSlots[i].Clear();
+        }
     }
 }

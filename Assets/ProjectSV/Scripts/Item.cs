@@ -3,6 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType
+{
+    None,
+
+    Wood,
+    Stone,
+    Thread,
+    Carrot,
+    Stick,
+    FishingPole,
+
+    Else
+}
+
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
 {
@@ -12,6 +26,7 @@ public class Item : ScriptableObject
     public ToolAction OnToolAction => onToolAction;
     public ToolAction OnToolActionTileMap => onToolActionTileMap;
     public CropData CropData => crop;
+    public ItemType Type => type;
 
     [SerializeField] private string itemName;
     [SerializeField] private bool stackable;
@@ -19,4 +34,5 @@ public class Item : ScriptableObject
     [SerializeField] private ToolAction onToolAction;
     [SerializeField] private ToolAction onToolActionTileMap;
     [SerializeField] private CropData crop;
+    [SerializeField] private ItemType type;
 }

@@ -15,3 +15,7 @@ MonoBehaviour:
   itemName: Sword
   stackable: 0
   icon: {fileID: 131449278, guid: d5581b5c4d14ea540b9faff5235642b6, type: 3}
+  onToolAction: {fileID: 0}
+  onToolActionTileMap: {fileID: 0}
+  crop: {fileID: 0}
+  type: 7

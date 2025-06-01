@@ -16,3 +16,6 @@ MonoBehaviour:
   stackable: 1
   icon: {fileID: -676822336, guid: e3ae41787212bb94f8e2af78b644bd77, type: 3}
   onToolAction: {fileID: 0}
+  onToolActionTileMap: {fileID: 0}
+  crop: {fileID: 0}
+  type: 1

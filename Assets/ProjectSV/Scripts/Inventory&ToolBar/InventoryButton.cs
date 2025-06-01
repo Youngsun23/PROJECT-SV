@@ -49,7 +49,16 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        itemPanel.OnClick(index);    
+        switch (eventData.button)
+        {
+            case PointerEventData.InputButton.Left:
+                itemPanel.OnClick(index, true);
+                break;
+            case PointerEventData.InputButton.Right:
+                itemPanel.OnClick(index, false);
+                break;
+        }
+  
     }
 
     public void Highlight(bool tf)

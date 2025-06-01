@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CarrotCrop
   m_EditorClassIdentifier: 
   fullGrowthTime: 40
-  yield: {fileID: 0}
+  yield: {fileID: 11400000, guid: 989857f83833dc244b53ef04f327439c, type: 2}
   yieldCount: 1
   growthSprites:
   - {fileID: -2019182477, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
   - {fileID: 1700238156, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
   - {fileID: 1851172993, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
-  growthStageTimer: 0a0000001400000028000000
+  growthStageTimer: 1400000028000000

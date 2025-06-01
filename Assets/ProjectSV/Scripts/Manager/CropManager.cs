@@ -53,7 +53,7 @@ public class CropManager : SingletonBase<CropManager>
         {
             if (crop == null) continue; // Values를 순회하는 상황에서 당연히 cropTile이 null인지를 먼저 체크 해야지 이 바보야~!~~!!~!~!!~~!~!~! 얘가 key가 아니고 value잖아!!!!!!
             if (crop.cropData == null) continue;
-            if (crop.currentGrowthStage == crop.cropData.GetMaxGrowthStage()) continue;
+            if (crop.currentGrowthStage >= crop.cropData.GetMaxGrowthStage()) continue;
 
             crop.TickGrowthTimer(1);
 
@@ -95,7 +95,8 @@ public class CropManager : SingletonBase<CropManager>
 
         // plantTargetTileMap.SetTile(pos, planted); // planted -> cropSpritePrefab을 해당 seed의 0번째 이미지로
         SpriteRenderer sr = cropSprite.GetComponent<SpriteRenderer>();
-        sr.sortingLayerName = "Player";
+        sr.sortingLayerName = "WalkInfront";
+        sr.sortingOrder = 2;
         crop.SetRenderer(sr);
         crop.SetSprite(seed.GetGrowthSprite(0));
     }

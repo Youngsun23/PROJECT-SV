@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86db9620083ab7049b1759615abd0c50, type: 3}
-  m_Name: PickaxAction
+  m_Script: {fileID: 11500000, guid: 884ae292120debd4386f000ea956e528, type: 3}
+  m_Name: Recipe_Stick
   m_EditorClassIdentifier: 
-  interactableDistance: 1
-  isHittableTypes: 02000000
+  recipe3x3: 000000000000000000000000000000000100000000000000000000000100000000000000
+  resultItem: {fileID: 11400000, guid: 08daf6ddd5931e54286ec60181802532, type: 2}

@@ -20,7 +20,7 @@ public class ToolBarPanel : ItemPanel
         toolBarController.onChange -= HighlightButton;
     }
 
-    public override void OnClick(int id)
+    public override void OnClick(int id, bool isLeft)
     {
         toolBarController.SetPreviousSelectedTool(toolBarController.SelectedTool);
         toolBarController.SetSelectedTool(id);

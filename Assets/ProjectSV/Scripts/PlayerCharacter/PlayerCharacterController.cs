@@ -29,6 +29,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         InputManager.Singleton.OnInteractPerformed += ExecuteInteract;
         InputManager.Singleton.OnInventoryTogglePerformed += ExecuteInventoryToggle;
         //InputManager.Singleton.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
+        InputManager.Singleton.OnCraftTabTogglePerformed += ExecuteCraftTabToggle;
     }
 
     private void OnDestroy()
@@ -37,6 +38,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         InputManager.Singleton.OnInteractPerformed -= ExecuteInteract;
         InputManager.Singleton.OnInventoryTogglePerformed -= ExecuteInventoryToggle;
         //InputManager.Singleton.OnSkillTabTogglePerformed -= ExecuteSkillTabToggle;
+        InputManager.Singleton.OnCraftTabTogglePerformed -= ExecuteCraftTabToggle;
     }
 
     private void ExecuteUseTool()
@@ -61,6 +63,11 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     //{
     //    uiTabController.ToggleSkillTab();
     //}
+
+    private void ExecuteCraftTabToggle()
+    {
+        uiTabController.ToggleCraftTab();   
+    }
 
     private void Update()
     {

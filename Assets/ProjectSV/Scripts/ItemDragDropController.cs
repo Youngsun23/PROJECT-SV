@@ -42,7 +42,7 @@ public class ItemDragDropController : MonoBehaviour
         }
     }
 
-    public void OnClick(ItemSlot inventorySlot)
+    public void OnLeftClick(ItemSlot inventorySlot)
     {
         if (dragDropSlot.Item == null)
         {
@@ -51,12 +51,37 @@ public class ItemDragDropController : MonoBehaviour
         }
         else
         {
+            // 다른 아이템이면 바꿔치기, 같은 아이템이면 합치기?
             Item temp_item = inventorySlot.Item;
-            int temp_count = dragDropSlot.Count;
-            inventorySlot.Copy(dragDropSlot);
-            dragDropSlot.Set(temp_item, temp_count);
+            int temp_count = inventorySlot.Count;
+            if(temp_item != dragDropSlot.Item)
+            {
+                inventorySlot.Copy(dragDropSlot);
+                dragDropSlot.Set(temp_item, temp_count);
+            }
+            else
+            {
+                inventorySlot.Set(temp_item, temp_count + dragDropSlot.Count);
+                dragDropSlot.Clear();
+            }
         }
         UpdateIcon();
+    }
+
+    // 우클릭 -> 절반만 선택
+    public void OnRightClick(ItemSlot inventorySlot)
+    {
+        if(dragDropSlot.Item != null || inventorySlot.Count == 1)
+        {
+            OnLeftClick(inventorySlot);
+        }
+        else
+        {
+            int remain = dragDropSlot.CopyInHalf(inventorySlot);
+            inventorySlot.Set(inventorySlot.Item, remain);
+
+            UpdateIcon();
+        }
     }
 
     private void UpdateIcon()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/CropData")]
+[CreateAssetMenu(menuName = "Data/Crop Data")]
 public class CropData : ScriptableObject
 {
     public int FullGrowthTime => fullGrowthTime;
