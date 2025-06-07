@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
-using HAD;
 
 public partial class UserDataManager : SingletonBase<UserDataManager>
 {

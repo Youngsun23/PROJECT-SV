@@ -1,7 +1,4 @@
-using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using HAD;
 
 // PlayerCharacter [C] - 임시 해제
 public class PlayerCharacterAbilityComponent : SingletonBase<PlayerCharacterAbilityComponent>

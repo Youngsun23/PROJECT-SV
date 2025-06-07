@@ -1,6 +1,3 @@
-using HAD;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +15,7 @@ public class InputManager : SingletonBase<InputManager>
 
     protected override void Awake()
     {
+        base.Awake();
         playerInput = GetComponent<PlayerInput>();
     }
 

@@ -72,7 +72,14 @@ public class PlayerCharacterToolController : MonoBehaviour
         if(isTileSelectable)
         {
             Item item = toolBarController.GetCurrentHoldingItem();
-            if (item == null || item.OnToolActionTileMap == null)
+            if(item == null)
+            {
+                PickupTile();
+                
+
+                return;
+            }
+            if (item.OnToolActionTileMap == null)
                 return;
             TileBase tileBase = TileMapReadManager.Singleton.GetTileBase(selectedTilePos);
             TileData tileData = TileMapReadManager.Singleton.GetTileData(tileBase);
@@ -86,5 +93,15 @@ public class PlayerCharacterToolController : MonoBehaviour
                 item.OnToolActionTileMap.OnItemUsed(item, GameManager.Singleton.Inventory);
             }
         }
+    }
+
+    private void PickupTile()
+    {
+        if (onTilePickup == null) return;
+
+        TileBase tileBase = TileMapReadManager.Singleton.GetTileBase(selectedTilePos);
+        TileData tileData = TileMapReadManager.Singleton.GetTileData(tileBase);
+
+        onTilePickup.OnApplyTileMap(selectedTilePos, tileData, null);
     }
 }

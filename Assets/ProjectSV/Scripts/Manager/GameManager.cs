@@ -1,8 +1,4 @@
-using HAD;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class GameManager : SingletonBase<GameManager>
 {
@@ -15,6 +11,7 @@ public class GameManager : SingletonBase<GameManager>
 
     protected override void Awake()
     {
+        base.Awake();
         ItemDragDropController = GetComponent<ItemDragDropController>();
         inventory = Instantiate(origin_inventory);
     }

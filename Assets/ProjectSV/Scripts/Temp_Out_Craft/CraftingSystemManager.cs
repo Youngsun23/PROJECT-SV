@@ -1,6 +1,3 @@
-using HAD;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingSystemManager : SingletonBase<CraftingSystemManager>
@@ -11,6 +8,8 @@ public class CraftingSystemManager : SingletonBase<CraftingSystemManager>
 
     protected override void Awake()
     {
+        base.Awake();
+
         craftBox = Instantiate(origin_craftBox);
     }
 }

@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
-using HAD;
 
 public class CraftingSystem : SingletonBase<CraftingSystem>
 {
@@ -12,6 +10,8 @@ public class CraftingSystem : SingletonBase<CraftingSystem>
 
     protected override void Awake()
     {
+        base.Awake();
+
         foreach (var recipe in recipes)
         {
             string hash = GenerateCraftingHash(recipe.RecipeGrid);
@@ -49,7 +49,7 @@ public class CraftingSystem : SingletonBase<CraftingSystem>
             if (slot != null && slot.Item != null)
             {
                 GameManager.Singleton.Inventory.AddItem(slot.Item, slot.Count);
-                // ÀÎº¥ ²Ë Â÷¼­ AddItem ½ÇÆÐÇÏ´Â °æ¿ì ÁÖº¯¿¡ µå¶øÇÏ´Â ¹æ½Ä Ãß°¡ Ã³¸® ÇÊ¿ä
+                // ï¿½Îºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ AddItem ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½Öºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ Ã³ï¿½ï¿½ ï¿½Ê¿ï¿½
             }
         }
         CraftingSystemManager.Singleton.CraftBox.ClearContainer();

@@ -1,11 +1,9 @@
 using UnityEngine;
-
-namespace HAD
-{
-    using System;
+using System;
 #if UNITY_EDITOR
     using UnityEditor;
 #endif
+
     public class SingletonBase<T> : MonoBehaviour where T : class
     {
         public static T Singleton
@@ -55,4 +53,3 @@ namespace HAD
 
         }
     }
-}

@@ -1,7 +1,5 @@
-using HAD;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public partial class UserDataManager : SingletonBase<UserDataManager>
 {

@@ -1,6 +1,3 @@
-using HAD;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -10,6 +7,7 @@ public class CropTile
     public int currentGrowthTimer {  get; private set; }
     public CropData cropData {  get; private set; }
     public int currentGrowthStage { get; private set; }
+    public bool isMature { get; private set; }   
     public SpriteRenderer renderer { get; private set; }
     public void SetRenderer(SpriteRenderer rd) {  renderer = rd; }
     public void SetSprite(Sprite sprite) { renderer.sprite = sprite; }  
@@ -17,14 +15,17 @@ public class CropTile
     public void TickGrowthTimer(int time) {  this.currentGrowthTimer += time; }
     public void SetCrop(CropData crop) {  this.cropData = crop; }
     public void TickGrowthStage(int stage) { this.currentGrowthStage += stage; }
+    public void SetIsMature(bool tf) { this.isMature = tf; }
 
     public CropTile(CropData _crop, int _timer = 0, int _stage = 0) { cropData = _crop; currentGrowthTimer = _timer;  currentGrowthStage = _stage; }
 }
 
 public class CropManager : SingletonBase<CropManager>
 {
+    // 물 준 상태 추가하면 -> 비주얼 다시 조정
     [SerializeField] private TileBase plowed;
-    [SerializeField] private TileBase planted;
+    // [SerializeField] private TileBase unPlowed;
+    // [SerializeField] private TileBase planted;
     [SerializeField] private Tilemap plowTargetTileMap;
     [SerializeField] private Tilemap plantTargetTileMap;
     private Dictionary<Vector3Int, CropTile> farmingTiles;
@@ -33,6 +34,7 @@ public class CropManager : SingletonBase<CropManager>
 
     protected override void Awake()
     {
+        base.Awake();
         timeAgent = GetComponent<TimeAgent>();
     }
 
@@ -51,9 +53,9 @@ public class CropManager : SingletonBase<CropManager>
     {
         foreach(CropTile crop in farmingTiles.Values)
         {
-            if (crop == null) continue; // Values를 순회하는 상황에서 당연히 cropTile이 null인지를 먼저 체크 해야지 이 바보야~!~~!!~!~!!~~!~!~! 얘가 key가 아니고 value잖아!!!!!!
+            if (crop == null) continue;
             if (crop.cropData == null) continue;
-            if (crop.currentGrowthStage >= crop.cropData.GetMaxGrowthStage()) continue;
+            if (crop.isMature) continue;
 
             crop.TickGrowthTimer(1);
 
@@ -64,7 +66,10 @@ public class CropManager : SingletonBase<CropManager>
                 crop.SetSprite(crop.cropData.GetGrowthSprite(crop.currentGrowthStage));
 
                 if (crop.currentGrowthStage >= crop.cropData.GetMaxGrowthStage())
+                {
+                    crop.SetIsMature(true);
                     Debug.Log($"{crop.cropData.name} 씨앗이 다 자랐습니다.");
+                }
             }
         }
     }
@@ -101,10 +106,28 @@ public class CropManager : SingletonBase<CropManager>
         crop.SetSprite(seed.GetGrowthSprite(0));
     }
 
+    public void Pickup(Vector3Int pos)
+    {
+        if (!farmingTiles.ContainsKey(pos)) return;
+        if (!farmingTiles[pos].isMature) return;
+
+        Item yield = farmingTiles[pos].cropData.GetYield();
+        int yieldCount = farmingTiles[pos].cropData.GetYieldCount();
+        ItemSpawnManager.Singleton.SpawnItem((Vector3)pos, yield, yieldCount);
+        CreateHarvestedTile(pos);
+    }
+
     private void CreatePlowedTile(Vector3Int pos)
     {
         farmingTiles.Add(pos, null);
 
         plowTargetTileMap.SetTile(pos, plowed);
+    }
+
+    private void CreateHarvestedTile(Vector3Int pos)
+    {
+        Destroy(farmingTiles[pos].renderer.gameObject);
+        farmingTiles.Remove(pos);
+        // plowTargetTileMap.SetTile(pos, null);
     }
 }

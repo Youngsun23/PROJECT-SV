@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Crop Data")]
-public class CropData : ScriptableObject
+public class CropData : GameDataBase
 {
     public int FullGrowthTime => fullGrowthTime;
     public int GetGrowthStageTimer(int phase) { return growthStageTimer[phase]; }
     public Sprite GetGrowthSprite(int phase) { return growthSprites[phase]; }
     public int GetMaxGrowthStage() { return growthStageTimer.Count; }
+    public Item GetYield() { return yield; }
+    public int GetYieldCount() { return yieldCount; }
 
     [SerializeField] private int fullGrowthTime = 10;
     [SerializeField] private Item yield;
