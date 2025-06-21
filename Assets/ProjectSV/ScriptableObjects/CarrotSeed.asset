@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: CarrotSeed
   m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 5
   itemName: CarrotSeed
+  itemInfo: "\uC2EC\uACE0 \uC2DC\uAC04\uC774 \uC9C0\uB098\uBA74 \uC218\uD655\uD560
+    \uC218 \uC788\uB2E4."
   stackable: 1
   icon: {fileID: -1242778746, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
   onToolAction: {fileID: 0}

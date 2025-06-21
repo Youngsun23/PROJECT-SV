@@ -7,6 +7,6 @@ public class DialogueInteraction : Interactable
     [SerializeField] private DialogueData dialogue;
     public override void Interact(PlayerCharacterController character)
     {
-        DialogueManager.Singleton.StartDialogue(dialogue);
+        GameManager.Singleton.DialogueManager.StartDialogue(dialogue);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class DialogueManager : SingletonBase<DialogueManager>
+public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI lineText;
     [SerializeField] private TextMeshProUGUI nameText;
@@ -23,7 +23,9 @@ public class DialogueManager : SingletonBase<DialogueManager>
 
     private void Update()
     {
-        if(Mouse.current.leftButton.wasPressedThisFrame)
+        if (currentDialogue == null) return;
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             NextLine();
         }
@@ -32,11 +34,12 @@ public class DialogueManager : SingletonBase<DialogueManager>
 
     public void StartDialogue(DialogueData dialogue)
     {
+        // Show의 순서 문제 - 생각 좀
+        Show();
         currentDialogue = dialogue;
         currentTextLine = 0;
         ShowSpeakerInfo();
         NewLine();
-        Show();
     }
 
     private void ShowSpeakerInfo()
@@ -47,14 +50,15 @@ public class DialogueManager : SingletonBase<DialogueManager>
 
     private void NextLine()
     {
-        if(visibleTextPercentage < 1f)
+        if (visibleTextPercentage < 1f)
         {
             visibleTextPercentage = 1f;
+            // TypeLineAtOnce(); // 안 먹는듯?
             ShowText();
             return;
         }
 
-        if(currentTextLine >= currentDialogue.Script.Count)
+        if (currentTextLine >= currentDialogue.Script.Count)
         {
             EndDialogue();
         }
@@ -68,6 +72,7 @@ public class DialogueManager : SingletonBase<DialogueManager>
     private void NewLine()
     {
         lineToShow = currentDialogue.Script[currentTextLine];
+        // Debug.Log($"{currentTextLine}번째 대사 => {lineToShow}");
         totalTimeToType = lineToShow.Length * timePerLetter;
         currentTime = 0f;
         visibleTextPercentage = 0f;
@@ -78,6 +83,7 @@ public class DialogueManager : SingletonBase<DialogueManager>
 
     private void EndDialogue()
     {
+        currentDialogue = null;
         Hide();
         Debug.Log($"Dialogue Ended");
     }
@@ -90,6 +96,12 @@ public class DialogueManager : SingletonBase<DialogueManager>
         visibleTextPercentage = currentTime / totalTimeToType;
         visibleTextPercentage = Mathf.Clamp(visibleTextPercentage, 0f, 1f);
         ShowText();
+    }
+
+    // 원하는 대로 작동 x
+    private void TypeLineAtOnce()
+    {
+        lineText.text = lineToShow;
     }
 
     private void ShowText()

@@ -20,36 +20,58 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         UserData.level++;
     }
 
-    public void UpdateUserDataSkillPoint(int val)
-    {
-        UserData.skillPoint += val;
-    }
+    //public void UpdateUserDataSkillPoint(int val)
+    //{
+    //    UserData.skillPoint += val;
+    //}
 
-    public void UpdateUserDataSkillSet(SkillTag tag, bool equip) 
+    //public void UpdateUserDataSkillSet(SkillTag tag, bool equip) 
+    //{
+    //    if(equip)
+    //        UserData.equippedSkillSet.Add(tag);
+    //    else
+    //        UserData.equippedSkillSet.Remove(tag);
+    //}
+
+    //public void UpdateUserDataSkillLevel(SkillTag tag) 
+    //{
+    //    UserData.skillLevelDictionary[tag]++;
+    //}
+
+    //public void UpdateUserDataSkillUnlockPoint(SkillTag tag)
+    //{
+    //    UserData.skillCurrentUnlockPointDictionary[tag]++;
+    //}
+
+    public void UpdateUserDataEquipment(EquipItem item, bool equip)
     {
         if(equip)
-            UserData.equippedSkillSet.Add(tag);
+            UserData.equippedItems.Add(item);
         else
-        UserData.equippedSkillSet.Remove(tag);
+            UserData.equippedItems.Remove(item);
     }
 
-    public void UpdateUserDataSkillLevel(SkillTag tag) 
+    public void UpdateUserDataEquipmentAtOnce(ItemContainer equipBox)
     {
-        UserData.skillLevelDictionary[tag]++;
-    }
+        UserData.equippedItems.Clear();
 
-    public void UpdateUserDataSkillUnlockPoint(SkillTag tag)
-    {
-        UserData.skillCurrentUnlockPointDictionary[tag]++;
+        foreach (ItemSlot slot in equipBox.ItemSlots)
+        {
+            if(slot.Item != null)
+            {
+                UserData.equippedItems.Add(slot.Item as EquipItem);
+            }
+        }
     }
 
     public int GetUserDataLevel() => UserData.level;
     public int GetUserDataEXP() => UserData.exp;
     public int GetUserDataSkillPoint() => UserData.skillPoint;
     public bool GetUserDataIsMaxLevel() => UserData.isMaxLevel;
-    public int GetUserDataSkillLevelDictionary(SkillTag tag) => UserData.skillLevelDictionary[tag];
-    public int GetUserDataSkillCurrentUnlockPointDictionary(SkillTag tag) => UserData.skillCurrentUnlockPointDictionary[tag];
-    public List<SkillTag> GetUserDataActivatedSkillSet() => UserData.equippedSkillSet;
+    //public int GetUserDataSkillLevelDictionary(SkillTag tag) => UserData.skillLevelDictionary[tag];
+    //public int GetUserDataSkillCurrentUnlockPointDictionary(SkillTag tag) => UserData.skillCurrentUnlockPointDictionary[tag];
+    //public List<SkillTag> GetUserDataActivatedSkillSet() => UserData.equippedSkillSet;
+    public List<EquipItem> GetUserDataEquippedItems() => UserData.equippedItems;
 }
 
 [System.Serializable]
@@ -60,9 +82,11 @@ public class UserDataDTO
     public int exp;
     public int skillPoint;
     public bool isMaxLevel;
-    public Dictionary<SkillTag, int> skillLevelDictionary = new Dictionary<SkillTag, int>();
-    public Dictionary<SkillTag, int> skillCurrentUnlockPointDictionary = new Dictionary<SkillTag, int>();
-    public List<SkillTag> equippedSkillSet = new List<SkillTag>();
+    //public Dictionary<SkillTag, int> skillLevelDictionary = new Dictionary<SkillTag, int>();
+    //public Dictionary<SkillTag, int> skillCurrentUnlockPointDictionary = new Dictionary<SkillTag, int>();
+    //public List<SkillTag> equippedSkillSet = new List<SkillTag>();
+
+    public List<EquipItem> equippedItems = new List<EquipItem>();
 
     public UserDataDTO()
     {
@@ -72,13 +96,14 @@ public class UserDataDTO
         skillPoint = 0;
         isMaxLevel = false;
 
-        foreach (SkillTag tag in Enum.GetValues(typeof(SkillTag)))
-        {
-            skillLevelDictionary[tag] = -1;
-            skillCurrentUnlockPointDictionary[tag] = 0;
-        }
+        //foreach (SkillTag tag in Enum.GetValues(typeof(SkillTag)))
+        //{
+        //    skillLevelDictionary[tag] = -1;
+        //    skillCurrentUnlockPointDictionary[tag] = 0;
+        //}
+        //equippedSkillSet.Clear();
 
-        equippedSkillSet.Clear();
+        equippedItems.Clear();
     }
 }
 

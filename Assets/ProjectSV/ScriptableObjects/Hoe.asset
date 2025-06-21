@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 6
   itemName: Hoe
+  itemInfo: "\uD3C9\uBC94\uD55C \uAD2D\uC774"
   stackable: 0
   icon: {fileID: 21300000, guid: 37d4212c6dcd56743bc737ae4b297f07, type: 3}
   onToolAction: {fileID: 0}

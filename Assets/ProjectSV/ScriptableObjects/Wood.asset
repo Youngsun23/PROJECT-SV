@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 10
   itemName: Wood
+  itemInfo: "\uD3C9\uBC94\uD55C \uB098\uBB34"
   stackable: 1
   icon: {fileID: -676822336, guid: e3ae41787212bb94f8e2af78b644bd77, type: 3}
   onToolAction: {fileID: 0}

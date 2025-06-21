@@ -96,17 +96,33 @@ public class FileUtility
     /// <param name="jsonData"></param>
     public static void WriteFileFromString(string localPath, string jsonData)
     {
-        string dataPath = pathForDocumentsFile(localPath);
-        int dirIndex = dataPath.LastIndexOf('/');
-        string dirPath = dataPath.Substring(0, dirIndex + 1);
+        // 원본 코드
+//        string dataPath = pathForDocumentsFile(localPath);
+//        int dirIndex = dataPath.LastIndexOf('/');
+//        string dirPath = dataPath.Substring(0, dirIndex + 1);
 
-        if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
-        if (!File.Exists(dataPath))
-        {
-            FileStream fs = File.Create(dataPath);
-            fs.Close();
-        }
-        File.WriteAllText(dataPath, jsonData, Encoding.UTF8);
+//        if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
+//        if (!File.Exists(dataPath))
+//        {
+//            FileStream fs = File.Create(dataPath);
+//            fs.Close();
+//        }
+//        File.WriteAllText(dataPath, jsonData, Encoding.UTF8);
+//#if UNITY_EDITOR
+//        UnityEditor.AssetDatabase.Refresh();
+//#endif
+//        Debug.LogFormat("WriteFileFromString - Save Complete. Path:{0}", localPath);
+
+        int dirIndex = localPath.LastIndexOf('/');
+        if (dirIndex < 0)
+            dirIndex = localPath.LastIndexOf('\\');
+        string dirPath = localPath.Substring(0, dirIndex + 1);
+
+        if (!Directory.Exists(dirPath))
+            Directory.CreateDirectory(dirPath);
+
+        File.WriteAllText(localPath, jsonData, Encoding.UTF8);
+
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
 #endif
@@ -150,11 +166,43 @@ public class FileUtility
     /// <param name="receiveData"></param>
     public static bool ReadFileData(string localPath, out string receiveData)
     {
-        string dataPath = pathForDocumentsFile(localPath);
+        // 원본 코드
+        //string dataPath = pathForDocumentsFile(localPath);
+        //receiveData = null;
+        //try
+        //{
+        //    receiveData = File.ReadAllText(dataPath);
+
+        //    if (string.IsNullOrEmpty(receiveData))
+        //        return false;
+
+        //    Debug.LogFormat("ReadFileData - Load Complete. Path:{0}", localPath);
+        //    return true;
+        //}
+        //catch (DirectoryNotFoundException e)
+        //{
+        //    Debug.LogErrorFormat("FileManager catched - '{0}' Directory Not Found Exception, Please Check Your Path Parameter or File Exist", dataPath);
+        //    Debug.LogError(e.Message);
+        //}
+        //catch (FileNotFoundException e)
+        //{
+        //    Debug.LogErrorFormat("FileManager catched - '{0}' File Not Found Exception, Please Check Your Path Parameter or File Exist", dataPath);
+        //    Debug.LogError(e.Message);
+        //}
+
+        //return false;
+
+
         receiveData = null;
         try
         {
-            receiveData = File.ReadAllText(dataPath);
+            if (!File.Exists(localPath))
+            {
+                Debug.LogWarning($"ReadFileData - File not found: {localPath}");
+                return false;
+            }
+
+            receiveData = File.ReadAllText(localPath);
 
             if (string.IsNullOrEmpty(receiveData))
                 return false;
@@ -164,12 +212,17 @@ public class FileUtility
         }
         catch (DirectoryNotFoundException e)
         {
-            Debug.LogErrorFormat("FileManager catched - '{0}' Directory Not Found Exception, Please Check Your Path Parameter or File Exist", dataPath);
+            Debug.LogErrorFormat("FileManager caught - '{0}' Directory Not Found Exception, Please Check Your Path or File Existence", localPath);
             Debug.LogError(e.Message);
         }
         catch (FileNotFoundException e)
         {
-            Debug.LogErrorFormat("FileManager catched - '{0}' File Not Found Exception, Please Check Your Path Parameter or File Exist", dataPath);
+            Debug.LogErrorFormat("FileManager caught - '{0}' File Not Found Exception, Please Check Your Path or File Existence", localPath);
+            Debug.LogError(e.Message);
+        }
+        catch (IOException e)
+        {
+            Debug.LogErrorFormat("FileManager caught - '{0}' IO Exception", localPath);
             Debug.LogError(e.Message);
         }
 

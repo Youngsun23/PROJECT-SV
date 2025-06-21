@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class ItemDragDropController : MonoBehaviour
 {
+    public ItemSlot DragDropSlot => dragDropSlot;
     [SerializeField] private ItemSlot dragDropSlot;
     [SerializeField] private GameObject dragDropIcon;
     private RectTransform iconTransform;
@@ -44,6 +45,12 @@ public class ItemDragDropController : MonoBehaviour
 
     public void OnLeftClick(ItemSlot inventorySlot)
     {
+        //if(inventorySlot == )
+
+
+
+
+
         if (dragDropSlot.Item == null)
         {
             dragDropSlot.Copy(inventorySlot);

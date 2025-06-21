@@ -9,6 +9,9 @@ public class GameManager : SingletonBase<GameManager>
     public ItemDragDropController ItemDragDropController { get; private set; }
     [SerializeField] private ItemContainer inventory;
 
+    public DialogueManager DialogueManager => dialogueManager;
+    [SerializeField] private DialogueManager dialogueManager;
+
     protected override void Awake()
     {
         base.Awake();
@@ -18,12 +21,13 @@ public class GameManager : SingletonBase<GameManager>
 
     private void Start()
     {
-        // Initialize();
+        Initialize();
     }
 
     private void Initialize()
     {
-        UserDataManager.Singleton.Load();
+        // UserDataManager.Singleton.Load();
+        PlayerCharacter.Singleton.InitializeCharacterAttribute();
     }
 
     public void TempGameQuit()

@@ -13,6 +13,7 @@ public class UITabController : MonoBehaviour
     //[SerializeField] private SkillPopup skillPopup;
     // Craft
     [SerializeField] private GameObject craftCanvas;
+    [SerializeField] private GameObject equipmentCanvas;
 
     public void ToggleInventory()
     {
@@ -22,6 +23,8 @@ public class UITabController : MonoBehaviour
 
         toolBarCanvas.SetActive(!inventoryCanvas.activeInHierarchy);
         dragDropIcon.SetActive(false);
+
+        ToolTipPanel.Singleton.Hide();
     }
 
     //public void ToggleSkillTab()
@@ -47,5 +50,14 @@ public class UITabController : MonoBehaviour
         {
             CraftingSystem.Singleton.ReturnUnusedItems();
         }
+    }
+
+    public void ToggleEquipmentTab()
+    {
+        bool equipmentTabWasOn = equipmentCanvas.activeInHierarchy;
+        equipmentCanvas.SetActive(!equipmentTabWasOn);
+        inventoryCanvas.SetActive(!equipmentTabWasOn);
+        toolBarPanel.Show();
+        toolBarCanvas.SetActive(equipmentTabWasOn);
     }
 }

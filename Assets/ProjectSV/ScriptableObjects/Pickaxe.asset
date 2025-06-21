@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 7
   itemName: Pickax
+  itemInfo: "\uD3C9\uBC94\uD55C \uACE1\uAD2D\uC774"
   stackable: 0
   icon: {fileID: 21300000, guid: ff9002b317e1b4144af822480ab4f5c4, type: 3}
   onToolAction: {fileID: 11400000, guid: 5a098d47a4b65a840a2b3a28fb56fd15, type: 2}

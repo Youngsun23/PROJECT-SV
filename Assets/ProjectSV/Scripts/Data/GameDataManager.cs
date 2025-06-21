@@ -6,16 +6,16 @@ using UnityEngine;
 
 public partial class GameDataManager : SingletonBase<GameDataManager>
 {
-    public List<Skill> skillGameData = new List<Skill>();
-    public List<int> expTable;
+    //public List<Skill> skillGameData = new List<Skill>();
+    //public List<int> expTable;
 
-    public Skill GetSkillGameData(SkillTag tag)
-    {
-        return skillGameData.Find(x => x.SkillTag == tag);
-    }
+    //public Skill GetSkillGameData(SkillTag tag)
+    //{
+    //    return skillGameData.Find(x => x.SkillTag == tag);
+    //}
 
-    public int GetRequiredEXP(int curLevel)
-    {
-        return expTable[curLevel + 1];
-    }
+    //public int GetRequiredEXP(int curLevel)
+    //{
+    //    return expTable[curLevel + 1];
+    //}
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryButton : MonoBehaviour, IPointerClickHandler
+public class InventoryButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI text;
@@ -58,7 +58,21 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
                 itemPanel.OnClick(index, false);
                 break;
         }
-  
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Item item = GameManager.Singleton.Inventory.ItemSlots[index].Item;
+
+        if (item != null)
+        {
+            ToolTipPanel.Singleton.Show(item.Name, item.Info);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ToolTipPanel.Singleton.Hide();
     }
 
     public void Highlight(bool tf)

@@ -18,9 +18,10 @@ public enum ItemType
 }
 
 [CreateAssetMenu(menuName = "Data/Item")]
-public class Item : ScriptableObject
+public class Item : GameDataBase
 {
     public string Name => itemName;
+    public string Info => itemInfo;
     public bool Stackable => stackable;
     public Sprite Icon => icon;
     public ToolAction OnToolAction => onToolAction;
@@ -29,6 +30,7 @@ public class Item : ScriptableObject
     public ItemType Type => type;
 
     [SerializeField] private string itemName;
+    [SerializeField] private string itemInfo;
     [SerializeField] private bool stackable;
     [SerializeField] private Sprite icon;
     [SerializeField] private ToolAction onToolAction;

@@ -10,7 +10,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private float moveSpeed;
+    // [SerializeField] private float moveSpeed;
     public Vector2 lastMoveVector { get; private set; }
     public bool isMoving;
 
@@ -28,6 +28,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         InputManager.Singleton.OnInventoryTogglePerformed += ExecuteInventoryToggle;
         //InputManager.Singleton.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
         InputManager.Singleton.OnCraftTabTogglePerformed += ExecuteCraftTabToggle;
+        InputManager.Singleton.OnEquipmentTabTogglePerformed += ExecuteEquipmentTabToggle;
     }
 
     private void OnDestroy()
@@ -37,6 +38,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         InputManager.Singleton.OnInventoryTogglePerformed -= ExecuteInventoryToggle;
         //InputManager.Singleton.OnSkillTabTogglePerformed -= ExecuteSkillTabToggle;
         InputManager.Singleton.OnCraftTabTogglePerformed -= ExecuteCraftTabToggle;
+        InputManager.Singleton.OnEquipmentTabTogglePerformed -= ExecuteEquipmentTabToggle;
     }
 
     private void ExecuteUseTool()
@@ -67,6 +69,11 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         uiTabController.ToggleCraftTab();   
     }
 
+    private void ExecuteEquipmentTabToggle()
+    {
+        uiTabController.ToggleEquipmentTab();
+    }
+
     private void Update()
     {
         Vector2 input = InputManager.Singleton.MovementInput;
@@ -95,6 +102,6 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
 
     private void Move(Vector2 input)
     {
-        rigidBody.velocity = input * moveSpeed;
+        rigidBody.velocity = input * PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.MoveSpeed);
     }
 }

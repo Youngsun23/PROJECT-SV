@@ -10,6 +10,7 @@ public class InputManager : SingletonBase<InputManager>
     public System.Action OnInventoryTogglePerformed;
     public System.Action OnSkillTabTogglePerformed;
     public System.Action OnCraftTabTogglePerformed;
+    public System.Action OnEquipmentTabTogglePerformed;
 
     public Vector2 MovementInput { get; private set; }
 
@@ -42,6 +43,11 @@ public class InputManager : SingletonBase<InputManager>
     public void OnCraftTabToggle()
     {
         OnCraftTabTogglePerformed?.Invoke();
+    }
+
+    public void OnEquipmentTabToggle()
+    {
+        OnEquipmentTabTogglePerformed?.Invoke();
     }
 
     public void OnMove(InputValue input)

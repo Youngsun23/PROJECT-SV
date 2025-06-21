@@ -6,7 +6,7 @@ public class PickableItem : MonoBehaviour
 {
     private Transform player;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float pickableRange = 2f;
+    // [SerializeField] private float pickableRange = 2f;
 
     [SerializeField] private Item item;
     [SerializeField] private int count = 1;
@@ -19,7 +19,7 @@ public class PickableItem : MonoBehaviour
     private void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        if(distance > pickableRange)
+        if(distance > PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.PickupRadius))
             return;
 
         transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);

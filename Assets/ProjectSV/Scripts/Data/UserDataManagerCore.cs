@@ -7,8 +7,8 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
     // [Button("Save")]
     public void Save()
     {
-        // string serializeUserData = JsonUtility.ToJson(UserData, true); // Dictionary ����ȭ �Ұ�
-        string serializeUserData = JsonConvert.SerializeObject(UserData, Formatting.Indented);
+        string serializeUserData = JsonUtility.ToJson(UserData, true);
+        // string serializeUserData = JsonConvert.SerializeObject(UserData, Formatting.Indented);
 
         FileUtility.WriteFileFromString("Assets/Resources/UserData.txt", serializeUserData);
     }
@@ -18,7 +18,8 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
     {
         if (FileUtility.ReadFileData("Assets/Resources/UserData.txt", out string loadedUserData))
         {
-            UserData = JsonConvert.DeserializeObject<UserDataDTO>(loadedUserData);
+            UserData = JsonUtility.FromJson<UserDataDTO>(loadedUserData);
+            PlayerCharacter.Singleton.InitializeCharacterAttribute();
         }
     }
 
@@ -30,7 +31,25 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         if (File.Exists(filePath))
         {
             File.Delete(filePath);
-            Debug.Log("User Data ����");
+        }
+    }
+
+    // 임시
+    public void BuildSave()
+    {
+        string filePath = Path.Combine(Application.persistentDataPath, "UserData.txt");
+        string serializeUserData = JsonUtility.ToJson(UserData, true);
+        FileUtility.WriteFileFromString(filePath, serializeUserData);
+    }
+
+    public void BuildLoad()
+    {
+        string filePath = Path.Combine(Application.persistentDataPath, "UserData.txt");
+        if (FileUtility.ReadFileData(filePath, out string loadedUserData))
+        {
+            UserData = JsonUtility.FromJson<UserDataDTO>(loadedUserData);
+            PlayerCharacter.Singleton.InitializeCharacterAttribute();
         }
     }
 }
+

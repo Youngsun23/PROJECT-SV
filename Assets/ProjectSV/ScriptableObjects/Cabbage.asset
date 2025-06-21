@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Cabbage
   m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 2
   itemName: Cabbage
+  itemInfo: "\uAC74\uAC15\uC5D0 \uC88B\uB2E4."
   stackable: 1
   icon: {fileID: 114299732, guid: eed3a6f160999bc4590c1ed99e0199f3, type: 3}
   onToolAction: {fileID: 0}
