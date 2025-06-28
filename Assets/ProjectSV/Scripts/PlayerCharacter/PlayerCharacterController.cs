@@ -74,6 +74,11 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         uiTabController.ToggleEquipmentTab();
     }
 
+    public void ExecuteDialogue()
+    {
+        uiTabController.ToggleToolbar();
+    }
+
     private void Update()
     {
         Vector2 input = InputManager.Singleton.MovementInput;

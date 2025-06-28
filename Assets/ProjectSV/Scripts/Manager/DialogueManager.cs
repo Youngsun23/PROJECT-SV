@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueData dialogue)
     {
         // Show의 순서 문제 - 생각 좀
+        PlayerCharacterController.Singleton.ExecuteDialogue();
         Show();
         currentDialogue = dialogue;
         currentTextLine = 0;
@@ -85,7 +86,8 @@ public class DialogueManager : MonoBehaviour
     {
         currentDialogue = null;
         Hide();
-        Debug.Log($"Dialogue Ended");
+        PlayerCharacterController.Singleton.ExecuteDialogue();
+        // Debug.Log($"Dialogue Ended");
     }
 
     private void TypeLine()

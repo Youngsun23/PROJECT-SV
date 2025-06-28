@@ -15,6 +15,11 @@ public class UITabController : MonoBehaviour
     [SerializeField] private GameObject craftCanvas;
     [SerializeField] private GameObject equipmentCanvas;
 
+    public void ToggleToolbar()
+    {
+        toolBarCanvas.SetActive(!toolBarCanvas.activeInHierarchy);
+    }
+
     public void ToggleInventory()
     {
         inventoryCanvas.SetActive(!inventoryCanvas.activeInHierarchy);
