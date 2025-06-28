@@ -21,6 +21,11 @@ public class TileMapReadManager : SingletonBase<TileMapReadManager>
         }
     }
 
+    public void SetReadTargetTileMap(Tilemap target)
+    {
+        readTargetTileMap = target; 
+    }
+
     public Vector3Int GetGridPosition(Vector2 mousePos, bool useMouse = true)
     {
         Vector3 worldPos;

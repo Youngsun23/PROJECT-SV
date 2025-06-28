@@ -105,7 +105,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         }
     }
 
-    private void Move(Vector2 input)
+    public void Move(Vector2 input)
     {
         rigidBody.velocity = input * PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.MoveSpeed);
     }

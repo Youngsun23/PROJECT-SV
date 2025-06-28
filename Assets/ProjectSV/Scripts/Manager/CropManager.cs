@@ -25,9 +25,8 @@ public class CropManager : SingletonBase<CropManager>
 {
     // 물 준 상태 추가하면 -> 비주얼 다시 조정
     [SerializeField] private TileBase plowed;
-    [SerializeField] private TileBase watered;
-    // [SerializeField] private TileBase unPlowed;
-    // [SerializeField] private TileBase planted;
+    // [SerializeField] private TileBase watered;
+    // [SerializeField] private TileBase default;
     [SerializeField] private Tilemap plowTargetTileMap;
     [SerializeField] private Tilemap plantTargetTileMap;
     private Dictionary<Vector3Int, CropTile> farmingTiles;
@@ -139,4 +138,13 @@ public class CropManager : SingletonBase<CropManager>
     }
 
     // 타겟 타일맵 - 농장 외 씬에서도 적용할거라면 SetTargetTileMap() 추가해서 해결
+    public void SetPlowTargetTileMap(Tilemap target)
+    {
+        plowTargetTileMap = target;
+    }
+
+    public void SetPlantTargetTileMap(Tilemap target)
+    {
+        plantTargetTileMap = target;
+    }
 }

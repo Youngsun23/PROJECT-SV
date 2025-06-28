@@ -40,6 +40,11 @@ public class PlayerCharacterToolController : MonoBehaviour
         selectedTilePos = TileMapReadManager.Singleton.GetGridPosition(Mouse.current.position.ReadValue());
     }
 
+    public void SetMarkerManager(MarkerManager target)
+    {
+        markerManager = target;
+    }
+
     private void tileSelectableCheck()
     {
         Vector2 characterPos = transform.position;
@@ -69,22 +74,24 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     public void UseToolGrid()
     {
-        if(isTileSelectable)
+
+        if (isTileSelectable)
         {
             Item item = toolBarController.GetCurrentHoldingItem();
             if(item == null)
             {
                 PickupTile();
-                
-
                 return;
             }
             if (item.OnToolActionTileMap == null)
                 return;
+
             TileBase tileBase = TileMapReadManager.Singleton.GetTileBase(selectedTilePos);
             TileData tileData = TileMapReadManager.Singleton.GetTileData(tileBase);
             if(tileData == null)
                 return;
+
+            //Debug.Log("ToolAction type: " + item.OnToolActionTileMap.GetType());
 
             // animator.SetTrigger("Act");
             bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData, item);
