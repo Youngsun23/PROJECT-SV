@@ -5,7 +5,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     public Animator animator;
     public PlayerCharacterToolController toolController;
     public PlayerCharacterInteraction interaction;
-    public UITabController uiTabController;
+    // public UITabController uiTabController;
     
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -56,7 +56,12 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
 
     private void ExecuteInventoryToggle()
     {
-        uiTabController.ToggleInventory();
+        //uiTabController.ToggleInventory();
+
+        UIManager.Singleton.ToggleUI<InventoryUI>(UIType.Inventory);
+
+        //var inventoryUI = UIManager.Singleton.GetUI<InventoryUI>(UIType.Inventory);
+        //inventoryUI.Show();
     }
 
     //private void ExecuteSkillTabToggle()
@@ -66,17 +71,16 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
 
     private void ExecuteCraftTabToggle()
     {
-        uiTabController.ToggleCraftTab();   
+        // uiTabController.ToggleCraftTab();
+
+        UIManager.Singleton.ToggleUI<CraftUI>(UIType.TempCraft);
     }
 
     private void ExecuteEquipmentTabToggle()
     {
-        uiTabController.ToggleEquipmentTab();
-    }
+        // uiTabController.ToggleEquipmentTab();
 
-    public void ExecuteDialogue()
-    {
-        uiTabController.ToggleToolbar();
+        UIManager.Singleton.ToggleUI<EquipmentUI>(UIType.TempEquipment);
     }
 
     private void Update()

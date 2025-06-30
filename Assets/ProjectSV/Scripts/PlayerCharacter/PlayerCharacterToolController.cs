@@ -24,13 +24,18 @@ public class PlayerCharacterToolController : MonoBehaviour
     {
         character = GetComponent<PlayerCharacterController>();
         animator = GetComponent<Animator>();
-        toolBarController = GetComponent<ToolBarController>();
         rigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        toolBarController = UIManager.Singleton.GetUI<ToolBarUI>(UIType.ToolBar).GetComponent<ToolBarController>();
     }
 
     private void Update()
     {
         if (TileMapReadManager.Singleton.TargetMap == null) return;
+        if (markerManager == null) return;
 
         SelectTile();
         tileSelectableCheck();

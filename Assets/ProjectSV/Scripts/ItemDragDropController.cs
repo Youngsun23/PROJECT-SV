@@ -20,6 +20,7 @@ public class ItemDragDropController : MonoBehaviour
         dragDropSlot = new ItemSlot();
         iconTransform = dragDropIcon.GetComponent<RectTransform>();
         dragDropSlotIcon = dragDropIcon.GetComponent<Image>();
+        UpdateIcon();
     }
 
     private void Update()

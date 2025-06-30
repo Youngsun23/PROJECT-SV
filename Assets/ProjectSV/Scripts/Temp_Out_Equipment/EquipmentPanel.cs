@@ -40,7 +40,16 @@ public class EquipmentPanel : MonoBehaviour
     {
         SetIndex();
         Show();
+
+        // Load한 후에, 저장된 유저데이터 대로 장비템 UI에 출력
+        // LoadInitialize();
     }
+
+    //private void LoadInitialize()
+    //{
+    //    // List<EquipItem> GetUserDataEquippedItems() 유저데이터 가져와서
+    //    // List 돌면서 EquipmentBox.ItemSlots[i].Set()해주기
+    //}
 
     private void SetIndex()
     {

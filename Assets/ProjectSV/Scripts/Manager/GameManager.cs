@@ -10,12 +10,12 @@ public class GameManager : SingletonBase<GameManager>
     [SerializeField] private ItemContainer inventory;
 
     public DialogueManager DialogueManager => dialogueManager;
-    [SerializeField] private DialogueManager dialogueManager;
+    private DialogueManager dialogueManager;
 
     protected override void Awake()
     {
         base.Awake();
-        ItemDragDropController = GetComponent<ItemDragDropController>();
+        // ItemDragDropController = GetComponent<ItemDragDropController>();
         inventory = Instantiate(origin_inventory);
     }
 
@@ -28,6 +28,11 @@ public class GameManager : SingletonBase<GameManager>
     {
         // UserDataManager.Singleton.Load();
         PlayerCharacter.Singleton.InitializeCharacterAttribute();
+
+        UIManager.Show<ToolBarUI>(UIType.ToolBar);
+        UIManager.Show<DragDropUI>(UIType.DragDrop);
+        ItemDragDropController = UIManager.Singleton.GetUI<DragDropUI>(UIType.DragDrop).GetComponent<ItemDragDropController>();
+        dialogueManager = UIManager.Singleton.GetUI<DialogueUI>(UIType.Dialogue).GetComponent<DialogueManager>();
     }
 
     public void TempGameQuit()

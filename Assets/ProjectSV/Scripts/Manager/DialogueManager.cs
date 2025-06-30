@@ -40,12 +40,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueData dialogue)
     {
-        PlayerCharacterController.Singleton.ExecuteDialogue();
         currentDialogue = dialogue;
         currentTextLine = 0;
         ShowSpeakerInfo();
         NewLine();
-        Show();
+        // Show();
     }
 
     private void ShowSpeakerInfo()
@@ -91,9 +90,9 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         currentDialogue = null;
-        Hide();
-        PlayerCharacterController.Singleton.ExecuteDialogue();
-        // Debug.Log($"Dialogue Ended");
+        // Hide();
+
+        UIManager.Hide<DialogueUI>(UIType.Dialogue);
     }
 
     private void TypeLine()
@@ -117,13 +116,13 @@ public class DialogueManager : MonoBehaviour
         lineText.text = lineToShow.Substring(0, letterCount);
     }
 
-    // UIManager 도입 전 Temp
-    private void Show()
-    {
-        this.gameObject.SetActive(true);
-    }
-    private void Hide()
-    {
-        this.gameObject.SetActive(false);
-    }
+    //// UIManager 도입 전 Temp
+    //private void Show()
+    //{
+    //    this.gameObject.SetActive(true);
+    //}
+    //private void Hide()
+    //{
+    //    this.gameObject.SetActive(false);
+    //}
 }

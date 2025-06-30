@@ -1,5 +1,6 @@
+using System;
 using System.Collections.Generic;
-using TMPro;
+
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -9,7 +10,7 @@ public class TimeManager : SingletonBase<TimeManager>
     const float tickLength = 900f; // 15m
     private float startTime = 28800f; // 8AM
 
-    [SerializeField] private TextMeshProUGUI textUI;
+    // [SerializeField] private TextMeshProUGUI textUI;
     [SerializeField] private Color dayLightColor = Color.white;
     [SerializeField] private Color nightLightColor;
     [SerializeField] private AnimationCurve lightColorCurve;
@@ -20,6 +21,10 @@ public class TimeManager : SingletonBase<TimeManager>
     private float Hours { get { return time / 3600f; } }
     private float Minutes { get { return time % 3600f / 60f; } }
     private int days;
+
+    private int prevHour = -1;
+    private int prevMinute = -1;
+    public event Action<int, int> OnTimeChanged;
 
     private List<TimeAgent> agents;
     private int oldPhase = 0; 
@@ -84,8 +89,16 @@ public class TimeManager : SingletonBase<TimeManager>
     private void TimeCalculation()
     {
         int hour = (int)Hours;
-        int minutes = (int)Minutes;
-        textUI.text = hour.ToString("00") + ":" + minutes.ToString("00");
+        int minute = (int)Minutes;
+
+        if (hour != prevHour || minute != prevMinute)
+        {
+            prevHour = hour;
+            prevMinute = minute;
+            OnTimeChanged?.Invoke(hour, minute);
+        }
+
+        // textUI.text = hour.ToString("00") + ":" + minutes.ToString("00");
     }
 
     private void StartNextDay()

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class ToolBarController : MonoBehaviour
 {
-    [SerializeField] private GameObject ToolBarCanvas;
+    //[SerializeField] private GameObject ToolBarCanvas;
 
     [SerializeField] int toolBarSize = 10;
     public int SelectedTool => selectedTool;
@@ -16,9 +16,14 @@ public class ToolBarController : MonoBehaviour
 
     public Action<int> onChange;
 
+    private bool isActive = false;
+
+    private void OnEnable() => isActive = true;
+    private void OnDisable() => isActive = false;
+
     private void Update()
     {
-        if (!ToolBarCanvas.activeSelf)
+        if (!isActive)
             return;
 
         float delta = Mouse.current.scroll.ReadValue().y;

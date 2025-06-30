@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ToolTipPanel : SingletonBase<ToolTipPanel>
+public class ToolTipPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI itemInfo;
@@ -16,11 +16,11 @@ public class ToolTipPanel : SingletonBase<ToolTipPanel>
     private float heightPaddingSize = 200f;
     private Vector2 tooltipOffset = new Vector2(80f, -30f);
 
-    protected override void Awake()
-    {
-        base.Awake();
-        Hide();
-    }
+    //protected override void Awake()
+    //{
+    //    base.Awake();
+    //    Hide();
+    //}
 
     //private void Update()
     //{
@@ -29,9 +29,9 @@ public class ToolTipPanel : SingletonBase<ToolTipPanel>
     //    transform.localPosition = localPoint;
     //}
 
-    public void Show(string nameString, string infoString)
+    public void UpdateToolTip(string nameString, string infoString)
     {
-        gameObject.SetActive(true);
+        panel.gameObject.SetActive(true);
 
         itemName.text = nameString;
         itemInfo.text = infoString;
@@ -43,9 +43,9 @@ public class ToolTipPanel : SingletonBase<ToolTipPanel>
         panel.transform.position = mousePos + tooltipOffset;
     }
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
+    //public void Hide()
+    //{
+    //    gameObject.SetActive(false);
+    //}
 
 }
