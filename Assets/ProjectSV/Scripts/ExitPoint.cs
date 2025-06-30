@@ -15,7 +15,6 @@ public class ExitPoint : MonoBehaviour, IInteractable
 
     public void Interact(PlayerCharacterController character)
     {
-        Debug.Log("TransitionPoint Interact");
         SceneTransitionManager.Singleton.LoadLevel(destinationScene, destinationPosition);
     }
 }

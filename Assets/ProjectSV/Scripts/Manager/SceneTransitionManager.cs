@@ -38,11 +38,11 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
             // PlayerCharacterController.Singleton.Move(Vector2.zero);
         }
 
-        // var FadeUI = UIManager.Singleton.GetUI<FadeInOutUI>(UIList.FadeInOut);
+        var FadeUI = UIManager.Singleton.GetUI<FadeInOutUI>(UIType.FadeInOut);
         if (!string.IsNullOrEmpty(currentLevelName))
         {
-            //    FadeUI.FadeOut();
-            //    yield return new WaitForSeconds(1);
+            FadeUI.FadeOut();
+            yield return new WaitForSeconds(1);
 
             var unloadAsync = SceneManager.UnloadSceneAsync(currentLevelName);
             while (!unloadAsync.isDone)
@@ -69,7 +69,7 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
         PlayerCharacterController.Singleton.transform.position = pos;
         PlayerCharacterController.Singleton.enabled = true;
 
-        // FadeUI.FadeIn();
-        // yield return new WaitForSeconds(1);
+        FadeUI.FadeIn();
+        yield return new WaitForSeconds(1);
     }
 }
