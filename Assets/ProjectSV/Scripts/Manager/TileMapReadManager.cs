@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 
 public class TileMapReadManager : SingletonBase<TileMapReadManager>
 {
+    public Tilemap TargetMap => readTargetTileMap;
     [SerializeField] private Tilemap readTargetTileMap;
     [SerializeField] private List<TileData> tileData;
     private Dictionary<TileBase, TileData> dataFromTiles;

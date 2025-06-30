@@ -10,8 +10,6 @@ public class PlowAction : ToolAction
 
     public override bool OnApplyTileMap(Vector3Int pos, TileData tile, Item usedItem)
     {
-        // Debug.Log("Plow 위해 타일 클릭 중");
-        
         if (tile != plowableTile)
         {
             return false;

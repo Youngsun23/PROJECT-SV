@@ -108,7 +108,7 @@ public class CropManager : SingletonBase<CropManager>
         crop.SetSprite(seed.GetGrowthSprite(0));
     }
 
-    public void Pickup(Vector3Int pos)
+    public void PickupCrop(Vector3Int pos)
     {
         if (!farmingTiles.ContainsKey(pos)) return;
         if (!farmingTiles[pos].isMature) return;

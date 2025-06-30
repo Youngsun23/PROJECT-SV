@@ -30,6 +30,8 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     private void Update()
     {
+        if (TileMapReadManager.Singleton.TargetMap == null) return;
+
         SelectTile();
         tileSelectableCheck();
         Marker();

@@ -21,26 +21,31 @@ public class DialogueManager : MonoBehaviour
     private float totalTimeToType, currentTime;
     private string lineToShow;
 
+    private bool isTyping = true;
+
     private void Update()
     {
         if (currentDialogue == null) return;
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            isTyping = true;
             NextLine();
         }
-        TypeLine();
+        if(isTyping)
+        {
+            TypeLine();
+        }
     }
 
     public void StartDialogue(DialogueData dialogue)
     {
-        // Show의 순서 문제 - 생각 좀
         PlayerCharacterController.Singleton.ExecuteDialogue();
-        Show();
         currentDialogue = dialogue;
         currentTextLine = 0;
         ShowSpeakerInfo();
         NewLine();
+        Show();
     }
 
     private void ShowSpeakerInfo()
@@ -55,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         {
             visibleTextPercentage = 1f;
             // TypeLineAtOnce(); // 안 먹는듯?
+            isTyping = false;
             ShowText();
             return;
         }
@@ -100,7 +106,6 @@ public class DialogueManager : MonoBehaviour
         ShowText();
     }
 
-    // 원하는 대로 작동 x
     private void TypeLineAtOnce()
     {
         lineText.text = lineToShow;
