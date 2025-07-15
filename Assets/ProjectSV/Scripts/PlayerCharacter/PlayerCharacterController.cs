@@ -73,7 +73,10 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     {
         // uiTabController.ToggleCraftTab();
 
-        UIManager.Singleton.ToggleUI<CraftUI>(UIType.TempCraft);
+        // 마인크래프트 Crafting
+        // UIManager.Singleton.ToggleUI<CraftUI>(UIType.TempCraft);
+        // 기획 Crafting
+        UIManager.Singleton.ToggleUI<CraftingUI>(UIType.Crafting);
     }
 
     private void ExecuteEquipmentTabToggle()

@@ -21,6 +21,7 @@ public enum UIType
     // SkillTree_Temp,
     TempCraft,
     TempEquipment,
+    Crafting,
 
     POPUP_END,
 }

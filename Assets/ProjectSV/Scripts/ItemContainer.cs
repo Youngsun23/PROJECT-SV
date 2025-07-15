@@ -66,7 +66,7 @@ public class ItemSlot
 }
 
 [CreateAssetMenu(menuName = "Data/Item Container")]
-public class ItemContainer : ScriptableObject
+public class ItemContainer : GameDataBase
 {
     public List<ItemSlot> ItemSlots => itemSlots;
 
@@ -150,5 +150,15 @@ public class ItemContainer : ScriptableObject
         {
             itemSlots[i].Clear();
         }
+    }
+
+    public bool IsFull()
+    {
+        for(int i = 0; i < itemSlots.Count; i++)
+        {
+            if (itemSlots[i].Item == null)
+                return false;
+        }
+        return true;
     }
 }
