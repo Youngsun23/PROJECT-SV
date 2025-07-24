@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 
 public class TileMapReadManager : SingletonBase<TileMapReadManager>
 {
+    public Tilemap TargetMap => readTargetTileMap;
     [SerializeField] private Tilemap readTargetTileMap;
     [SerializeField] private List<TileData> tileData;
     private Dictionary<TileBase, TileData> dataFromTiles;
@@ -19,6 +20,11 @@ public class TileMapReadManager : SingletonBase<TileMapReadManager>
                 dataFromTiles.TryAdd(tile, data);
             }
         }
+    }
+
+    public void SetReadTargetTileMap(Tilemap target)
+    {
+        readTargetTileMap = target; 
     }
 
     public Vector3Int GetGridPosition(Vector2 mousePos, bool useMouse = true)

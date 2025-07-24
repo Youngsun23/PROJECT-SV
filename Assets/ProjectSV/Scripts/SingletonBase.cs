@@ -5,55 +5,55 @@ using System;
 #endif
 
 // 원본 코드
-//    public class SingletonBase<T> : MonoBehaviour where T : class
+//public class SingletonBase<T> : MonoBehaviour where T : class
+//{
+//    public static T Singleton
 //    {
-//        public static T Singleton
+//        get
 //        {
-//            get
-//            {
-//                return _instance.Value;
-//            }
+//            return _instance.Value;
 //        }
-//        public static bool IsSingletonCreated = _instance?.IsValueCreated ?? false;
+//    }
+//    public static bool IsSingletonCreated = _instance?.IsValueCreated ?? false;
 
-//        private static readonly Lazy<T> _instance =
-//           new Lazy<T>(() =>
+//    private static readonly Lazy<T> _instance =
+//       new Lazy<T>(() =>
+//       {
+//           T instance = FindObjectOfType(typeof(T)) as T;
+
+//           if (instance == null)
 //           {
-//               T instance = FindObjectOfType(typeof(T)) as T;
-
-//               if (instance == null)
-//               {
-//                   GameObject obj = new GameObject(typeof(T).ToString());
-//                   instance = obj.AddComponent(typeof(T)) as T;
+//               GameObject obj = new GameObject(typeof(T).ToString());
+//               instance = obj.AddComponent(typeof(T)) as T;
 
 //#if UNITY_EDITOR
-//                   if (EditorApplication.isPlaying)
-//                   {
-//                       DontDestroyOnLoad(obj);
-//                   }
+//               if (EditorApplication.isPlaying)
+//               {
+//                   DontDestroyOnLoad(obj);
+//               }
 //#else
 //                   DontDestroyOnLoad(obj);
 //#endif
-//               }
+//           }
 
-//               return instance;
-//           });
+//           return instance;
+//       });
 
-//        public virtual bool IsRuntimeInitializeScript { get; set; } = false;
+//    public virtual bool IsRuntimeInitializeScript { get; set; } = false;
 
-//        protected virtual void Awake()
-//        {
-//            DontDestroyOnLoad(gameObject);
-//            Init();
-//        }
-//        /// <summary>
-//        /// Awake 함수에서 호출 된다.
-//        /// </summary>
-//        protected virtual void Init()
-//        {
-
-//        }
+//    protected virtual void Awake()
+//    {
+//        DontDestroyOnLoad(gameObject);
+//        Init();
 //    }
+//    /// <summary>
+//    /// Awake 함수에서 호출 된다.
+//    /// </summary>
+//    protected virtual void Init()
+//    {
+
+//    }
+//}
 
 public class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
 {

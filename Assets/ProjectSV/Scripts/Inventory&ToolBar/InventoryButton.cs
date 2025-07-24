@@ -13,10 +13,24 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     [SerializeField] private int index;
     [SerializeField] private Image highlighted;
     private ItemPanel itemPanel;
+    private ToolTipPanel toolTipPanel;
+    private bool belongsInventory = false;
 
     private void Awake()
     {
         itemPanel = transform.parent.GetComponent<ItemPanel>();
+    }
+
+    private void Start()
+    {
+        // var toolTipUI = UIManager.Singleton.GetUI<ToolTipUI>(UIType.ToolTip);
+        InventoryPanel inventoryPanel = itemPanel as InventoryPanel;
+
+        if (inventoryPanel != null)
+        {
+            toolTipPanel = inventoryPanel.ToolTipPanel;
+            belongsInventory = true;
+        }
     }
 
     public void SetIndex(int _index)
@@ -62,17 +76,23 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!belongsInventory) return;
+
         Item item = GameManager.Singleton.Inventory.ItemSlots[index].Item;
 
         if (item != null)
         {
-            ToolTipPanel.Singleton.Show(item.Name, item.Info);
+            UIManager.Show<ToolTipUI>(UIType.ToolTip);
+            toolTipPanel.UpdateToolTip(item.Name, item.Info);
+            //ToolTipPanel.Singleton.Show(item.Name, item.Info);
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ToolTipPanel.Singleton.Hide();
+        if (!belongsInventory) return;
+        //ToolTipPanel.Singleton.Hide();
+        UIManager.Hide<ToolTipUI>(UIType.ToolTip);
     }
 
     public void Highlight(bool tf)

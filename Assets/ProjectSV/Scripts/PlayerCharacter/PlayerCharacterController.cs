@@ -5,7 +5,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     public Animator animator;
     public PlayerCharacterToolController toolController;
     public PlayerCharacterInteraction interaction;
-    public UITabController uiTabController;
+    // public UITabController uiTabController;
     
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -56,7 +56,12 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
 
     private void ExecuteInventoryToggle()
     {
-        uiTabController.ToggleInventory();
+        //uiTabController.ToggleInventory();
+
+        UIManager.Singleton.ToggleUI<InventoryUI>(UIType.Inventory);
+
+        //var inventoryUI = UIManager.Singleton.GetUI<InventoryUI>(UIType.Inventory);
+        //inventoryUI.Show();
     }
 
     //private void ExecuteSkillTabToggle()
@@ -66,12 +71,19 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
 
     private void ExecuteCraftTabToggle()
     {
-        uiTabController.ToggleCraftTab();   
+        // uiTabController.ToggleCraftTab();
+
+        // 마인크래프트 Crafting
+        // UIManager.Singleton.ToggleUI<CraftUI>(UIType.TempCraft);
+        // 기획 Crafting
+        UIManager.Singleton.ToggleUI<CraftingUI>(UIType.Crafting);
     }
 
     private void ExecuteEquipmentTabToggle()
     {
-        uiTabController.ToggleEquipmentTab();
+        // uiTabController.ToggleEquipmentTab();
+
+        UIManager.Singleton.ToggleUI<EquipmentUI>(UIType.TempEquipment);
     }
 
     private void Update()
@@ -100,7 +112,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         }
     }
 
-    private void Move(Vector2 input)
+    public void Move(Vector2 input)
     {
         rigidBody.velocity = input * PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.MoveSpeed);
     }

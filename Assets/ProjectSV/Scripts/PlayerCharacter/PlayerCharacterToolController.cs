@@ -24,12 +24,19 @@ public class PlayerCharacterToolController : MonoBehaviour
     {
         character = GetComponent<PlayerCharacterController>();
         animator = GetComponent<Animator>();
-        toolBarController = GetComponent<ToolBarController>();
         rigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        toolBarController = UIManager.Singleton.GetUI<ToolBarUI>(UIType.ToolBar).GetComponent<ToolBarController>();
     }
 
     private void Update()
     {
+        if (TileMapReadManager.Singleton.TargetMap == null) return;
+        if (markerManager == null) return;
+
         SelectTile();
         tileSelectableCheck();
         Marker();
@@ -38,6 +45,11 @@ public class PlayerCharacterToolController : MonoBehaviour
     private void SelectTile()
     {
         selectedTilePos = TileMapReadManager.Singleton.GetGridPosition(Mouse.current.position.ReadValue());
+    }
+
+    public void SetMarkerManager(MarkerManager target)
+    {
+        markerManager = target;
     }
 
     private void tileSelectableCheck()
@@ -69,22 +81,24 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     public void UseToolGrid()
     {
-        if(isTileSelectable)
+
+        if (isTileSelectable)
         {
             Item item = toolBarController.GetCurrentHoldingItem();
             if(item == null)
             {
                 PickupTile();
-                
-
                 return;
             }
             if (item.OnToolActionTileMap == null)
                 return;
+
             TileBase tileBase = TileMapReadManager.Singleton.GetTileBase(selectedTilePos);
             TileData tileData = TileMapReadManager.Singleton.GetTileData(tileBase);
             if(tileData == null)
                 return;
+
+            //Debug.Log("ToolAction type: " + item.OnToolActionTileMap.GetType());
 
             // animator.SetTrigger("Act");
             bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData, item);

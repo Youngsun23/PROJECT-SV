@@ -11,7 +11,9 @@ public class PlowAction : ToolAction
     public override bool OnApplyTileMap(Vector3Int pos, TileData tile, Item usedItem)
     {
         if (tile != plowableTile)
+        {
             return false;
+        }
 
         CropManager.Singleton.Plow(pos);
         return true;

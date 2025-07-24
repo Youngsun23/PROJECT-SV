@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueInteraction : Interactable
+public class DialogueInteraction : MonoBehaviour, IInteractable
 {
     [SerializeField] private DialogueData dialogue;
-    public override void Interact(PlayerCharacterController character)
+
+    public void Interact(PlayerCharacterController character)
     {
+        UIManager.Show<DialogueUI>(UIType.Dialogue);
+
         GameManager.Singleton.DialogueManager.StartDialogue(dialogue);
     }
 }

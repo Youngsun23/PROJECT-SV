@@ -5,6 +5,22 @@ using UnityEngine;
 
 public class InventoryPanel : ItemPanel
 {
+
+    public ToolTipPanel ToolTipPanel { get; private set; }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        var toolTipUI = UIManager.Singleton.GetUI<ToolTipUI>(UIType.ToolTip);
+        ToolTipPanel = toolTipUI.GetComponent<ToolTipPanel>();
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Hide<ToolTipUI>(UIType.ToolTip);
+    }
+
     public override void OnClick(int id, bool isLeft)
     {
         if (isLeft)

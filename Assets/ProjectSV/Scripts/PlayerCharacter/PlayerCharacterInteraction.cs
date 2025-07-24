@@ -23,12 +23,20 @@ public class PlayerCharacterInteraction : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, interactableRange);
         foreach (Collider2D col in colliders)
         {
-            Interactable interaction = col.GetComponent<Interactable>();
+            IInteractable interaction = col.GetComponent<IInteractable>();
             if (interaction != null)
             {
                 interaction.Interact(character);
                 break;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.Interact(character);
         }
     }
 }
