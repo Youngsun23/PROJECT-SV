@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0aca47261c5d24b9ebe2948b149a43, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 
   itemSlots:
   - item: {fileID: 11400000, guid: 4a766370045193743ad51b9d0b574a65, type: 2}
     count: 1
@@ -23,8 +24,8 @@ MonoBehaviour:
     count: 4
   - item: {fileID: 11400000, guid: 22a3057276a813748af0f6e1cd1e190f, type: 2}
     count: 2
-  - item: {fileID: 0}
-    count: 0
+  - item: {fileID: 11400000, guid: 2220d4b4d308c344cad6ec14b8d75c4a, type: 2}
+    count: 1
   - item: {fileID: 0}
     count: 0
   - item: {fileID: 0}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,7 @@ public class ToolBarController : MonoBehaviour
                 selectedTool = (selectedTool < 0 ? toolBarSize - 1 : selectedTool);
             }
             onChange?.Invoke(selectedTool);
+            UpdateHighlightIcon();
         }
     }
 
@@ -55,5 +57,27 @@ public class ToolBarController : MonoBehaviour
     public Item GetCurrentHoldingItem()
     {
         return GameManager.Singleton.Inventory.ItemSlots[selectedTool].Item;
+    }
+
+    public void UpdateHighlightIcon()
+    {
+        Item item = GetCurrentHoldingItem();
+
+        if(item == null)
+        {
+            GameManager.Singleton.PlaceableItemHighlight.Show(false);
+            return;
+        }
+
+        GameManager.Singleton.PlaceableItemHighlight.Show(item.Placeable);
+
+        if(item.Placeable)
+        {
+            GameManager.Singleton.PlaceableItemHighlight.SetIcon(item.Icon);
+        }
+        else
+        {
+            GameManager.Singleton.PlaceableItemHighlight.SetIcon(null);
+        }
     }
 }

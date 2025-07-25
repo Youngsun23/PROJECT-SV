@@ -62,8 +62,9 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     private void Marker()
     {
-        Vector3Int gridPos = selectedTilePos;
-        markerManager.SetMarkedCellPosition(gridPos);
+        // Vector3Int gridPos = selectedTilePos;
+        markerManager.SetMarkedCellPosition(selectedTilePos);
+        GameManager.Singleton.PlaceableItemHighlight.SetTargetCellPosition(selectedTilePos);
     }
 
     public bool UseToolWorld()

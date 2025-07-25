@@ -64,14 +64,22 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         }
     }
 
+    public void UpdateUserDataCropTiles(List<CropTile> _cropTiles)
+    {
+        UserData.cropTiles = _cropTiles;
+    }
+
     public int GetUserDataLevel() => UserData.level;
     public int GetUserDataEXP() => UserData.exp;
     public int GetUserDataSkillPoint() => UserData.skillPoint;
     public bool GetUserDataIsMaxLevel() => UserData.isMaxLevel;
+
+    public List<EquipItem> GetUserDataEquippedItems() => UserData.equippedItems;
     //public int GetUserDataSkillLevelDictionary(SkillTag tag) => UserData.skillLevelDictionary[tag];
     //public int GetUserDataSkillCurrentUnlockPointDictionary(SkillTag tag) => UserData.skillCurrentUnlockPointDictionary[tag];
     //public List<SkillTag> GetUserDataActivatedSkillSet() => UserData.equippedSkillSet;
-    public List<EquipItem> GetUserDataEquippedItems() => UserData.equippedItems;
+
+    public List<CropTile> GetUserDataCropTiles() => UserData.cropTiles;
 }
 
 [System.Serializable]
@@ -82,11 +90,13 @@ public class UserDataDTO
     public int exp;
     public int skillPoint;
     public bool isMaxLevel;
+
+    public List<EquipItem> equippedItems = new List<EquipItem>();
     //public Dictionary<SkillTag, int> skillLevelDictionary = new Dictionary<SkillTag, int>();
     //public Dictionary<SkillTag, int> skillCurrentUnlockPointDictionary = new Dictionary<SkillTag, int>();
     //public List<SkillTag> equippedSkillSet = new List<SkillTag>();
 
-    public List<EquipItem> equippedItems = new List<EquipItem>();
+    public List<CropTile> cropTiles = new List<CropTile>();
 
     public UserDataDTO()
     {
@@ -96,6 +106,7 @@ public class UserDataDTO
         skillPoint = 0;
         isMaxLevel = false;
 
+        equippedItems.Clear();
         //foreach (SkillTag tag in Enum.GetValues(typeof(SkillTag)))
         //{
         //    skillLevelDictionary[tag] = -1;
@@ -103,7 +114,7 @@ public class UserDataDTO
         //}
         //equippedSkillSet.Clear();
 
-        equippedItems.Clear();
+        cropTiles.Clear();
     }
 }
 

@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 public class PlowAction : ToolAction
 {
     [SerializeField] private TileData plowableTile;
+    // [SerializeField] private AudioClip plowSound;
 
     public override bool OnApplyTileMap(Vector3Int pos, TileData tile, Item usedItem)
     {

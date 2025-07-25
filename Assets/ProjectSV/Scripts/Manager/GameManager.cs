@@ -12,6 +12,9 @@ public class GameManager : SingletonBase<GameManager>
     public DialogueManager DialogueManager => dialogueManager;
     private DialogueManager dialogueManager;
 
+    public PlaceableItemHighlight PlaceableItemHighlight => placeableHighlight;
+    [SerializeField] private PlaceableItemHighlight placeableHighlight;
+
     protected override void Awake()
     {
         base.Awake();
@@ -26,8 +29,9 @@ public class GameManager : SingletonBase<GameManager>
 
     private void Initialize()
     {
-        // UserDataManager.Singleton.Load();
+        UserDataManager.Singleton.Load();
         PlayerCharacter.Singleton.InitializeCharacterAttribute();
+        // CropManager.Singleton.TileMapCropManger.LoadCropTilesData();
 
         UIManager.Show<ToolBarUI>(UIType.ToolBar);
         UIManager.Show<DragDropUI>(UIType.DragDrop);

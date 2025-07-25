@@ -1,18 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TimeAgent : MonoBehaviour
 {
     public Action onTimeTick;
 
-    private void Start()
+    protected virtual void Start()
     {
         Init();
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         TimeManager.Singleton.UnSubscribe(this);
     }

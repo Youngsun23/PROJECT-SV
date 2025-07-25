@@ -58,8 +58,8 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
         {
             yield return null;
         }
-        //Scene loadedScene = SceneManager.GetSceneByName(currentLevelName);
-        //SceneManager.SetActiveScene(loadedScene);
+        Scene loadedScene = SceneManager.GetSceneByName(currentLevelName);
+        SceneManager.SetActiveScene(loadedScene); // 타이밍 문제?
 
         var player = FindObjectOfType<PlayerCharacterToolController>();
         var marker = FindObjectOfType<MarkerManager>();

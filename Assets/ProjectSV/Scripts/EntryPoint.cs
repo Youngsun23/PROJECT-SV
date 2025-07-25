@@ -8,6 +8,7 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private Tilemap plowMap;
     [SerializeField] private Tilemap plantMap;
     [SerializeField] private Tilemap readMap;
+    [SerializeField] private Tilemap highlightMap;
 
     [SerializeField] private Collider2D confiner;
 
@@ -19,6 +20,8 @@ public class EntryPoint : MonoBehaviour
             CropManager.Singleton.SetPlantTargetTileMap(plantMap);
         if(readMap != null)
             TileMapReadManager.Singleton.SetReadTargetTileMap(readMap);
+        if (highlightMap != null)
+            GameManager.Singleton.PlaceableItemHighlight.SetTargetTileMap(highlightMap);
 
         CameraSystem.Singleton.SetCameraConfiner(confiner);
     }

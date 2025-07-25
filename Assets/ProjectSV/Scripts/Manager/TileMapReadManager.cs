@@ -29,6 +29,14 @@ public class TileMapReadManager : SingletonBase<TileMapReadManager>
 
     public Vector3Int GetGridPosition(Vector2 mousePos, bool useMouse = true)
     {
+        if(readTargetTileMap == null)
+        {
+            return Vector3Int.zero;
+
+            // Find 쓰는 대신, 새로운 씬 입장 시 외부에서 Set 해줄거임 (CropManager도 동일)
+            // readTargetTileMap = GameObject.Find("BaseTilemap").GetComponent<Tilemap>();
+        }
+
         Vector3 worldPos;
 
         if (useMouse)
@@ -56,6 +64,13 @@ public class TileMapReadManager : SingletonBase<TileMapReadManager>
 
     public TileData GetTileData(TileBase tileBase)
     {
+        if (readTargetTileMap == null)
+        {
+            return null;
+
+            // readTargetTileMap = GameObject.Find("BaseTilemap").GetComponent<Tilemap>();
+        }
+
         if (tileBase != null)
         {
             // Debug.Log($"TileData: {dataFromTiles[tileBase].name}");
