@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be24ad65f4a380544830ebb3c7fcb859, type: 3}
-  m_Name: Farm Placed Items Container
+  m_Script: {fileID: 11500000, guid: 27980b2f7de890f40b03f94262b4b5ed, type: 3}
+  m_Name: PlaceAction
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 
-  placedItems: []

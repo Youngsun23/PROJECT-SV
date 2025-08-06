@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
+  m_Name: CopperOre
+  m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 
+  itemName: IronOre
+  itemInfo: 
+  stackable: 1
+  icon: {fileID: 2140948208, guid: 15b4a903882e7e040a358ef8823406fa, type: 3}
+  onToolAction: {fileID: 0}
+  onToolActionTileMap: {fileID: 0}
+  crop: {fileID: 0}
+  type: 0
+  placeable: 0
+  itemPrefab: {fileID: 0}

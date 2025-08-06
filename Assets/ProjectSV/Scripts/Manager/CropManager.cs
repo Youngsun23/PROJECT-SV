@@ -38,9 +38,20 @@ public class CropManager : SingletonBase<CropManager>
     public TileMapCropsManager TileMapCropManger => cropsManager;
     [SerializeField] private TileMapCropsManager cropsManager;
 
+    private bool isInitialized = false;
+
     public void SetCropsManager(TileMapCropsManager manager)
     {
         cropsManager = manager;
+        if(!isInitialized)
+        {
+            cropsManager.Initialize();
+            isInitialized = true;
+        }
+        else
+        {
+            cropsManager.InitilizeScene();
+        }
     }
 
     public void PickupCrop(Vector3Int pos)

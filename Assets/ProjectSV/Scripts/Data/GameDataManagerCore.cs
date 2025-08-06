@@ -17,7 +17,6 @@ public partial class GameDataManager : SingletonBase<GameDataManager>
 
     }
 
-    // CSV -> GameData? ... ���߿� �ʿ��ϸ� �۾�
     public T DataParsing<T, K>(string[] line) where T : GameDataBase, new() where K : new()
     {
         T result = new T();

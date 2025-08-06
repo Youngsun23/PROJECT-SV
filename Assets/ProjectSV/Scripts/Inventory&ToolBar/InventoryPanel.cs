@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class InventoryPanel : ItemPanel
 {
-
     public ToolTipPanel ToolTipPanel { get; private set; }
 
     protected override void Start()

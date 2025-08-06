@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using static UnityEditor.PlayerSettings;
 
-public class TileMapCropsManager : TimeAgent
+public class TileMapCropsManager : MonoBehaviour
 {
-    [SerializeField] private PlantedCropsContainer container;
+    public PlantedCropsContainer Container => PlantedCropsManager.Singleton.Container;
+    //[SerializeField] private PlantedCropsContainer container;
 
     // 물 준 상태 추가하면 -> 비주얼 다시 조정
     [SerializeField] private TileBase plowed;
@@ -22,80 +23,82 @@ public class TileMapCropsManager : TimeAgent
     //private TimeAgent timeAgent;
     [SerializeField] private float spread = 2f;
 
+
     //private void Awake()
     //{
     //    timeAgent = GetComponent<TimeAgent>();
     //}
 
-
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-
+        cropTargetTileMap = GetComponent<Tilemap>();
         CropManager.Singleton.SetCropsManager(this);
+    }
+
+
+    private void Start()
+    {
+        // CropManager.Singleton.SetCropsManager(this);
         // farmingTiles = new Dictionary<Vector3Int, CropTile>();
-        onTimeTick += Tick;
+
         // plowTargetTileMap = GetComponent<TileMap>();
         // plantTargetTileMap = GetComponent<TileMap>();
-        cropTargetTileMap = GetComponent<Tilemap>();
+        // cropTargetTileMap = GetComponent<Tilemap>();
+    }
 
-        container.ClearCropTileList();
-        LoadCropTilesData(); // 얠 어디로 보내야하나
+    private void OnDestroy()
+    {
+        for (int i = 0; i < Container.Crops.Count; i++)
+        {
+            Container.Crops[i].SetRenderer(null);
+        }
+
+        SaveRuntimeCropTilesData();
+    }
+
+    public void Initialize()
+    {
+        Debug.Log("TileMapCropsManager - Initialize() 호출");
+
+        Container.ClearCropTileList();
+        LoadCropTilesData(); 
         VisualizeTiles();
     }
-    protected override void OnDestroy()
+
+    public void InitilizeScene()
     {
-        base.OnDestroy();
+        Debug.Log("TileMapCropsManager - InitializeScene() 호출");
 
-        onTimeTick -= Tick;
-
-        for(int i = 0; i < container.Crops.Count; i++)
-        {
-            container.Crops[i].SetRenderer(null);
-        }
-    }
-
-    public void Tick()
-    {
-        foreach (CropTile crop in container.Crops)
-        {
-            if (crop == null) continue;
-            if (crop.CropData == null) continue;
-            if (crop.IsMature) continue;
-
-            crop.TickGrowthTimer(1);
-
-            if (crop.CurrentGrowthTimer >= crop.CropData.GetGrowthStageTimer(crop.CurrentGrowthStage))
-            {
-                crop.TickGrowthStage(1);
-                // Debug.Log($"Tick/CurrentTimer: {crop.currentGrowthTimer} // Tick/CurrentStage: {crop.currentGrowthStage}");
-                crop.SetSprite(crop.CropData.GetGrowthSprite(crop.CurrentGrowthStage));
-
-                if (crop.CurrentGrowthStage >= crop.CropData.GetMaxGrowthStage())
-                {
-                    crop.SetIsMature(true);
-                    // Debug.Log($"{crop.cropData.name} 씨앗이 다 자랐습니다.");
-                }
-            }
-        }
+        LoadRuntimeCropTilesData();
+        VisualizeTiles();
     }
 
     public void SaveCropTilesData()
     {
-        UserDataManager.Singleton.UpdateUserDataCropTiles(container.Crops);
+        UserDataManager.Singleton.UpdateUserDataCropTiles(Container.Crops);
     }
 
     public void LoadCropTilesData()
     {
-        container.SetCropTileList(UserDataManager.Singleton.GetUserDataCropTiles());
+        Container.SetCropTileList(UserDataManager.Singleton.GetUserDataCropTiles());
         // Debug.Log($"LoadCropTilesData 호출 - {UserDataManager.Singleton.GetUserDataCropTiles().Count}");
+    }
+
+    public void SaveRuntimeCropTilesData()
+    {
+        RuntimeDataManager.Singleton.UpdateRuntimeDataCropTilesData(Container.Crops);
+    }
+
+    public void LoadRuntimeCropTilesData()
+    {
+        Container.SetCropTileList(RuntimeDataManager.Singleton.GetRuntimeDataCropTiles());
     }
 
     public bool IsPlantable(Vector3Int pos)
     {
         //if (!farmingTiles.ContainsKey(pos) || farmingTiles[pos] != null)
         //    return false;
-        if (container.GetCropTile(pos) == null || container.GetCropTile(pos).CropData != null)
+        if (Container.GetCropTile(pos) == null || Container.GetCropTile(pos).CropData != null)
             return false;
         else
             return true;
@@ -106,7 +109,7 @@ public class TileMapCropsManager : TimeAgent
         //if (farmingTiles.ContainsKey(pos))
         //    return;
 
-        if(container.GetCropTile(pos) != null)
+        if(Container.GetCropTile(pos) != null)
             return;
 
         CreatePlowedTile(pos);
@@ -114,15 +117,15 @@ public class TileMapCropsManager : TimeAgent
 
     public void Plant(Vector3Int pos, CropData seed)
     {
-        container.GetCropTile(pos).SetCrop(seed);
+        Container.GetCropTile(pos).SetCrop(seed);
         // farmingTiles[pos] = crop;
 
-        VisualizeTile(container.GetCropTile(pos));
+        VisualizeTile(Container.GetCropTile(pos));
     }
 
     public void VisualizeTiles()
     {
-        foreach (var tile in container.Crops)
+        foreach (var tile in Container.Crops)
         {
             VisualizeTile(tile);
         }
@@ -152,14 +155,14 @@ public class TileMapCropsManager : TimeAgent
 
     public void PickupCrop(Vector3Int pos)
     {
-        if (container.GetCropTile(pos) == null) return;
-        if (!container.GetCropTile(pos).IsMature) return;
+        if (Container.GetCropTile(pos) == null) return;
+        if (!Container.GetCropTile(pos).IsMature) return;
 
         //if (!farmingTiles.ContainsKey(pos)) return;
         //if (!farmingTiles[pos].isMature) return;
 
-        Item yield = container.GetCropTile(pos).CropData.GetYield();
-        int yieldCount = container.GetCropTile(pos).CropData.GetYieldCount();
+        Item yield = Container.GetCropTile(pos).CropData.GetYield();
+        int yieldCount = Container.GetCropTile(pos).CropData.GetYieldCount();
         // Item yield = farmingTiles[pos].cropData.GetYield();
         // int yieldCount = farmingTiles[pos].cropData.GetYieldCount();
         Vector3 worldPos = cropTargetTileMap.GetCellCenterWorld(pos);
@@ -175,7 +178,7 @@ public class TileMapCropsManager : TimeAgent
             return;
 
         CropTile crop = new CropTile(null, pos);
-        container.Crops.Add(crop);
+        Container.Crops.Add(crop);
         // farmingTiles.Add(pos, null);
 
         cropTargetTileMap.SetTile(pos, plowed);
@@ -183,10 +186,10 @@ public class TileMapCropsManager : TimeAgent
 
     private void CreateHarvestedTile(Vector3Int pos)
     {
-        Destroy(container.GetCropTile(pos).Renderer.gameObject);
+        Destroy(Container.GetCropTile(pos).Renderer.gameObject);
         // Destroy(farmingTiles[pos].renderer.gameObject);
         // farmingTiles.Remove(pos);
-        container.GetCropTile(pos).SetCrop(null);
+        Container.GetCropTile(pos).SetCrop(null);
         // farmingTiles[pos] = null;
         // plowTargetTileMap.SetTile(pos, null);
     }

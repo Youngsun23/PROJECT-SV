@@ -18,7 +18,8 @@ MonoBehaviour:
   stackable: 0
   icon: {fileID: -1898235797, guid: 511bf48c45e0ba24295f5701af9426ce, type: 3}
   onToolAction: {fileID: 0}
-  onToolActionTileMap: {fileID: 0}
+  onToolActionTileMap: {fileID: 11400000, guid: 3de52c40e66593549ab2d4871146d250, type: 2}
   crop: {fileID: 0}
   type: 0
   placeable: 1
+  itemPrefab: {fileID: 5658750211044545739, guid: c070efb5a11fe5c468e5ca3bc4ac803d, type: 3}

@@ -7,8 +7,14 @@ public class PlaceAction : ToolAction
 {
     public override bool OnApplyTileMap(Vector3Int pos, TileData tile, Item usedItem)
     {
-        PlaceableObjectsManager.Singleton.Place(usedItem, pos);
+        Debug.Log("액션 호출");
 
-        return true;
+        return PlaceableObjectsManager.Singleton.Place(usedItem, pos);
+    }
+
+    public override void OnItemUsed(Item usedItem, ItemContainer inventory)
+    {
+        inventory.RemoveItem(usedItem);
+        GameManager.Singleton.PlaceableItemHighlight.Show(false);
     }
 }

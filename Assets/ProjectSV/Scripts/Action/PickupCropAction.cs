@@ -11,6 +11,8 @@ public class PickupCropAction : ToolAction
         // 채집 액션도 똑같은 걸로 할건지 함수 분리할건지?
         CropManager.Singleton.PickupCrop(pos);
 
+        PlaceableObjectsManager.Singleton.Pickup(pos);
+
         return true;
     }
 }

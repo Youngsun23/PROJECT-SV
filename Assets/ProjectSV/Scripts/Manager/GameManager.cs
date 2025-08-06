@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : SingletonBase<GameManager>
@@ -15,6 +16,8 @@ public class GameManager : SingletonBase<GameManager>
     public PlaceableItemHighlight PlaceableItemHighlight => placeableHighlight;
     [SerializeField] private PlaceableItemHighlight placeableHighlight;
 
+    private bool initialized = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -24,19 +27,25 @@ public class GameManager : SingletonBase<GameManager>
 
     private void Start()
     {
-        Initialize();
+        StartCoroutine(DelayedInitialize());
     }
 
-    private void Initialize()
+    private IEnumerator DelayedInitialize() // 타이밍 문제
     {
-        UserDataManager.Singleton.Load();
-        PlayerCharacter.Singleton.InitializeCharacterAttribute();
-        // CropManager.Singleton.TileMapCropManger.LoadCropTilesData();
+        yield return null;
 
-        UIManager.Show<ToolBarUI>(UIType.ToolBar);
-        UIManager.Show<DragDropUI>(UIType.DragDrop);
-        ItemDragDropController = UIManager.Singleton.GetUI<DragDropUI>(UIType.DragDrop).GetComponent<ItemDragDropController>();
-        dialogueManager = UIManager.Singleton.GetUI<DialogueUI>(UIType.Dialogue).GetComponent<DialogueManager>();
+        if (!initialized)
+        {
+            UserDataManager.Singleton.Load();
+            PlayerCharacter.Singleton.InitializeCharacterAttribute();
+
+            UIManager.Show<ToolBarUI>(UIType.ToolBar);
+            UIManager.Show<DragDropUI>(UIType.DragDrop);
+            ItemDragDropController = UIManager.Singleton.GetUI<DragDropUI>(UIType.DragDrop).GetComponent<ItemDragDropController>();
+            dialogueManager = UIManager.Singleton.GetUI<DialogueUI>(UIType.Dialogue).GetComponent<DialogueManager>();
+
+            initialized = true;
+        }
     }
 
     public void TempGameQuit()

@@ -28,6 +28,7 @@ public class Item : GameDataBase
     public ToolAction OnToolActionTileMap => onToolActionTileMap;
     public CropData CropData => crop;
     public ItemType Type => type;
+    public bool Placeable => placeable;
     public GameObject ItemPrefab => itemPrefab;
 
     [SerializeField] private string itemName;
@@ -38,5 +39,6 @@ public class Item : GameDataBase
     [SerializeField] private ToolAction onToolActionTileMap;
     [SerializeField] private CropData crop;
     [SerializeField] private ItemType type;
+    [SerializeField] private bool placeable;
     [SerializeField] private GameObject itemPrefab;
 }

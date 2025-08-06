@@ -82,7 +82,6 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     public void UseToolGrid()
     {
-
         if (isTileSelectable)
         {
             Item item = toolBarController.GetCurrentHoldingItem();

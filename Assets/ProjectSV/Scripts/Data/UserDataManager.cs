@@ -69,6 +69,11 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         UserData.cropTiles = _cropTiles;
     }
 
+    public void UpdateUserDataPlacedItems(List<PlacedItem> _placedItems)
+    {
+        UserData.placedItems = _placedItems;
+    }
+
     public int GetUserDataLevel() => UserData.level;
     public int GetUserDataEXP() => UserData.exp;
     public int GetUserDataSkillPoint() => UserData.skillPoint;
@@ -80,6 +85,7 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
     //public List<SkillTag> GetUserDataActivatedSkillSet() => UserData.equippedSkillSet;
 
     public List<CropTile> GetUserDataCropTiles() => UserData.cropTiles;
+    public List<PlacedItem> GetUserDataPlacedItems() => UserData.placedItems;
 }
 
 [System.Serializable]
@@ -97,6 +103,7 @@ public class UserDataDTO
     //public List<SkillTag> equippedSkillSet = new List<SkillTag>();
 
     public List<CropTile> cropTiles = new List<CropTile>();
+    public List<PlacedItem> placedItems = new List<PlacedItem>();
 
     public UserDataDTO()
     {
@@ -115,6 +122,7 @@ public class UserDataDTO
         //equippedSkillSet.Clear();
 
         cropTiles.Clear();
+        placedItems.Clear();
     }
 }
 

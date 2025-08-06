@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5b6d8c5f01726a44914b80f16505c1a, type: 3}
-  m_Name: FarmCropsContainer
+  m_Name: Farm Planted Crops Container
   m_EditorClassIdentifier: 
   crops:
-  - position: {x: -7, y: -9, z: 0}
-    currentGrowthTimer: 0
-    cropData: {fileID: 0}
-    currentGrowthStage: 0
-    isMature: 0
-    renderer: {fileID: 0}
-  - position: {x: -5, y: -9, z: 0}
-    currentGrowthTimer: 40
+  - position: {x: 6, y: 0, z: 0}
+    currentGrowthTimer: 43
     cropData: {fileID: 11400000, guid: e7515f749e3873e438a69f22636ec016, type: 2}
     currentGrowthStage: 2
-    isMature: 1
+    isMature: 0
+    renderer: {fileID: 0}
+  - position: {x: 7, y: 0, z: 0}
+    currentGrowthTimer: 31
+    cropData: {fileID: 11400000, guid: e7515f749e3873e438a69f22636ec016, type: 2}
+    currentGrowthStage: 1
+    isMature: 0
     renderer: {fileID: 0}

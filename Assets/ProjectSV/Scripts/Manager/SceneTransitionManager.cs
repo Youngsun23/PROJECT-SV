@@ -61,6 +61,8 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
         Scene loadedScene = SceneManager.GetSceneByName(currentLevelName);
         SceneManager.SetActiveScene(loadedScene); // 타이밍 문제?
 
+        PlaceableObjectsManager.Singleton.SaveRuntimePlacedItemsData();
+
         var player = FindObjectOfType<PlayerCharacterToolController>();
         var marker = FindObjectOfType<MarkerManager>();
         player?.SetMarkerManager(marker);

@@ -44,13 +44,34 @@ public class ItemDragDropController : MonoBehaviour
         }
     }
 
+    public bool ConvertableCheck(Item item, int count = 1)
+    {
+        if (dragDropSlot == null) return false;
+
+        if(item.Stackable)
+        {
+            return dragDropSlot.Item == item && dragDropSlot.Count >= count;
+        }
+        return dragDropSlot.Item == item;
+    }
+
+    public void RemoveItem(int count = 1)
+    {
+        if(dragDropSlot.Item.Stackable)
+        {
+            dragDropSlot.ChangeCount(-count);
+            if (dragDropSlot.Count <= 0)
+                dragDropSlot.Clear();
+        }
+        else
+            dragDropSlot.Clear();
+
+        UpdateIcon();
+    }
+
     public void OnLeftClick(ItemSlot inventorySlot)
     {
         //if(inventorySlot == )
-
-
-
-
 
         if (dragDropSlot.Item == null)
         {

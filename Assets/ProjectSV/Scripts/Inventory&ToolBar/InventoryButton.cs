@@ -31,6 +31,8 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
             toolTipPanel = inventoryPanel.ToolTipPanel;
             belongsInventory = true;
         }
+
+        icon.preserveAspect = true;
     }
 
     public void SetIndex(int _index)

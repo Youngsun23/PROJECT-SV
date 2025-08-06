@@ -1,0 +1,65 @@
+﻿{
+    "level": 1,
+    "exp": 0,
+    "skillPoint": 0,
+    "isMaxLevel": false,
+    "equippedItems": [],
+    "cropTiles": [
+        {
+            "position": {
+                "x": 6,
+                "y": 0,
+                "z": 0
+            },
+            "currentGrowthTimer": 40,
+            "cropData": {
+                "instanceID": 42458
+            },
+            "currentGrowthStage": 2,
+            "isMature": true,
+            "renderer": {
+                "instanceID": -348348
+            }
+        },
+        {
+            "position": {
+                "x": 7,
+                "y": 0,
+                "z": 0
+            },
+            "currentGrowthTimer": 40,
+            "cropData": {
+                "instanceID": 42458
+            },
+            "currentGrowthStage": 2,
+            "isMature": true,
+            "renderer": {
+                "instanceID": -348354
+            }
+        }
+    ],
+    "placedItems": [
+        {
+            "placedItem": {
+                "instanceID": 35976
+            },
+            "transform": {
+                "instanceID": -348358
+            },
+            "positionOnGrid": {
+                "x": 6,
+                "y": -3,
+                "z": 0
+            },
+            "data": {
+                "itemSlot": {
+                    "item": {
+                        "instanceID": 37478
+                    },
+                    "count": 1
+                },
+                "timer": 39.24433898925781
+            }
+        }
+    ]
+}

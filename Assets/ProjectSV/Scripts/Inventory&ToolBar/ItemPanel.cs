@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPanel : MonoBehaviour
 {
-    protected ItemContainer Inventory => GameManager.Singleton.Inventory;
+    protected virtual ItemContainer Inventory => GameManager.Singleton.Inventory;
     [SerializeField] protected List<InventoryButton> buttons;
 
     protected virtual void Start()

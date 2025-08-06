@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
+  m_Name: Furnace
+  m_EditorClassIdentifier: 
+  <UniqueID>k__BackingField: 
+  itemName: Furnace
+  itemInfo: 
+  stackable: 0
+  icon: {fileID: -992527182, guid: a11dc616aa5e28549b23b7964ea8fef1, type: 3}
+  onToolAction: {fileID: 0}
+  onToolActionTileMap: {fileID: 11400000, guid: 3de52c40e66593549ab2d4871146d250, type: 2}
+  crop: {fileID: 0}
+  type: 0
+  placeable: 1
+  itemPrefab: {fileID: 7511843243587858732, guid: 3c6117197bd9acc4a8f69ac14609ee4d, type: 3}

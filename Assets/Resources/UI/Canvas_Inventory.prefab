@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216fde1d7a5b9cf4697b9ffc151d2ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragDropIcon: {fileID: 0}
 --- !u!1 &4743628131189818666
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +571,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2185657782366747077, guid: ebab03107be971043aa7af8db8f95db5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185657782366747077, guid: ebab03107be971043aa7af8db8f95db5, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185657782366747077, guid: ebab03107be971043aa7af8db8f95db5, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3082242814918026635, guid: ebab03107be971043aa7af8db8f95db5, type: 3}
       propertyPath: m_RaycastTarget
