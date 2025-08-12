@@ -13,15 +13,39 @@ MonoBehaviour:
   m_Name: Farm Planted Crops Container
   m_EditorClassIdentifier: 
   crops:
+  - position: {x: 5, y: 0, z: 0}
+    currentGrowthTimer: 40
+    cropData: {fileID: 0}
+    currentGrowthStage: 2
+    isMature: 1
+    renderer: {fileID: 0}
+  - position: {x: 7, y: 0, z: 0}
+    currentGrowthTimer: 40
+    cropData: {fileID: 0}
+    currentGrowthStage: 2
+    isMature: 1
+    renderer: {fileID: 0}
   - position: {x: 6, y: 0, z: 0}
-    currentGrowthTimer: 43
-    cropData: {fileID: 11400000, guid: e7515f749e3873e438a69f22636ec016, type: 2}
+    currentGrowthTimer: 40
+    cropData: {fileID: 0}
+    currentGrowthStage: 2
+    isMature: 1
+    renderer: {fileID: 0}
+  - position: {x: 7, y: 2, z: 0}
+    currentGrowthTimer: 141
+    cropData: {fileID: 11400000, guid: 501ae736b3fdae545a2fc355d907db4d, type: 2}
+    currentGrowthStage: 3
+    isMature: 0
+    renderer: {fileID: 0}
+  - position: {x: 8, y: 2, z: 0}
+    currentGrowthTimer: 18
+    cropData: {fileID: 11400000, guid: 501ae736b3fdae545a2fc355d907db4d, type: 2}
     currentGrowthStage: 2
     isMature: 0
     renderer: {fileID: 0}
-  - position: {x: 7, y: 0, z: 0}
-    currentGrowthTimer: 31
-    cropData: {fileID: 11400000, guid: e7515f749e3873e438a69f22636ec016, type: 2}
-    currentGrowthStage: 1
+  - position: {x: 12, y: -1, z: 0}
+    currentGrowthTimer: 0
+    cropData: {fileID: 0}
+    currentGrowthStage: 0
     isMature: 0
     renderer: {fileID: 0}

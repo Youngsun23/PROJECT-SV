@@ -36,25 +36,50 @@ public class PlacedItem
 public class ItemConvertorData
 {
     public ItemSlot ItemSlot => itemSlot;
-    public float Timer => timer;
+    public float CurrentTimer => currentConvertingTimer;
+    public float FullTimer => fullConvertingTimer;
+    public bool IsConvertingOver => isConvertingOver;
+    public bool IsConverting => isConverting;
 
     [SerializeField] private ItemSlot itemSlot;
-    [SerializeField] private float timer;
+    [SerializeField] private float currentConvertingTimer;
+    [SerializeField] private float fullConvertingTimer;
+    [SerializeField] private bool isConvertingOver = false;
+    [SerializeField] private bool isConverting = false;
 
     public ItemConvertorData()
     {
         itemSlot = new ItemSlot();
-        timer = 0;
+        currentConvertingTimer = 0;
+        fullConvertingTimer = 10;
     }
 
-    public void SetTImer(float time)
+    public void SetFullTImer(float time)
     {
-        timer = time;
+        fullConvertingTimer = time;
     }
 
-    public void TickTimer(float time)
+    public void TickConvertingTimer(float tick)
     {
-        timer += time;
+        currentConvertingTimer += tick;
+    }
+
+    public void SetIsConvertingOver(bool tf)
+    {
+        isConvertingOver = tf;
+    }
+
+    public void SetIsConverting(bool tf)
+    {
+        isConverting = tf;
+    }
+
+    public void ResetData()
+    {
+        itemSlot.Clear();
+        currentConvertingTimer = 0;
+        isConvertingOver = false;
+        isConverting = false;
     }
 }
 

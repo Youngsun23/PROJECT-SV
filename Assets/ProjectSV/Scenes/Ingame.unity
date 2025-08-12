@@ -1032,6 +1032,7 @@ GameObject:
   - component: {fileID: 1277673890}
   - component: {fileID: 1277673889}
   - component: {fileID: 1277673891}
+  - component: {fileID: 1277673892}
   m_Layer: 0
   m_Name: SceneObjectManager
   m_TagString: Untagged
@@ -1081,6 +1082,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 11400000, guid: 6172085c2049cce4da18d4887eff5b27, type: 2}
+--- !u!114 &1277673892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277673888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04647357a76e2b4b8548c263e3988bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1351820972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropTiles: []
+  placedItems: []
 --- !u!4 &1449746678
 Transform:
   m_ObjectHideFlags: 0

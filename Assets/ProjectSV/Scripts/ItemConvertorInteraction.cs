@@ -10,19 +10,23 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     [SerializeField] private Item convertableItem;
     [SerializeField] private Item convertedItem;
     [SerializeField] private int convertedItemCount = 1;
-    [SerializeField] private float timeToConvert = 5f;
+    // [SerializeField] private float timeToConvert = 5f;
     private ItemConvertorData data;
-    private Animator animator;
+    public Animator animator;
+
+    private void Awake()
+    {
+        if (data == null)
+        {
+            data = new ItemConvertorData();
+        }
+        animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
-        if(data == null)
-        {
-            data = new ItemConvertorData();
-            LoadConvertorData();
-        }
-        animator = GetComponent<Animator>();
-        animator.SetBool("Working", data.Timer > 0f);
+        LoadConvertorData();
+        animator.SetBool("Working", data.IsConverting);
     }
 
     private void OnDestroy()
@@ -30,21 +34,28 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
         SaveConvertorData();
     }
 
+    //private void Update()
+    //{
+    //    if (data.ItemSlot == null) return;
+
+    //    if(data.Timer > 0f)
+    //    {
+    //        Debug.Log($"타이머 update - {data.Timer}");
+    //        data.TickTimer(-Time.deltaTime);
+    //        if(data.Timer <= 0f)
+    //        {
+    //            data.ItemSlot.Set(convertedItem, convertedItemCount);
+    //            animator.SetBool("Working", false);
+    //        }
+    //    }
+    //}
+
     private void Update()
     {
-        if (data.ItemSlot == null) return;
-        
-        if(data.Timer > 0f)
-        {
-            Debug.Log($"타이머 update - {data.Timer}");
-            data.TickTimer(-Time.deltaTime);
-            if(data.Timer <= 0f)
-            {
-                data.ItemSlot.Set(convertedItem, convertedItemCount);
-                animator.SetBool("Working", false);
-            }
-        }
-        
+        if (data == null) return;
+
+        if (data.IsConvertingOver)
+            animator.SetBool("Working", false);
     }
 
     public void Interact(PlayerCharacterController character)
@@ -58,10 +69,10 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
         }
         else
         {
-            if(data.Timer <= 0f)
+            if(data.IsConvertingOver)
             {
-                GameManager.Singleton.Inventory.AddItem(data.ItemSlot.Item, data.ItemSlot.Count);
-                data.ItemSlot.Clear();
+                GameManager.Singleton.Inventory.AddItem(convertedItem, convertedItemCount);
+                data.ResetData();
             }
         }
     }
@@ -70,12 +81,12 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     private void StartItemConverting()
     {
         animator.SetBool("Working", true);
-        
+
         data.ItemSlot.Copy(GameManager.Singleton.ItemDragDropController.DragDropSlot);
         GameManager.Singleton.ItemDragDropController.RemoveItem();
-
-        data.SetTImer(timeToConvert);
         data.ItemSlot.SetCount(1);
+        data.SetIsConverting(true);
+        SaveConvertorData();
     }
 
     public void SaveConvertorData()
@@ -87,7 +98,7 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     public void LoadConvertorData()
     {
         PlacedItem item = PlaceableObjectsManager.Singleton.Container.PlacedItems.Find(x => x.Transform == this.gameObject.GetComponent<Transform>());
-        if(item != null)
+        if(item?.ConvertorData != null)
             this.data = item.ConvertorData;
     }
 

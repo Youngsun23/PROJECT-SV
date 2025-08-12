@@ -16,9 +16,12 @@ MonoBehaviour:
   placedItems:
   - placedItem: {fileID: 11400000, guid: a84a3ca5acf7ad248b5db01d86f638e3, type: 2}
     transform: {fileID: 0}
-    positionOnGrid: {x: 6, y: -3, z: 0}
+    positionOnGrid: {x: 8, y: -2, z: 0}
     data:
       itemSlot:
-        item: {fileID: 11400000, guid: f99022676280faa44b23986008163550, type: 2}
-        count: 1
-      timer: 51.92192
+        item: {fileID: 0}
+        count: 0
+      currentConvertingTimer: 0
+      fullConvertingTimer: 10
+      isConvertingOver: 0
+      isConverting: 0

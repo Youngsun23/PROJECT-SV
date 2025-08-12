@@ -31,6 +31,15 @@ public class CropTile
     public void SetIsMature(bool tf) { this.isMature = tf; }
 
     public CropTile(CropData _crop, Vector3Int _pos, int _timer = 0, int _stage = 0) { cropData = _crop; position = _pos; currentGrowthTimer = _timer;  currentGrowthStage = _stage; }
+
+    public void ResetCropTile()
+    {
+        cropData = null;
+        currentGrowthTimer = 0;
+        currentGrowthStage = 0;
+        isMature = false;
+        renderer = null;
+    }
 }
 
 public class CropManager : SingletonBase<CropManager>

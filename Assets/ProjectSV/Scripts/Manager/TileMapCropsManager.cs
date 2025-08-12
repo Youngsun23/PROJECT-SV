@@ -189,7 +189,7 @@ public class TileMapCropsManager : MonoBehaviour
         Destroy(Container.GetCropTile(pos).Renderer.gameObject);
         // Destroy(farmingTiles[pos].renderer.gameObject);
         // farmingTiles.Remove(pos);
-        Container.GetCropTile(pos).SetCrop(null);
+        Container.GetCropTile(pos).ResetCropTile();
         // farmingTiles[pos] = null;
         // plowTargetTileMap.SetTile(pos, null);
     }
