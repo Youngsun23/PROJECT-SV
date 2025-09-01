@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ChestInventoryUI : UIBase
 {
+    [SerializeField] private ChestInventoryPanel panel;
+
+    public ChestInventoryPanel GetPanel() => panel;
+
     public override void Show()
     {
         base.Show();

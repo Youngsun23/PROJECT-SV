@@ -9,6 +9,7 @@ public class SaveInteraction : MonoBehaviour, IInteractable
         Debug.Log("UserData를 저장합니다.");
 
         CropManager.Singleton.TileMapCropManger.SaveCropTilesData();
+        PlaceableObjectsManager.Singleton.SavePlacedItemsData();
         UserDataManager.Singleton.Save();
     }
 }

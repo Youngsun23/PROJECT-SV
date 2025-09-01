@@ -7,7 +7,8 @@ using UnityEngine;
 [Serializable]
 public class ItemSlot
 {
-    public Item Item => item;
+    // ID
+    public Item Item => item; 
     public int Count => count;
 
     [SerializeField] private Item item;
@@ -73,6 +74,20 @@ public class ItemContainer : GameDataBase
     [SerializeField] private List<ItemSlot> itemSlots;
 
     public Action onChange;
+
+    public void Init()
+    {
+        itemSlots = new List<ItemSlot>();   
+        for(int i = 0; i < 30; i++)
+        {
+            itemSlots.Add(new ItemSlot());
+        }
+    }
+
+    public void SetItemList(List<ItemSlot> list)
+    {
+        itemSlots = list;
+    }
 
     public bool AddItem(Item item, int count = 1)
     {

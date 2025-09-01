@@ -59,6 +59,11 @@ public class ToolBarController : MonoBehaviour
         return GameManager.Singleton.Inventory.ItemSlots[selectedTool].Item;
     }
 
+    public ItemSlot GetCurrentItemSlot()
+    {
+        return GameManager.Singleton.Inventory.ItemSlots[selectedTool];
+    }
+
     public void UpdateHighlightIcon()
     {
         Item item = GetCurrentHoldingItem();

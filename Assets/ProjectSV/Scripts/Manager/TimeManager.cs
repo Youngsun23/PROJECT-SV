@@ -6,9 +6,12 @@ using UnityEngine.Rendering.Universal;
 
 public class TimeManager : SingletonBase<TimeManager>
 {
-    const float secondsInDay = 86400f; // 24H
-    const float tickLength = 900f; // 15m
-    private float startTime = 28800f; // 8AM
+    // 7:00AM ~ 1:00AM (하루 18시간)
+    // 1틱 = 게임 10m = 현실 10s
+    // 하루 = 108틱 = 현실 18m
+    const float secondsInDay = 1500f; // 1AM
+    const float tickLength = 10f; // 현실 10s
+    private float startTime = 420f; // 7AM
 
     // [SerializeField] private TextMeshProUGUI textUI;
     [SerializeField] private Color dayLightColor = Color.white;
@@ -16,15 +19,17 @@ public class TimeManager : SingletonBase<TimeManager>
     [SerializeField] private AnimationCurve lightColorCurve;
     [SerializeField] private Light2D globalLight;
 
-    [SerializeField] private float timeScale = 60f;
+    [SerializeField] private float timeScale = 1f;
     private float time;
-    private float Hours { get { return time / 3600f; } }
-    private float Minutes { get { return time % 3600f / 60f; } }
+    public int Hours => hours;
+    public int Minutes => minutes;
+    private int hours;
+    private int minutes;
     private int days;
 
     private int prevHour = -1;
     private int prevMinute = -1;
-    public event Action<int, int> OnTimeChanged;
+    public event Action<int> OnDateChanged;
 
     private List<TimeAgent> agents;
     private int oldPhase = 0; 
@@ -38,6 +43,7 @@ public class TimeManager : SingletonBase<TimeManager>
     private void Start()
     {
         time = startTime;
+        days = 1;
     }
 
     public void Subscribe(TimeAgent agent)
@@ -88,23 +94,31 @@ public class TimeManager : SingletonBase<TimeManager>
 
     private void TimeCalculation()
     {
-        int hour = (int)Hours;
-        int minute = (int)Minutes;
+        hours = (int)(time / (tickLength * 6f));
+        minutes = (int)((time % (tickLength * 6f) / tickLength) * 10f);
 
-        if (hour != prevHour || minute != prevMinute)
+        if (hours != prevHour || minutes != prevMinute)
         {
-            prevHour = hour;
-            prevMinute = minute;
-            OnTimeChanged?.Invoke(hour, minute);
+            prevHour = hours;
+            prevMinute = minutes;
+            
         }
-
-        // textUI.text = hour.ToString("00") + ":" + minutes.ToString("00");
     }
 
     private void StartNextDay()
     {
-        time = 0;
+        time = startTime;
         days++;
+        OnDateChanged?.Invoke(days);
+
+        if (days >= 28)
+            StartNextSeason();
     }
 
+    private void StartNextSeason()
+    {
+        days = 1;
+
+        // 
+    }
 }

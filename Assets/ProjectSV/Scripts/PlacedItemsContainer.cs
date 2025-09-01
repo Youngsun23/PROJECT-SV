@@ -10,12 +10,14 @@ public class PlacedItem
     public Transform Transform => transform;    
     public Vector3Int Position => positionOnGrid;
     // public string ObjectState => objectState;
-    public ItemConvertorData ConvertorData => data;
+    public ItemConvertorData ConvertorData => convertorData;
+    public ChestStorageData StorageData => storageData;
 
     [SerializeField] private Item placedItem;
     [SerializeField] private Transform transform;
     [SerializeField] private Vector3Int positionOnGrid;
-    [SerializeField] private ItemConvertorData data;
+    [SerializeField] private ItemConvertorData convertorData;
+    [SerializeField] private ChestStorageData storageData;
 
     ///// <summary>
     ///// Serialized JSON string which contains the state of the object
@@ -24,12 +26,13 @@ public class PlacedItem
 
     public PlacedItem(Item _item, Vector3Int _pos)
     {
-        placedItem = _item; positionOnGrid = _pos; data = null;
+        placedItem = _item; positionOnGrid = _pos; convertorData = null; storageData = null;
     }
 
     public void SetTransform(Transform _transform) { transform = _transform; } 
     // public void SetObjectState(string _string) { objectState = _string; }
-    public void SetItemConvertorData(ItemConvertorData _data) { data = _data; }
+    public void SetItemConvertorData(ItemConvertorData _data) { convertorData = _data; }
+    public void SetChestStorageData(ChestStorageData _data) { storageData = _data; }
 }
 
 [Serializable]
@@ -80,6 +83,32 @@ public class ItemConvertorData
         currentConvertingTimer = 0;
         isConvertingOver = false;
         isConverting = false;
+    }
+}
+
+[Serializable]
+public class ChestStorageData
+{
+    public List<ItemSlot> ItemSlots => itemSlots;
+    [SerializeField] private List<ItemSlot> itemSlots;
+
+    public ChestStorageData()
+    {
+        itemSlots = new List<ItemSlot>();
+        for(int i = 0; i < 30; i++)
+        {
+            itemSlots.Add(new ItemSlot());
+        }
+    }
+
+    public void SetData(List<ItemSlot> container)
+    {
+        itemSlots = container;
+    }
+
+    public void ResetData()
+    {
+        itemSlots.Clear();
     }
 }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 10
+  <UniqueID>k__BackingField: 13
   itemName: Wood
   itemInfo: "\uD3C9\uBC94\uD55C \uB098\uBB34"
   stackable: 1
@@ -21,3 +21,5 @@ MonoBehaviour:
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}
   type: 1
+  placeable: 0
+  itemPrefab: {fileID: 0}

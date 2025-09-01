@@ -6,6 +6,7 @@ public enum UIType
 {
     PANEL_START,
 
+    HUD,
     FadeInOut,
 
     PANEL_END,

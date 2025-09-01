@@ -126,12 +126,12 @@ TextureImporter:
       name: UI_Premade_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 87
-        width: 72
-        height: 141
+        x: 46
+        y: 128
+        width: 52
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +194,7 @@ TextureImporter:
         width: 193
         height: 159
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

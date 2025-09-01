@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 6
+  <UniqueID>k__BackingField: 9
   itemName: Hoe
   itemInfo: "\uD3C9\uBC94\uD55C \uAD2D\uC774"
   stackable: 0
@@ -21,3 +21,5 @@ MonoBehaviour:
   onToolActionTileMap: {fileID: 11400000, guid: 31267ca283b1b644c86f73da6cbb3f3a, type: 2}
   crop: {fileID: 0}
   type: 7
+  placeable: 0
+  itemPrefab: {fileID: 0}

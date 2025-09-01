@@ -1595,7 +1595,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   globalLight: {fileID: 1613740580}
-  timeScale: 1200
+  timeScale: 1
 --- !u!114 &1770143493
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 
+  <UniqueID>k__BackingField: 5
   itemName: Basic Chest
   itemInfo: "\uBB3C\uAC74\uC744 \uBCF4\uAD00\uD558\uB294 \uC0C1\uC790"
   stackable: 0

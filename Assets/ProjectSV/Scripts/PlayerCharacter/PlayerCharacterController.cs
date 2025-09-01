@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class PlayerCharacterController : SingletonBase<PlayerCharacterController>
 {
-    public Animator animator;
-    public PlayerCharacterToolController toolController;
-    public PlayerCharacterInteraction interaction;
+    [SerializeField] private Animator animator;
+    [SerializeField] private PlayerCharacterToolController toolController;
+    [SerializeField] private PlayerCharacterInteraction interaction;
     // public UITabController uiTabController;
-    
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
 

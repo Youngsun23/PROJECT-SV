@@ -4462,6 +4462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1338c002d3a124b85fbaff891fe997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 3202332419041899548}
 --- !u!1 &3047872200273001769
 GameObject:
   m_ObjectHideFlags: 0
@@ -10892,7 +10893,7 @@ MonoBehaviour:
   - {fileID: 6419008803809271874}
   - {fileID: 6943727718994256722}
   - {fileID: 4991887283277305576}
-  chestInventory: {fileID: 11400000, guid: 8d87afefcb5688d48b1663a9e15be8cb, type: 2}
+  chestInventory: {fileID: 0}
 --- !u!1 &7044865064176033081
 GameObject:
   m_ObjectHideFlags: 0

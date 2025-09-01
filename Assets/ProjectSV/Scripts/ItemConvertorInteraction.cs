@@ -12,7 +12,8 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     [SerializeField] private int convertedItemCount = 1;
     // [SerializeField] private float timeToConvert = 5f;
     private ItemConvertorData data;
-    public Animator animator;
+    private Animator animator;
+    private ToolBarController toolBarController;
 
     private void Awake()
     {
@@ -27,6 +28,8 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     {
         LoadConvertorData();
         animator.SetBool("Working", data.IsConverting);
+
+        toolBarController = UIManager.Singleton.GetUI<ToolBarUI>(UIType.ToolBar).GetComponent<ToolBarController>();
     }
 
     private void OnDestroy()
@@ -64,7 +67,13 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
         {
             if (GameManager.Singleton.ItemDragDropController.ConvertableCheck(convertableItem))
             {
-                StartItemConverting();
+                StartItemConverting(GameManager.Singleton.ItemDragDropController.DragDropSlot);
+                return;
+            }
+
+            if (toolBarController?.GetCurrentHoldingItem() == convertableItem)
+            {
+                StartItemConverting(toolBarController.GetCurrentItemSlot());
             }
         }
         else
@@ -78,15 +87,28 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     }
 
 
-    private void StartItemConverting()
+    private void StartItemConverting(ItemSlot toProcess)
     {
         animator.SetBool("Working", true);
 
-        data.ItemSlot.Copy(GameManager.Singleton.ItemDragDropController.DragDropSlot);
-        GameManager.Singleton.ItemDragDropController.RemoveItem();
+        data.ItemSlot.Copy(toProcess);
+        // GameManager.Singleton.ItemDragDropController.RemoveItem();
         data.ItemSlot.SetCount(1);
         data.SetIsConverting(true);
         SaveConvertorData();
+
+        if (toProcess.Item.Stackable)
+        {
+            toProcess.ChangeCount(-1);
+            if (toProcess.Count < 0)
+                toProcess.Clear();
+        }
+        else
+        {
+            toProcess.Clear();
+        }
+        // 툴바, 인벤토리
+        GameManager.Singleton.Inventory.onChange?.Invoke();
     }
 
     public void SaveConvertorData()

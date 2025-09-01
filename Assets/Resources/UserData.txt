@@ -1,0 +1,637 @@
+﻿{
+    "level": 1,
+    "exp": 0,
+    "skillPoint": 0,
+    "isMaxLevel": false,
+    "equippedItems": [],
+    "cropTiles": [],
+    "placedItems": [
+        {
+            "placedItem": {
+                "instanceID": 41980
+            },
+            "transform": {
+                "instanceID": -213742
+            },
+            "positionOnGrid": {
+                "x": 6,
+                "y": 0,
+                "z": 0
+            },
+            "convertorData": {
+                "itemSlot": {
+                    "item": {
+                        "instanceID": 0
+                    },
+                    "count": 0
+                },
+                "currentConvertingTimer": 0.0,
+                "fullConvertingTimer": 10.0,
+                "isConvertingOver": false,
+                "isConverting": false
+            },
+            "storageData": {
+                "itemSlots": [
+                    {
+                        "item": {
+                            "instanceID": 36772
+                        },
+                        "count": 2
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    }
+                ]
+            }
+        },
+        {
+            "placedItem": {
+                "instanceID": 35998
+            },
+            "transform": {
+                "instanceID": -213772
+            },
+            "positionOnGrid": {
+                "x": 8,
+                "y": 0,
+                "z": 0
+            },
+            "convertorData": {
+                "itemSlot": {
+                    "item": {
+                        "instanceID": 37500
+                    },
+                    "count": 1
+                },
+                "currentConvertingTimer": 0.0,
+                "fullConvertingTimer": 10.0,
+                "isConvertingOver": false,
+                "isConverting": true
+            },
+            "storageData": {
+                "itemSlots": [
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    }
+                ]
+            }
+        },
+        {
+            "placedItem": {
+                "instanceID": 41980
+            },
+            "transform": {
+                "instanceID": -216230
+            },
+            "positionOnGrid": {
+                "x": 9,
+                "y": -2,
+                "z": 0
+            },
+            "convertorData": {
+                "itemSlot": {
+                    "item": {
+                        "instanceID": 0
+                    },
+                    "count": 0
+                },
+                "currentConvertingTimer": 0.0,
+                "fullConvertingTimer": 10.0,
+                "isConvertingOver": false,
+                "isConverting": false
+            },
+            "storageData": {
+                "itemSlots": [
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    }
+                ]
+            }
+        }
+    ]
+}

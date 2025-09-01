@@ -18,6 +18,12 @@ public class ItemPanel : MonoBehaviour
         Inventory.onChange -= Show;
     }
 
+    private void OnEnable()
+    {
+        if(Inventory != null)
+            Show();
+    }
+
     public void Initialize()
     {
         SetIndex();

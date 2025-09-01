@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: CopperOre
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 
+  <UniqueID>k__BackingField: 7
   itemName: IronOre
   itemInfo: 
   stackable: 1

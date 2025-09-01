@@ -30,7 +30,7 @@ public class GameManager : SingletonBase<GameManager>
         StartCoroutine(DelayedInitialize());
     }
 
-    private IEnumerator DelayedInitialize() // 타이밍 문제
+    private IEnumerator DelayedInitialize() // 타이밍 문제?
     {
         yield return null;
 
@@ -43,6 +43,7 @@ public class GameManager : SingletonBase<GameManager>
             UIManager.Show<DragDropUI>(UIType.DragDrop);
             ItemDragDropController = UIManager.Singleton.GetUI<DragDropUI>(UIType.DragDrop).GetComponent<ItemDragDropController>();
             dialogueManager = UIManager.Singleton.GetUI<DialogueUI>(UIType.Dialogue).GetComponent<DialogueManager>();
+            UIManager.Show<HUDUI>(UIType.HUD);
 
             initialized = true;
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 4
+  <UniqueID>k__BackingField: 3
   itemName: Carrot
   itemInfo: "\uB2F9\uB098\uADC0\uC758 \uAC04\uC2DD"
   stackable: 1
@@ -21,3 +21,5 @@ MonoBehaviour:
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}
   type: 4
+  placeable: 0
+  itemPrefab: {fileID: 0}
