@@ -42,3 +42,13 @@ public class Item : GameDataBase
     [SerializeField] private bool placeable;
     [SerializeField] private GameObject itemPrefab;
 }
+
+[CreateAssetMenu(menuName = "Data/Item/Weapon")]
+public class WeaponItem : Item
+{
+    public int Damage => damage;
+    public float Radius => radius;
+
+    [SerializeField] private int damage;
+    [SerializeField] private float radius;
+}

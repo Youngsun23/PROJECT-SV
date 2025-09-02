@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToolAction : ScriptableObject
 {
-    public virtual bool OnApply(Vector2 pos)
+    public virtual bool OnApply(Vector2 pos, Item usedItem)
     {
         Debug.LogWarning("OnApply() Override Needed");
         return true;

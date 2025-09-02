@@ -76,7 +76,7 @@ public class PlayerCharacterToolController : MonoBehaviour
             return false;
 
         // animator.SetTrigger("Act");
-        bool actionComplete = item.OnToolAction.OnApply(position);
+        bool actionComplete = item.OnToolAction.OnApply(position, item);
         return actionComplete;
     }
 

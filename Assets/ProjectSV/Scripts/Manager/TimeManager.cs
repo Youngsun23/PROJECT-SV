@@ -9,7 +9,7 @@ public class TimeManager : SingletonBase<TimeManager>
     // 7:00AM ~ 1:00AM (하루 18시간)
     // 1틱 = 게임 10m = 현실 10s
     // 하루 = 108틱 = 현실 18m
-    const float secondsInDay = 1500f; // 1AM
+    const float secondsInDay = 1500f; // 1AM~강제취침
     const float tickLength = 10f; // 현실 10s
     private float startTime = 420f; // 7AM
 
@@ -101,13 +101,21 @@ public class TimeManager : SingletonBase<TimeManager>
         {
             prevHour = hours;
             prevMinute = minutes;
-            
         }
     }
 
-    private void StartNextDay()
+    //private void PhaseCalculation()
+    //{
+    //    return (int)(time / phaseLength) + (int)(days * phaseInDay);
+    //}
+
+    public void StartNextDay()
     {
+        int skippedTicks = TimeSkipCalculation(time);
+        SkipTick(skippedTicks);
+
         time = startTime;
+        oldPhase = 0;
         days++;
         OnDateChanged?.Invoke(days);
 
@@ -120,5 +128,25 @@ public class TimeManager : SingletonBase<TimeManager>
         days = 1;
 
         // 
+    }
+
+    private int TimeSkipCalculation(float bedTime)
+    {
+        float skippedSeconds = 360 + (1500f - bedTime);
+        int skippedTicks = (int)(skippedSeconds / tickLength);
+        Debug.Log($"SkippedSeconds: {skippedSeconds} / SkippedTicks: {skippedTicks}");
+        return skippedTicks;
+    }
+
+    public void SkipTick(int tick)
+    {
+        for (int i = 0; i < tick; i++)
+        {
+            for (int j = 0; j < agents.Count; j++)
+            {
+                agents[j]?.InvokeTick();
+                // Debug.Log($"밤 중에 돌아간 틱 횟수: {skippedTicks} - 대상({agents.Count})");
+            }
+        }
     }
 }

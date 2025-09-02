@@ -11,5 +11,7 @@ public class SaveInteraction : MonoBehaviour, IInteractable
         CropManager.Singleton.TileMapCropManger.SaveCropTilesData();
         PlaceableObjectsManager.Singleton.SavePlacedItemsData();
         UserDataManager.Singleton.Save();
+
+        TimeManager.Singleton.StartNextDay();
     }
 }

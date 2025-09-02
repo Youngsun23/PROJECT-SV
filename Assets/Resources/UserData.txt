@@ -4,11 +4,60 @@
     "skillPoint": 0,
     "isMaxLevel": false,
     "equippedItems": [],
-    "cropTiles": [],
+    "cropTiles": [
+        {
+            "position": {
+                "x": 0,
+                "y": -7,
+                "z": 0
+            },
+            "currentGrowthTimer": 1,
+            "cropData": {
+                "instanceID": 42488
+            },
+            "currentGrowthStage": 0,
+            "isMature": false,
+            "renderer": {
+                "instanceID": -17776
+            }
+        },
+        {
+            "position": {
+                "x": -1,
+                "y": -7,
+                "z": 0
+            },
+            "currentGrowthTimer": 1,
+            "cropData": {
+                "instanceID": 42488
+            },
+            "currentGrowthStage": 0,
+            "isMature": false,
+            "renderer": {
+                "instanceID": -17770
+            }
+        },
+        {
+            "position": {
+                "x": -2,
+                "y": -7,
+                "z": 0
+            },
+            "currentGrowthTimer": 1,
+            "cropData": {
+                "instanceID": 42488
+            },
+            "currentGrowthStage": 0,
+            "isMature": false,
+            "renderer": {
+                "instanceID": -17764
+            }
+        }
+    ],
     "placedItems": [
         {
             "placedItem": {
-                "instanceID": 41980
+                "instanceID": 0
             },
             "transform": {
                 "instanceID": -213742
@@ -34,7 +83,7 @@
                 "itemSlots": [
                     {
                         "item": {
-                            "instanceID": 36772
+                            "instanceID": 0
                         },
                         "count": 2
                     },
@@ -217,7 +266,7 @@
         },
         {
             "placedItem": {
-                "instanceID": 35998
+                "instanceID": 0
             },
             "transform": {
                 "instanceID": -213772
@@ -230,14 +279,14 @@
             "convertorData": {
                 "itemSlot": {
                     "item": {
-                        "instanceID": 37500
+                        "instanceID": 0
                     },
                     "count": 1
                 },
-                "currentConvertingTimer": 0.0,
+                "currentConvertingTimer": 10.0,
                 "fullConvertingTimer": 10.0,
-                "isConvertingOver": false,
-                "isConverting": true
+                "isConvertingOver": true,
+                "isConverting": false
             },
             "storageData": {
                 "itemSlots": [
@@ -426,7 +475,7 @@
         },
         {
             "placedItem": {
-                "instanceID": 41980
+                "instanceID": 0
             },
             "transform": {
                 "instanceID": -216230
@@ -446,6 +495,424 @@
                 "currentConvertingTimer": 0.0,
                 "fullConvertingTimer": 10.0,
                 "isConvertingOver": false,
+                "isConverting": false
+            },
+            "storageData": {
+                "itemSlots": [
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    }
+                ]
+            }
+        },
+        {
+            "placedItem": {
+                "instanceID": 41988
+            },
+            "transform": {
+                "instanceID": -13188
+            },
+            "positionOnGrid": {
+                "x": 9,
+                "y": 2,
+                "z": 0
+            },
+            "convertorData": {
+                "itemSlot": {
+                    "item": {
+                        "instanceID": 0
+                    },
+                    "count": 0
+                },
+                "currentConvertingTimer": 0.0,
+                "fullConvertingTimer": 10.0,
+                "isConvertingOver": false,
+                "isConverting": false
+            },
+            "storageData": {
+                "itemSlots": [
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    },
+                    {
+                        "item": {
+                            "instanceID": 0
+                        },
+                        "count": 0
+                    }
+                ]
+            }
+        },
+        {
+            "placedItem": {
+                "instanceID": 36008
+            },
+            "transform": {
+                "instanceID": -13212
+            },
+            "positionOnGrid": {
+                "x": 3,
+                "y": -1,
+                "z": 0
+            },
+            "convertorData": {
+                "itemSlot": {
+                    "item": {
+                        "instanceID": 37510
+                    },
+                    "count": 1
+                },
+                "currentConvertingTimer": 10.0,
+                "fullConvertingTimer": 10.0,
+                "isConvertingOver": true,
                 "isConverting": false
             },
             "storageData": {

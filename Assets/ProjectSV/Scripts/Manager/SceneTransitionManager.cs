@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -74,4 +75,9 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
         FadeUI.FadeIn();
         yield return new WaitForSeconds(1);
     }
+
+    //private void OnDrawGizmos()
+    //{
+    //    Handles.Label(transform.position, "to "); // 연결되는 씬 정보
+    //}
 }

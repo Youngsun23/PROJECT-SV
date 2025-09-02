@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
@@ -52,6 +53,32 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         characterAttributeComponent.SetAttribute(AttributeTypes.PickupRadius, characterData.PickupRadius, totalEquipmentModifier.TryGetValue(AttributeTypes.PickupRadius, out float mPickupRadius) ? mPickupRadius : 0f);
 
         // HUDUI.Instance.UpdateHUDUIHP(MaxHP, CurHP);
+    }
+
+    public void Attack(Item usedWeapon)
+    {
+        // usedWeapon의 정보 가져와서 그만큼의 사거리, 속도, 대미지
+        WeaponItem weapon = usedWeapon as WeaponItem;
+        Collider2D[] overlapObjects = Physics2D.OverlapCircleAll(transform.position, weapon.Radius);
+        if (overlapObjects?.Length == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < overlapObjects.Length; i++)
+        {
+            Vector2 position = overlapObjects[i].transform.position;
+            Vector2 direction = (position - (Vector2)transform.position).normalized;
+            float dotAngle = Vector2.Dot(transform.up, direction);
+            if (dotAngle > 0.5f)
+            {
+                if (overlapObjects[i].CompareTag("Monster"))
+                {
+                    var damageInterface = overlapObjects[i].GetComponent<IDamage>();
+                    damageInterface.TakeDamage(this, weapon.Damage);
+                    Debug.Log($"{overlapObjects[i].name}에게 {weapon.Damage}만큼의 피해");
+                }
+            }
+        }
     }
 
     public GameObject GetActor()

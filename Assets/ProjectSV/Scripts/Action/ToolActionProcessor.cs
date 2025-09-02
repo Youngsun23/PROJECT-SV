@@ -16,7 +16,7 @@ public class ToolActionProcessor : ToolAction
     [SerializeField] private float interactableDistance = 1f;
     [SerializeField] private List<HitNodeType> isHittableTypes;
 
-    public override bool OnApply(Vector2 pos)
+    public override bool OnApply(Vector2 pos, Item usedItem)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(pos, interactableDistance);
         foreach (Collider2D col in colliders)
