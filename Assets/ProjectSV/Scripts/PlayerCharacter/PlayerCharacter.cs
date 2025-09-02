@@ -60,18 +60,48 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         // usedWeapon의 정보 가져와서 그만큼의 사거리, 속도, 대미지
         WeaponItem weapon = usedWeapon as WeaponItem;
         Collider2D[] overlapObjects = Physics2D.OverlapCircleAll(transform.position, weapon.Radius);
-        if (overlapObjects?.Length == 0)
-        {
-            return;
-        }
+
+        if (overlapObjects?.Length == 0) return;
+
         for (int i = 0; i < overlapObjects.Length; i++)
         {
-            Vector2 position = overlapObjects[i].transform.position;
-            Vector2 direction = (position - (Vector2)transform.position).normalized;
-            float dotAngle = Vector2.Dot(transform.up, direction);
-            if (dotAngle > 0.5f)
+            // 버전1) 캐릭터가 바라보고 있는 방향 기준 내적 0.5f 이내 부채꼴 범위
+            //Vector2 position = overlapObjects[i].transform.position;
+            //Vector2 direction = (position - (Vector2)transform.position).normalized;
+
+            //float dotAngle = Vector2.Dot(PlayerCharacterController.Singleton.lastMoveVector, direction);
+            //DrawFOVLines(weapon.Radius, 60f);
+            //if (dotAngle > 0.5f)
+            //{
+            //    if (overlapObjects[i].CompareTag("Monster"))
+            //    {
+            //        var damageInterface = overlapObjects[i].GetComponent<IDamage>();
+            //        damageInterface.TakeDamage(this, weapon.Damage);
+            //        Debug.Log($"{overlapObjects[i].name}에게 {weapon.Damage}만큼의 피해");
+            //    }
+            //}
+
+            // 버전2) 애니메이션이 우측 90도, 좌측 30도, 총합 120 정도로 치우쳐 있어서 그거랑 맞추기 위해 외적까지 추가한 버전
+            // 얼추 맞는데, 완전 일치하게 하려면 골치 아픈 조정이 필요할듯...대체 왜 애니메이션이 좌우대칭이 아닌걸까
+            Vector2 forward = PlayerCharacterController.Singleton.lastMoveVector;
+            Vector2 targetPos = overlapObjects[i].transform.position;
+            Vector2 toTarget = (targetPos - (Vector2)transform.position).normalized;
+
+            float dot = Vector2.Dot(forward, toTarget);
+            float cross = forward.x * toTarget.y - forward.y * toTarget.x;
+            bool hit = false;
+            // 오른쪽 80도
+            if (cross < 0 && dot > Mathf.Cos(80f * Mathf.Deg2Rad))
+                hit = true;
+            // 왼쪽 40도
+            if (cross > 0 && dot > Mathf.Cos(40f * Mathf.Deg2Rad))
+                hit = true;
+
+            DrawAsymmetricFOVLines(weapon.Radius, 90f, 30f);
+
+            if (hit)
             {
-                if (overlapObjects[i].CompareTag("Monster"))
+                if (overlapObjects[i].CompareTag("Monster") || overlapObjects[i].CompareTag("Breakable"))
                 {
                     var damageInterface = overlapObjects[i].GetComponent<IDamage>();
                     damageInterface.TakeDamage(this, weapon.Damage);
@@ -79,6 +109,34 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
                 }
             }
         }
+    }
+
+    private void DrawFOVLines(float radius, float fovAngle)
+    {
+        Vector2 forward = PlayerCharacterController.Singleton.lastMoveVector;
+
+        float halfFOV = fovAngle / 2f;
+
+        // 왼쪽 끝 방향
+        Vector2 leftDir = Quaternion.Euler(0, 0, -halfFOV) * forward;
+        Debug.DrawLine(transform.position, (Vector2)transform.position + leftDir * radius, Color.red);
+
+        // 오른쪽 끝 방향
+        Vector2 rightDir = Quaternion.Euler(0, 0, halfFOV) * forward;
+        Debug.DrawLine(transform.position, (Vector2)transform.position + rightDir * radius, Color.red);
+    }
+
+    private void DrawAsymmetricFOVLines(float radius, float rightAngle, float leftAngle)
+    {
+        Vector2 forward = PlayerCharacterController.Singleton.lastMoveVector;
+
+        // 왼쪽 끝
+        Vector2 leftDir = Quaternion.Euler(0, 0, leftAngle) * forward;
+        Debug.DrawLine(transform.position, (Vector2)transform.position + leftDir * radius, Color.yellow);
+
+        // 오른쪽 끝
+        Vector2 rightDir = Quaternion.Euler(0, 0, -rightAngle) * forward;
+        Debug.DrawLine(transform.position, (Vector2)transform.position + rightDir * radius, Color.yellow);
     }
 
     public GameObject GetActor()
@@ -91,6 +149,8 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         // 애니메이터
         // 이펙트
         // 카메라 쉐이크
+        // 대미지
+        OnScreenMessageManager.Singleton.ShowMessageOnScreen(transform.position, damage.ToString());
 
         characterAttributeComponent.ChangeBuffedAttribute(AttributeTypes.HP, -damage);
         float currentHP = characterAttributeComponent.GetAttribute(AttributeTypes.HP).CurrentValue;

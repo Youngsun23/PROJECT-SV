@@ -80,7 +80,8 @@ public class CraftBoxPanel : MonoBehaviour
 
         for (int i = 0; i < CraftBox.ItemSlots.Count; i++)
         {
-            result[i] = CraftBox.ItemSlots[i]?.Item?.Type ?? ItemType.None;
+            // 이 스크립트 전체 안 쓸건데 에러 나서 이것만
+            // result[i] = CraftBox.ItemSlots[i]?.Item?.Type ?? ItemType.None;
         }
 
         return result;

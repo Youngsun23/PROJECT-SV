@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterCombatBase : MonoBehaviour, IActor, IDamage
+public class BreakbleObject : MonoBehaviour, IDamage
 {
     [SerializeField] private int maxHP;
     [SerializeField] private int currentHP;
 
     private void Start()
     {
+        maxHP = Random.Range(1, 3);
         currentHP = maxHP;
-    }
-
-    public GameObject GetActor()
-    {
-        return this.gameObject;
     }
 
     public void TakeDamage(IActor actor, int damage)
@@ -22,10 +18,8 @@ public class MonsterCombatBase : MonoBehaviour, IActor, IDamage
         // 애니메이터
         // 이펙트
         // 카메라 쉐이크
-        // 대미지 인디케이터
-        OnScreenMessageManager.Singleton.ShowMessageOnScreen(transform.position, damage.ToString());
 
-        currentHP -= damage;
+        currentHP--;
 
         if (currentHP <= 0f)
         {
@@ -37,5 +31,4 @@ public class MonsterCombatBase : MonoBehaviour, IActor, IDamage
     {
         Destroy(this.gameObject);
     }
-    
 }

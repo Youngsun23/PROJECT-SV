@@ -17,6 +17,18 @@ public enum ItemType
     Else
 }
 
+public enum TriggerType
+{
+    None,
+
+    Axe,
+    Hoe,
+    Sword,
+    Seed,
+
+    Else
+}
+
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : GameDataBase
 {
@@ -27,7 +39,7 @@ public class Item : GameDataBase
     public ToolAction OnToolAction => onToolAction;
     public ToolAction OnToolActionTileMap => onToolActionTileMap;
     public CropData CropData => crop;
-    public ItemType Type => type;
+    public TriggerType TriggerType => type;
     public bool Placeable => placeable;
     public GameObject ItemPrefab => itemPrefab;
 
@@ -38,17 +50,7 @@ public class Item : GameDataBase
     [SerializeField] private ToolAction onToolAction;
     [SerializeField] private ToolAction onToolActionTileMap;
     [SerializeField] private CropData crop;
-    [SerializeField] private ItemType type;
+    [SerializeField] private TriggerType type;
     [SerializeField] private bool placeable;
     [SerializeField] private GameObject itemPrefab;
-}
-
-[CreateAssetMenu(menuName = "Data/Item/Weapon")]
-public class WeaponItem : Item
-{
-    public int Damage => damage;
-    public float Radius => radius;
-
-    [SerializeField] private int damage;
-    [SerializeField] private float radius;
 }

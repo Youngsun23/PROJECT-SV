@@ -20,6 +20,6 @@ MonoBehaviour:
   onToolAction: {fileID: 0}
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}
-  type: 0
+  type: 5
   placeable: 0
   itemPrefab: {fileID: 0}

@@ -75,7 +75,8 @@ public class PlayerCharacterToolController : MonoBehaviour
         if (item == null || item.OnToolAction == null)
             return false;
 
-        // animator.SetTrigger("Act");
+        // item마다 Trigger 뭔지 string(enumType)으로 둬서 애니메이션 호출? 그냥 item.name으로?
+        animator.SetTrigger(item.TriggerType.ToString());
         bool actionComplete = item.OnToolAction.OnApply(position, item);
         return actionComplete;
     }

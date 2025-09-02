@@ -9,17 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
-  m_Name: Wood
+  m_Script: {fileID: 11500000, guid: c08ca1f1b6d99414fac1ab3be62c2d05, type: 3}
+  m_Name: WeaponSword
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 13
-  itemName: Wood
-  itemInfo: "\uD3C9\uBC94\uD55C \uB098\uBB34"
-  stackable: 1
-  icon: {fileID: -676822336, guid: e3ae41787212bb94f8e2af78b644bd77, type: 3}
-  onToolAction: {fileID: 0}
+  <UniqueID>k__BackingField: 
+  itemName: WeaponSword
+  itemInfo: 
+  stackable: 0
+  icon: {fileID: 131449278, guid: d5581b5c4d14ea540b9faff5235642b6, type: 3}
+  onToolAction: {fileID: 11400000, guid: a8500ce5da6001944bb45e0be6bc1b41, type: 2}
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}
-  type: 5
+  type: 3
   placeable: 0
   itemPrefab: {fileID: 0}
+  damage: 3
+  radius: 2.5

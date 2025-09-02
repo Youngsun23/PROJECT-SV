@@ -20,6 +20,6 @@ MonoBehaviour:
   onToolAction: {fileID: 0}
   onToolActionTileMap: {fileID: 11400000, guid: 3de52c40e66593549ab2d4871146d250, type: 2}
   crop: {fileID: 0}
-  type: 0
+  type: 5
   placeable: 1
   itemPrefab: {fileID: 7511843243587858732, guid: 3c6117197bd9acc4a8f69ac14609ee4d, type: 3}

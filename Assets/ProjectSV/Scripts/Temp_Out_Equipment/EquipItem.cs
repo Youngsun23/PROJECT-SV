@@ -21,7 +21,7 @@ public interface IEquipable
     void RemoveEffect();
 }
 
-[CreateAssetMenu (menuName = "Data/EquipItem")]
+[CreateAssetMenu (menuName = "Data/Item/Equipment")]
 public class EquipItem : Item, IEquipable
 {
     public SerializableDictionary<AttributeTypes, float> Effects => effects;
