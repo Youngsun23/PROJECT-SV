@@ -15,7 +15,7 @@ public class EntryPoint : MonoBehaviour // ToDo: 별개의 클래스로 분리
 
     // public event Action OnTilemapSet;
 
-    private void Awake()
+    private void Awake() // start?
     {
         if(plowMap != null)
             CropManager.Singleton.SetPlowTargetTileMap(plowMap);
@@ -38,7 +38,13 @@ public class EntryPoint : MonoBehaviour // ToDo: 별개의 클래스로 분리
                 PlaceableObjectsManager.Singleton.InitilizeScene();
             }
         }
+    }
 
-        CameraSystem.Singleton.SetCameraConfiner(confiner);
+    private void Start()
+    {
+        if (confiner != null)
+        {
+            CameraSystem.Singleton.SetCameraConfiner(confiner);
+        }
     }
 }

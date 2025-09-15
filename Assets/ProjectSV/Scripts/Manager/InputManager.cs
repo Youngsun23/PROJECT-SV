@@ -11,6 +11,7 @@ public class InputManager : SingletonBase<InputManager>
     public System.Action OnSkillTabTogglePerformed;
     public System.Action OnCraftTabTogglePerformed;
     public System.Action OnEquipmentTabTogglePerformed;
+    public System.Action OnRunTogglePerformed;
 
     public Vector2 MovementInput { get; private set; }
 
@@ -53,5 +54,10 @@ public class InputManager : SingletonBase<InputManager>
     public void OnMove(InputValue input)
     {
         MovementInput = input.Get<Vector2>();
+    }
+
+    public void OnRunToggle()
+    {
+        OnRunTogglePerformed?.Invoke();
     }
 }

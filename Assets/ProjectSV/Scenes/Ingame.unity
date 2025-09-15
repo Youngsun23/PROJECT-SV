@@ -600,6 +600,7 @@ MonoBehaviour:
   toolController: {fileID: 572677909}
   interaction: {fileID: 572677908}
   isMoving: 0
+  isRunning: 0
 --- !u!61 &572677911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3231,6 +3232,7 @@ MonoBehaviour:
   toolController: {fileID: 8384917099106744519}
   interaction: {fileID: 8624039944357887171}
   isMoving: 0
+  isRunning: 0
 --- !u!1 &7081794874047320210
 GameObject:
   m_ObjectHideFlags: 0

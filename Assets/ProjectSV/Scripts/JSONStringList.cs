@@ -1,0 +1,30 @@
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
+//[CreateAssetMenu (menuName = "JSON String List")]
+//public class JSONStringList : MonoBehaviour
+//{
+//    public List<string> strings;
+
+//    public void SetString(string jsonString, int idInList)
+//    {
+//        if(strings.Count <= idInList)
+//        {
+//            int count = strings.Count - idInList + 1;
+
+//            while(count > 0 )
+//            {
+//                strings.Add("");
+//                count--;
+//            }
+//        }
+//        strings[idInList] = jsonString;
+//    }
+
+//    public string GetString(int idInList)
+//    {
+//        if (idInList >= strings.Count) return "";
+//        return strings[idInList];
+//    }
+//}

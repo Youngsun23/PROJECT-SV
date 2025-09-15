@@ -12,6 +12,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     // [SerializeField] private float moveSpeed;
     public Vector2 lastMoveVector { get; private set; }
     public bool isMoving;
+    public bool isRunning;
 
     protected override void Awake()
     {
@@ -28,6 +29,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         //InputManager.Singleton.OnSkillTabTogglePerformed += ExecuteSkillTabToggle;
         InputManager.Singleton.OnCraftTabTogglePerformed += ExecuteCraftTabToggle;
         InputManager.Singleton.OnEquipmentTabTogglePerformed += ExecuteEquipmentTabToggle;
+        InputManager.Singleton.OnRunTogglePerformed += ExecuteRunToggle;
     }
 
     private void OnDestroy()
@@ -38,6 +40,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         //InputManager.Singleton.OnSkillTabTogglePerformed -= ExecuteSkillTabToggle;
         InputManager.Singleton.OnCraftTabTogglePerformed -= ExecuteCraftTabToggle;
         InputManager.Singleton.OnEquipmentTabTogglePerformed -= ExecuteEquipmentTabToggle;
+        InputManager.Singleton.OnRunTogglePerformed -= ExecuteRunToggle;
     }
 
     private void ExecuteUseTool()
@@ -85,6 +88,12 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         UIManager.Singleton.ToggleUI<EquipmentUI>(UIType.TempEquipment);
     }
 
+    private void ExecuteRunToggle()
+    {
+        isRunning = !isRunning;
+        animator.SetBool("isRunning", isRunning);
+    }
+
     private void Update()
     {
         Vector2 input = InputManager.Singleton.MovementInput;
@@ -103,6 +112,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
 
         isMoving = (horizontal != 0 || vertical != 0);
         animator.SetBool("isMoving", isMoving);
+        
         if (isMoving)
         {
             lastMoveVector = input.normalized;
@@ -114,5 +124,7 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     public void Move(Vector2 input)
     {
         rigidBody.velocity = input * PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.MoveSpeed);
+        if (isRunning)
+            rigidBody.velocity *= 1.5f;
     }
 }

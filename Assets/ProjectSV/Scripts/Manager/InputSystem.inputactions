@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "RunToggle",
+                    "type": "Button",
+                    "id": "f56a8527-ef74-4be0-9bc6-04d5cffe6b60",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "UseTool",
                     "type": "Button",
                     "id": "f0949c58-1469-4ecb-9f30-cca93f0c4552",
@@ -188,6 +197,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "EquipmentTabToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "823086b1-f982-472c-8814-3a2c57fdda06",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -10,6 +10,9 @@ public class OnScreenMessageManager : SingletonBase<OnScreenMessageManager>
 
     public void ShowMessageOnScreen(Vector3 worldPos, string message)
     {
+        worldPos.x += Random.Range(-0.5f, 0.5f);
+        worldPos.y += Random.Range(-0.5f, 0.5f);
+
         GameObject textGO = Instantiate(textPrefab, transform);
         textGO.transform.position = worldPos;
 

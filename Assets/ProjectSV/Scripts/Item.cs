@@ -29,7 +29,7 @@ public enum TriggerType
     Else
 }
 
-[CreateAssetMenu(menuName = "Data/Item")]
+[CreateAssetMenu(menuName = "Data/Item/Item")]
 public class Item : GameDataBase
 {
     public string Name => itemName;

@@ -57,7 +57,7 @@ public class ItemConvertorInteraction : MonoBehaviour, IInteractable/*, IPersist
     {
         if (data == null) return;
 
-        if (data.IsConvertingOver)
+        if (data.IsConvertingOver) // ToDo: Update말고 딴 곳으로 옮겨야지
             animator.SetBool("Working", false);
     }
 
