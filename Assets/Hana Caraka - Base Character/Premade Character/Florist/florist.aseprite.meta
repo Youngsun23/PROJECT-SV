@@ -1,0 +1,893 @@
+fileFormatVersion: 2
+guid: 71de13ab863027641b7872ae3feb1973
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: florist_Frame_4
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 15
+      height: 15
+    spriteID: 9e92d08e71d5edb4c999528bcfe637bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: florist_Frame_5
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 188
+      width: 15
+      height: 14
+    spriteID: 59cc99d4112edb143a1a0cccb3192f08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 188}
+  - name: florist_Frame_6
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 210
+      width: 15
+      height: 14
+    spriteID: d40ee60c7e7e7354595dea260cd63e81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 210}
+  - name: florist_Frame_7
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 195
+      width: 15
+      height: 15
+    spriteID: bdefc872545e2bc4cbfaa0d1b4444fcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 195}
+  - name: florist_Frame_8
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 218
+      width: 15
+      height: 15
+    spriteID: f0f4ee2a1a3f01a4aa0d7b8a4583a42d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 218}
+  - name: florist_Frame_9
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 232
+      width: 15
+      height: 14
+    spriteID: 55329dc54dd9612449f44a1ba7211080
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 232}
+  - name: florist_Frame_10
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 4
+      width: 15
+      height: 14
+    spriteID: 873cb9cd9fb2cad4595570ba35d74077
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 4}
+  - name: florist_Frame_11
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 4
+      width: 15
+      height: 15
+    spriteID: fb60b256636f526459a45497da7f08c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 4}
+  - name: florist_Frame_12
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 27
+      width: 15
+      height: 15
+    spriteID: 38e8a3f08d393cb449437755dc93ac83
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 27}
+  - name: florist_Frame_13
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 15
+      height: 16
+    spriteID: 174c7fa64a5d36b49ae98c93e17c2cf5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 124}
+  - name: florist_Frame_14
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 50
+      width: 15
+      height: 15
+    spriteID: 188ada05eb08fcc44b0cde606ab20ead
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 50}
+  - name: florist_Frame_15
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 26
+      width: 15
+      height: 14
+    spriteID: 3b0f15b3b771cef47bb2b024d2ff709b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 26}
+  - name: florist_Frame_16
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 73
+      width: 15
+      height: 15
+    spriteID: 9e979d6c315bbca42aafa4173bfdbda1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 73}
+  - name: florist_Frame_17
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 15
+      height: 16
+    spriteID: 20740086ea6711a4e989524144ce4440
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 148}
+  - name: florist_Frame_18
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 96
+      width: 15
+      height: 15
+    spriteID: 8439630987b6c3841ba8e2c4684ccc2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 96}
+  - name: florist_Frame_19
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 48
+      width: 15
+      height: 14
+    spriteID: 0fece54a0b3f0f44b89f1ae664ac6dd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 48}
+  - name: florist_Frame_20
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 119
+      width: 15
+      height: 15
+    spriteID: 53c1b22a80d5da448b64b9141c99fd92
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 119}
+  - name: florist_Frame_21
+    originalName: 
+    pivot: {x: 0.47058824, y: -1.9375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 17
+      height: 16
+    spriteID: 71f11d158e64ce446976c0561d625378
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: florist_Frame_22
+    originalName: 
+    pivot: {x: 0.49999997, y: -1.8823531}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 16
+      height: 17
+    spriteID: 8ee64cef6981df3418a35390a98c95a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: florist_Frame_0
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 142
+      width: 15
+      height: 15
+    spriteID: 34a71c1d712b1a1449aa9308dc00d3f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 142}
+  - name: florist_Frame_1
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 165
+      width: 15
+      height: 15
+    spriteID: ffc060a6c0b5aa44bbe7354cdb155e0d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 165}
+  - name: florist_Frame_2
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 70
+      width: 15
+      height: 14
+    spriteID: 21e65d2f3621dc341b9259e9403ccb4d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 70}
+  - name: florist_Frame_3
+    originalName: 
+    pivot: {x: 0.5333333, y: -2.357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 92
+      width: 15
+      height: 14
+    spriteID: 02fbd82ff69d613489587d4e7f95cbc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 92}
+  - name: florist_Frame_23
+    originalName: 
+    pivot: {x: 0.5263158, y: -1.8823531}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 19
+      height: 17
+    spriteID: 2728817d852491c44ac541553880e65c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: florist_Frame_24
+    originalName: 
+    pivot: {x: 0.5263158, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 29
+      width: 19
+      height: 15
+    spriteID: 37ceff3794b5b56498895fcccd08de66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 29}
+  - name: florist_Frame_25
+    originalName: 
+    pivot: {x: 0.52941185, y: -2.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 101
+      width: 17
+      height: 15
+    spriteID: 84748cd7645f19b44abb0268bfb16e1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 101}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 2037159557
+    name: florist
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: florist_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 9e92d08e71d5edb4c999528bcfe637bb
+    - name: florist_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 59cc99d4112edb143a1a0cccb3192f08
+    - name: florist_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: d40ee60c7e7e7354595dea260cd63e81
+    - name: florist_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: bdefc872545e2bc4cbfaa0d1b4444fcd
+    - name: florist_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: f0f4ee2a1a3f01a4aa0d7b8a4583a42d
+    - name: florist_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 55329dc54dd9612449f44a1ba7211080
+    - name: florist_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 873cb9cd9fb2cad4595570ba35d74077
+    - name: florist_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: fb60b256636f526459a45497da7f08c3
+    - name: florist_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 38e8a3f08d393cb449437755dc93ac83
+    - name: florist_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 16
+      spriteId: 174c7fa64a5d36b49ae98c93e17c2cf5
+    - name: florist_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 188ada05eb08fcc44b0cde606ab20ead
+    - name: florist_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 3b0f15b3b771cef47bb2b024d2ff709b
+    - name: florist_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 9e979d6c315bbca42aafa4173bfdbda1
+    - name: florist_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 16
+      spriteId: 20740086ea6711a4e989524144ce4440
+    - name: florist_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 8439630987b6c3841ba8e2c4684ccc2d
+    - name: florist_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 0fece54a0b3f0f44b89f1ae664ac6dd7
+    - name: florist_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 53c1b22a80d5da448b64b9141c99fd92
+    - name: florist_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 31
+        width: 17
+        height: 16
+      spriteId: 71f11d158e64ce446976c0561d625378
+    - name: florist_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 32
+        width: 16
+        height: 17
+      spriteId: 8ee64cef6981df3418a35390a98c95a1
+    - name: florist_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: 34a71c1d712b1a1449aa9308dc00d3f8
+    - name: florist_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 15
+      spriteId: ffc060a6c0b5aa44bbe7354cdb155e0d
+    - name: florist_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 21e65d2f3621dc341b9259e9403ccb4d
+    - name: florist_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 33
+        width: 15
+        height: 14
+      spriteId: 02fbd82ff69d613489587d4e7f95cbc3
+    - name: florist_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 32
+        width: 19
+        height: 17
+      spriteId: 2728817d852491c44ac541553880e65c
+    - name: florist_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 33
+        width: 19
+        height: 15
+      spriteId: 37ceff3794b5b56498895fcccd08de66
+    - name: florist_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 33
+        width: 17
+        height: 15
+      spriteId: 84748cd7645f19b44abb0268bfb16e1a
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 80, y: 80}

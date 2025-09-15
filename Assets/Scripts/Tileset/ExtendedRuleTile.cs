@@ -18,8 +18,8 @@ public class ExtendedRuleTile : RuleTile
  
         switch (neighbor)
         {
-            case TilingRule.Neighbor.This: return type == otherTile.type ;
-            case TilingRule.Neighbor.NotThis: return type != otherTile.type;
+            case TilingRuleOutput.Neighbor.This: return type == otherTile.type;
+            case TilingRuleOutput.Neighbor.NotThis: return type != otherTile.type;
         }
         return true;
  
