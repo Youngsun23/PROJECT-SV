@@ -3130,7 +3130,8 @@ GameObject:
   - component: {fileID: 8281857415267537546}
   - component: {fileID: 5084592441546504758}
   - component: {fileID: 8624039944357887171}
-  m_Layer: 0
+  - component: {fileID: 8624039944357887172}
+  m_Layer: 10
   m_Name: PlayerCharacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3574,6 +3575,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetDistance: 1
   interactableRange: 1.2
+--- !u!114 &8624039944357887172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550923345135030248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a59c935b018ff47a350e3fec2f4375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

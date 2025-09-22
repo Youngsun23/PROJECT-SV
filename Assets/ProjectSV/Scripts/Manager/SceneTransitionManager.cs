@@ -33,11 +33,13 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
 
     IEnumerator LoadLevelAsync(string levelName, Vector2 pos)
     {
-        if (PlayerCharacterController.Singleton != null)
-        {
-            PlayerCharacterController.Singleton.enabled = false;
-            // PlayerCharacterController.Singleton.Move(Vector2.zero);
-        }
+        //if (PlayerCharacterController.Singleton != null)
+        //{
+        //    PlayerCharacterController.Singleton.enabled = false;
+        //    // PlayerCharacterController.Singleton.Move(Vector2.zero);
+        //}
+
+        PlayerCharacter.Singleton.DisableCharacterControl.DisableControl();
 
         var FadeUI = UIManager.Singleton.GetUI<FadeInOutUI>(UIType.FadeInOut);
         if (!string.IsNullOrEmpty(currentLevelName))
@@ -70,7 +72,8 @@ public class SceneTransitionManager : SingletonBase<SceneTransitionManager>
 
         // PlayerCharacterController.Singleton.Move(Vector2.zero);
         PlayerCharacterController.Singleton.transform.position = pos;
-        PlayerCharacterController.Singleton.enabled = true;
+        // PlayerCharacterController.Singleton.enabled = true;
+        PlayerCharacter.Singleton.DisableCharacterControl.EnableControl();
 
         FadeUI.FadeIn();
         yield return new WaitForSeconds(1);

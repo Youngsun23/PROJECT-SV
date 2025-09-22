@@ -9,5 +9,5 @@ public interface IActor
 
 public interface IDamage
 {
-    void TakeDamage(IActor actor, int damage);
+    void TakeDamage(IActor actor, float damage);
 }

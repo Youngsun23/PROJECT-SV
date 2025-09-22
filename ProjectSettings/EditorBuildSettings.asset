@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ProjectSV/Scenes/Cave2.unity
     guid: 9b679e8c6e6f099409c783c94692ba16
+  - enabled: 1
+    path: Assets/ProjectSV/Scenes/CombatGround.unity
+    guid: f0bfed594a6e8d740857de370ae87636
   m_configObjects: {}

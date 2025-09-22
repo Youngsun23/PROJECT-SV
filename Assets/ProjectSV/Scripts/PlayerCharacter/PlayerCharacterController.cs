@@ -127,4 +127,14 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
         if (isRunning)
             rigidBody.velocity *= 1.5f;
     }
+
+    private void OnDisable()
+    {
+        rigidBody.velocity = Vector2.zero;
+    }
+
+    private void OnEnable()
+    {
+        animator.Play("Idle", 0, 0f);
+    }
 }

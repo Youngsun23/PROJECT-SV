@@ -15,6 +15,7 @@ public class CharacterGameData : GameDataBase
     [field: SerializeField] public float PickupRadius { get; protected set; } = 1.2f;
 
     [field: Title("Combat Setting")]
+    [field: SerializeField] public float InvincibleTime { get; protected set; } = 1f;
     [field: SerializeField] public float AttakRadius { get; protected set; } = 0f;
     [field: SerializeField] public float AttackDamage { get; protected set; }
     [field: SerializeField] public float SpecialAttackDamage { get; protected set; }

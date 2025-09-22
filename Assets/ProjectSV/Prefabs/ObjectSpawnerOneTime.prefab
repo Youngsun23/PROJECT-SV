@@ -49,6 +49,10 @@ MonoBehaviour:
   objectToSpawn:
   - {fileID: 8925124765650159492, guid: 116ced5475538314b8ac783061b1b2a6, type: 3}
   - {fileID: 3645114646323432775, guid: 6e66df25355a1d846b99f7aeebdd0ea1, type: 3}
+  itemToSpawn:
+  - {fileID: 11400000, guid: 8f80fe4af16140a459e9df0c016304cf, type: 2}
   probability: 0.5
   spawnCount: 1
   oneTime: 1
+  objectSpawnLimit: -1
+  spawnedObjectCount: 0

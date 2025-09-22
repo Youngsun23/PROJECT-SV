@@ -9,6 +9,7 @@ public enum AttributeTypes
     Stamina,
     MoveSpeed, 
     PickupRadius,
+    InvincibleTime,
     //AttackRadius,
     //AttackDamage,
     //SpecialAttackDamage,
@@ -21,13 +22,13 @@ public class CharacterAttributeComponent : MonoBehaviour
 {
     public Dictionary<AttributeTypes, CharacterAttribute> attributes = new Dictionary<AttributeTypes, CharacterAttribute>();
 
-    public void RegisterEvent(AttributeTypes type, System.Action<int, int> onModifierChanged = null, System.Action<int, int> onBuffedChanged = null)
+    public void RegisterEvent(AttributeTypes type, System.Action<float, float> onModifierChanged = null, System.Action<float, float> onBuffedChanged = null)
     {
         attributes[type].OnModifierChanged += onModifierChanged;
         attributes[type].OnBuffedChanged += onBuffedChanged;
     }
 
-    public void EraseEvent(AttributeTypes type, System.Action<int, int> onModifierChanged = null, System.Action<int, int> onBuffedChanged = null)
+    public void EraseEvent(AttributeTypes type, System.Action<float, float> onModifierChanged = null, System.Action<float, float> onBuffedChanged = null)
     {
         attributes[type].OnModifierChanged -= onModifierChanged;
         attributes[type].OnBuffedChanged -= onBuffedChanged;
@@ -56,25 +57,36 @@ public class CharacterAttributeComponent : MonoBehaviour
         attributes[type].DefaultValue = defaultValue;
         attributes[type].ModifierValue = modifierValue;
         attributes[type].BuffedValue = buffedValue;
+
+        attributes[type].OnModifierChanged?.Invoke(attributes[type].MaxValue, attributes[type].CurrentValue);
+        attributes[type].OnBuffedChanged?.Invoke(attributes[type].MaxValue, attributes[type].CurrentValue);
     }
 
     public void ChangeModifierAttribute(AttributeTypes type, float modifierValue)
     {
         attributes[type].ModifierValue += modifierValue;
+
+        attributes[type].OnModifierChanged?.Invoke(attributes[type].MaxValue, attributes[type].CurrentValue);
     }
 
     public void SetModifierAttribute(AttributeTypes type, float modifierValue)
     {
         attributes[type].ModifierValue = modifierValue;
+
+        attributes[type].OnModifierChanged?.Invoke(attributes[type].MaxValue, attributes[type].CurrentValue);
     }
 
     public void ChangeBuffedAttribute(AttributeTypes type, float buffedValue)
     {
         attributes[type].BuffedValue += buffedValue;
+
+        attributes[type].OnBuffedChanged?.Invoke(attributes[type].MaxValue, attributes[type].CurrentValue);
     }
 
     public void SetBuffedAttribute(AttributeTypes type, float buffedValue)
     {
         attributes[type].BuffedValue = buffedValue;
+
+        attributes[type].OnBuffedChanged?.Invoke(attributes[type].MaxValue, attributes[type].CurrentValue);
     }
 }

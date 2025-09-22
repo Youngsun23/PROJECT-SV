@@ -148,5 +148,7 @@ public class TimeManager : SingletonBase<TimeManager>
                 // Debug.Log($"밤 중에 돌아간 틱 횟수: {skippedTicks} - 대상({agents.Count})");
             }
         }
+
+        time += tickLength * tick; // 틱이...왜 10단위여야 하는데 13,14분이 뜨지?
     }
 }

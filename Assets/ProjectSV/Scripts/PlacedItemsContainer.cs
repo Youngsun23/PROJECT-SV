@@ -54,10 +54,10 @@ public class ItemConvertorData
     {
         itemSlot = new ItemSlot();
         currentConvertingTimer = 0;
-        fullConvertingTimer = 10;
+        fullConvertingTimer = 5;
     }
 
-    public void SetFullTImer(float time)
+    public void SetFullTimer(float time)
     {
         fullConvertingTimer = time;
     }

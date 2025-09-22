@@ -13,7 +13,7 @@ public class BreakbleObject : MonoBehaviour, IDamage
         currentHP = maxHP;
     }
 
-    public void TakeDamage(IActor actor, int damage)
+    public void TakeDamage(IActor actor, float damage)
     {
         // 애니메이터
         // 이펙트

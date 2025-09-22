@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DefaultPlayerCharacterData
   m_EditorClassIdentifier: 
   <UniqueID>k__BackingField: 
-  <HP>k__BackingField: 50
+  <HP>k__BackingField: 10
   <Stamina>k__BackingField: 100
   <MoveSpeed>k__BackingField: 5
   <PickupRadius>k__BackingField: 1.2
+  <InvincibleTime>k__BackingField: 1
   <AttakRadius>k__BackingField: 0
   <AttackDamage>k__BackingField: 0
   <SpecialAttackDamage>k__BackingField: 0

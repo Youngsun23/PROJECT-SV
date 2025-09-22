@@ -7,25 +7,44 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
 {
     public CharacterAttributeComponent CharacterAttributeComponent => characterAttributeComponent;
     private CharacterAttributeComponent characterAttributeComponent;
-    public CharacterGameData characterData;
+    [SerializeField] private CharacterGameData characterData;
+    public DisableCharacterControl DisableCharacterControl => disableCharacterControl;
+    private DisableCharacterControl disableCharacterControl;
+    private Animator animator;
     private HUDBarPanel HUDUI;
+    private bool isInvincible = false;
+    private float invincibleTimer;
+    private bool hasPassedOut = false;
 
     protected override void Awake()
     {
         characterAttributeComponent = GetComponent<CharacterAttributeComponent>();
+        animator = GetComponent<Animator>();
+        disableCharacterControl = GetComponent<DisableCharacterControl>();
     }
 
     private void Start()
     {
-        HUDUI = UIManager.Singleton.GetUI<HUDUI>(UIType.HUD).gameObject.GetComponent<HUDBarPanel>();
-        characterAttributeComponent.RegisterEvent(AttributeTypes.HP, (int max, int cur) => HUDUI.UpdateHUDUIHP(max, cur), (int max, int cur) => HUDUI.UpdateHUDUIHP(max, cur));
-        characterAttributeComponent.RegisterEvent(AttributeTypes.Stamina, (int max, int cur) => HUDUI.UpdateHUDUIStamina(max, cur), (int max, int cur) => HUDUI.UpdateHUDUIHP(max, cur));
+        HUDUI = UIManager.Singleton.GetUI<HUDUI>(UIType.HUD).gameObject.GetComponentInChildren<HUDBarPanel>();  
+        characterAttributeComponent.RegisterEvent(AttributeTypes.HP, (float max, float cur) => HUDUI?.UpdateHUDUIHP(max, cur), (float max, float cur) => HUDUI?.UpdateHUDUIHP(max, cur));
+        characterAttributeComponent.RegisterEvent(AttributeTypes.Stamina, (float max, float cur) => HUDUI?.UpdateHUDUIStamina(max, cur), (float max, float cur) => HUDUI?.UpdateHUDUIHP(max, cur));
     }
 
     private void OnDestroy()
     {
-        characterAttributeComponent.EraseEvent(AttributeTypes.HP, (int max, int cur) => HUDUI.UpdateHUDUIHP(max, cur), (int max, int cur) => HUDUI.UpdateHUDUIHP(max, cur));
-        characterAttributeComponent.EraseEvent(AttributeTypes.Stamina, (int max, int cur) => HUDUI.UpdateHUDUIStamina(max, cur), (int max, int cur) => HUDUI.UpdateHUDUIHP(max, cur));
+        characterAttributeComponent.EraseEvent(AttributeTypes.HP, (float max, float cur) => HUDUI.UpdateHUDUIHP(max, cur), (float max, float cur) => HUDUI.UpdateHUDUIHP(max, cur));
+        characterAttributeComponent.EraseEvent(AttributeTypes.Stamina, (float max, float cur) => HUDUI.UpdateHUDUIStamina(max, cur), (float max, float cur) => HUDUI.UpdateHUDUIStamina(max, cur));
+    }
+
+    private void Update()
+    {
+        if (!isInvincible) return;
+
+        invincibleTimer += Time.deltaTime;
+        if(invincibleTimer >= characterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.InvincibleTime))
+        {
+            isInvincible = false;
+        }
     }
 
     public void InitializeCharacterAttribute()
@@ -51,8 +70,10 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         characterAttributeComponent.SetAttribute(AttributeTypes.Stamina, characterData.Stamina, totalEquipmentModifier.TryGetValue(AttributeTypes.Stamina, out float mStamina) ? mStamina : 0f);
         characterAttributeComponent.SetAttribute(AttributeTypes.MoveSpeed, characterData.MoveSpeed, totalEquipmentModifier.TryGetValue(AttributeTypes.MoveSpeed, out float mMoveSpeed) ? mMoveSpeed : 0f);
         characterAttributeComponent.SetAttribute(AttributeTypes.PickupRadius, characterData.PickupRadius, totalEquipmentModifier.TryGetValue(AttributeTypes.PickupRadius, out float mPickupRadius) ? mPickupRadius : 0f);
+        characterAttributeComponent.SetAttribute(AttributeTypes.InvincibleTime, characterData.InvincibleTime, totalEquipmentModifier.TryGetValue(AttributeTypes.InvincibleTime, out float mInvincibleTime) ? mInvincibleTime : 0f);
 
-        // HUDUI.Instance.UpdateHUDUIHP(MaxHP, CurHP);
+        // HUDUI.UpdateHUDUIHP(characterAttributeComponent.GetAttribute(AttributeTypes.HP).MaxValue, characterAttributeComponent.GetAttribute(AttributeTypes.HP).CurrentValue);
+        // HUDUI.UpdateHUDUIStamina(characterAttributeComponent.GetAttribute(AttributeTypes.Stamina).MaxValue, characterAttributeComponent.GetAttribute(AttributeTypes.Stamina).CurrentValue);
     }
 
     public void Attack(Item usedWeapon)
@@ -144,8 +165,15 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         return this.gameObject;
     }
 
-    public void TakeDamage(IActor actor, int damage)
+    public void TakeDamage(IActor actor, float damage)
     {
+        if (hasPassedOut)
+            return;
+
+        Debug.Log($"{this.gameObject.name} - {nameof(TakeDamage)} - isInvincible: {isInvincible}");
+        if (isInvincible)
+            return;
+
         // 애니메이터
         // 이펙트
         // 카메라 쉐이크
@@ -154,12 +182,16 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
 
         characterAttributeComponent.ChangeBuffedAttribute(AttributeTypes.HP, -damage);
         float currentHP = characterAttributeComponent.GetAttribute(AttributeTypes.HP).CurrentValue;
+
+        // 무적
+        isInvincible = true;
+        invincibleTimer = 0f;
         
         // HUD UI 갱신
 
         if(currentHP <= 0f)
         {
-            PassOut();
+            StartCoroutine(PassOutCoroutine(1f));
         }
     }
 
@@ -181,7 +213,35 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
 
     public void PassOut()
     {
+        hasPassedOut = true;
+        animator.SetTrigger("PassOut");
 
+        disableCharacterControl.DisableControl();
+
+        SceneTransitionManager.Singleton.LoadLevel("Farm", new Vector2(3f, 0f));
+
+        StartCoroutine(WakeupCoroutine(2f));
+    }
+
+    public void WakeUp()
+    {
+        hasPassedOut = false;
+        disableCharacterControl.EnableControl();
+        TimeManager.Singleton.SkipTick(6);
+        FullRecoverStamina();
+        FullHeal();
+    }
+
+    private IEnumerator PassOutCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        PassOut();
+    }
+
+    private IEnumerator WakeupCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        WakeUp();
     }
 
     public void UseStamina(int val)

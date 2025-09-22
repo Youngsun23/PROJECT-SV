@@ -71,7 +71,8 @@ public class ItemDragDropController : MonoBehaviour
 
     public void OnLeftClick(ItemSlot inventorySlot)
     {
-        //if(inventorySlot == )
+        if (!inventorySlot.Item.Stackable)
+            return;
 
         if (dragDropSlot.Item == null)
         {
@@ -100,7 +101,10 @@ public class ItemDragDropController : MonoBehaviour
     // 우클릭 -> 절반만 선택
     public void OnRightClick(ItemSlot inventorySlot)
     {
-        if(dragDropSlot.Item != null || inventorySlot.Count == 1)
+        if (!inventorySlot.Item.Stackable)
+            return;
+
+        if (dragDropSlot.Item != null || inventorySlot.Count == 1)
         {
             OnLeftClick(inventorySlot);
         }

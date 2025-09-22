@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1511622620888907073}
   - component: {fileID: 6201094965591447524}
   - component: {fileID: 8417448922377396188}
-  m_Layer: 0
+  - component: {fileID: 1593230729943841452}
+  m_Layer: 11
   m_Name: MonsterSlime
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -32,7 +33,8 @@ Transform:
   m_LocalPosition: {x: -3.83, y: -5.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2868027544319758915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1617087836622131947
@@ -120,8 +122,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b20b831fa2b07948ae613ccae17d0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  <AIState>k__BackingField: 0
+  <MaxHP>k__BackingField: 0
+  <MaxStamina>k__BackingField: 0
+  <MoveSpeed>k__BackingField: 0
+  <PatrolRange>k__BackingField: 0
+  <DetectRadius>k__BackingField: 0
+  <AttackPossibleRadius>k__BackingField: 0
+  <AttackRadius>k__BackingField: 0
+  <AttackDamage>k__BackingField: 0
+  <AttackCoolTime>k__BackingField: 0
   currentHP: 0
+  currentStamina: 0
+  monsterStatData: {fileID: 11400000, guid: 5c9788d94c037ad4cb5b72c80ef12e29, type: 2}
+  sensor: {fileID: 2761203901803098066}
+  rb: {fileID: 1593230729943841452}
+  animator: {fileID: 1511622620888907073}
 --- !u!58 &8417448922377396188
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,9 +167,117 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.07519835, y: -0.05639887}
   serializedVersion: 2
   m_Radius: 0.40600193
+--- !u!50 &1593230729943841452
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3129746515349558432}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!1 &3265003027599995333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2868027544319758915}
+  - component: {fileID: 8709558911997289832}
+  - component: {fileID: 2761203901803098066}
+  m_Layer: 0
+  m_Name: Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2868027544319758915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265003027599995333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5251342519109888591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8709558911997289832
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265003027599995333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.051662683, y: -0.0826599}
+  serializedVersion: 2
+  m_Radius: 0.46900278
+--- !u!114 &2761203901803098066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265003027599995333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b0250ae7ef4aa4c8efe46adbd8eba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRadius: 4
