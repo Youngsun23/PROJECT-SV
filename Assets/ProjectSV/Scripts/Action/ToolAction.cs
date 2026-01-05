@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ToolAction : ScriptableObject
 {
+    public int StaminaCost => staminaCost;
+    [SerializeField] private int staminaCost;
+
     public virtual bool OnApply(Vector2 pos, Item usedItem)
     {
         Debug.LogWarning("OnApply() Override Needed");

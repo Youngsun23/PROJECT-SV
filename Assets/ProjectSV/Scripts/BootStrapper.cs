@@ -31,6 +31,8 @@ public class BootStrapper : MonoBehaviour
 
     private static void InternalBoot()
     {
+        Debug.Log($"{nameof(InternalBoot)} ½ÇÇà");
+
         UIManager.Singleton.Initialize();
         // SoundManager.Singleton.Initialize();
     }

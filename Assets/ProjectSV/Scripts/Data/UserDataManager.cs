@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.iOS;
 
 public partial class UserDataManager : SingletonBase<UserDataManager>
 {
-    // public UserDataDTO UserData { get; private set; } = new UserDataDTO();
     private UserDataDTO UserData = new UserDataDTO();
+
+    public void UpdateUserDataResource(Dictionary<ResourceTypes, CharacterResource> resources)
+    {
+        UserData.resource = resources;
+    }
 
     public void UpdateUserDataExp(int value)
     {
@@ -74,6 +79,7 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         UserData.placedItems = _placedItems;
     }
 
+    public Dictionary<ResourceTypes, CharacterResource> GetUserDataResource() => UserData.resource;
     public int GetUserDataLevel() => UserData.level;
     public int GetUserDataEXP() => UserData.exp;
     public int GetUserDataSkillPoint() => UserData.skillPoint;
@@ -91,7 +97,7 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
 [System.Serializable]
 public class UserDataDTO
 {
-    //public int coin;
+    public Dictionary<ResourceTypes, CharacterResource> resource;
     public int level;
     public int exp;
     public int skillPoint;
@@ -107,12 +113,12 @@ public class UserDataDTO
 
     public UserDataDTO()
     {
-        //coin = 0;
         level = 1;
         exp = 0;
         skillPoint = 0;
         isMaxLevel = false;
 
+        resource.Clear();
         equippedItems.Clear();
         //foreach (SkillTag tag in Enum.GetValues(typeof(SkillTag)))
         //{

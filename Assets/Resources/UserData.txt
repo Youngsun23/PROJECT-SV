@@ -1,0 +1,9 @@
+﻿{
+    "level": 1,
+    "exp": 0,
+    "skillPoint": 0,
+    "isMaxLevel": false,
+    "equippedItems": [],
+    "cropTiles": [],
+    "placedItems": []
+}
