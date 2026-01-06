@@ -12,7 +12,7 @@ public class PlaceableObjectsManager : SingletonBase<PlaceableObjectsManager>
 
     public void Initialize()
     {
-        Debug.Log("PlaceableObjectsManager - Initialize() È£Ãâ");
+        Debug.Log("PlaceableObjectsManager - Initialize() È£ï¿½ï¿½");
 
         container.ClearPlacedItemsList();
         LoadPlacedItemsData();
@@ -21,7 +21,7 @@ public class PlaceableObjectsManager : SingletonBase<PlaceableObjectsManager>
 
     public void InitilizeScene()
     {
-        Debug.Log("PlaceableObjectsManager - InitializeScene() È£Ãâ");
+        Debug.Log("PlaceableObjectsManager - InitializeScene() È£ï¿½ï¿½");
 
         LoadRuntimePlacedItemsData();
         VisualizePlacedObjects();
@@ -40,7 +40,7 @@ public class PlaceableObjectsManager : SingletonBase<PlaceableObjectsManager>
     public void LoadPlacedItemsData()
     {
         container.SetPlacedItemsList(UserDataManager.Singleton.GetUserDataPlacedItems());
-        // Debug.Log($"LoadCropTilesData È£Ãâ - {UserDataManager.Singleton.GetUserDataCropTiles().Count}");
+        // Debug.Log($"LoadCropTilesData È£ï¿½ï¿½ - {UserDataManager.Singleton.GetUserDataCropTiles().Count}");
     }
 
     public void SaveRuntimePlacedItemsData()
@@ -95,7 +95,7 @@ public class PlaceableObjectsManager : SingletonBase<PlaceableObjectsManager>
         Vector3 position = targetTileMap.CellToWorld(placedItem.Position) + targetTileMap.cellSize / 2;
         go.transform.position = position;
         placedItem.SetTransform(go.transform);
-        // Debug.Log($"VisualizePlacedObject ÇÔ¼ö È£Ãâ - {placedItem.Position} -> {go.transform.position}");
+        // Debug.Log($"VisualizePlacedObject ï¿½Ô¼ï¿½ È£ï¿½ï¿½ - {placedItem.Position} -> {go.transform.position}");
 
         //IPersistant persistant = go.GetComponent<IPersistant>();
         //if(persistant != null)

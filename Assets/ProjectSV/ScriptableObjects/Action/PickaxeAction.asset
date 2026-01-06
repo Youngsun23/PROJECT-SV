@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86db9620083ab7049b1759615abd0c50, type: 3}
   m_Name: PickaxeAction
   m_EditorClassIdentifier: 
+  staminaCost: 5
   interactableDistance: 1
   isHittableTypes: 02000000

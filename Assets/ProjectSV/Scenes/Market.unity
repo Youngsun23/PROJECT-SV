@@ -388,6 +388,9 @@ MonoBehaviour:
   plowMap: {fileID: 0}
   plantMap: {fileID: 0}
   readMap: {fileID: 1590944978}
+  highlightMap: {fileID: 0}
+  placedItemMap: {fileID: 0}
+  confiner: {fileID: 0}
 --- !u!1 &601989786
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +764,7 @@ GameObject:
   - component: {fileID: 851586438}
   - component: {fileID: 851586437}
   m_Layer: 0
-  m_Name: Stand 0 (2)
+  m_Name: NPC_Talk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1119,7 @@ GameObject:
   - component: {fileID: 1090706275}
   - component: {fileID: 1090706274}
   m_Layer: 0
-  m_Name: Stand 0 (1)
+  m_Name: NPC_Trade2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,8 +1202,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1106048065}
   - component: {fileID: 1106048064}
+  - component: {fileID: 1106048066}
   m_Layer: 0
-  m_Name: Stand 0
+  m_Name: NPC_Trade1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,6 +1277,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106048066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106048063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7aa33e11eee1444a1a07499915577e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: d983d5e4a0243ca4b9bdb53a3197c48d, type: 2}
 --- !u!1 &1443095286
 GameObject:
   m_ObjectHideFlags: 0

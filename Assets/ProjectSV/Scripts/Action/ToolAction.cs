@@ -23,4 +23,9 @@ public class ToolAction : ScriptableObject
     {
 
     }
+
+    public virtual void OnComplete()
+    {
+        PlayerCharacter.Singleton.UseStamina(staminaCost);
+    }
 }

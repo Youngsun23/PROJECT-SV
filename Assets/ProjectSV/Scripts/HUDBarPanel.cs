@@ -19,7 +19,7 @@ public class HUDBarPanel : MonoBehaviour
 
     public void UpdateHUDUIHP(float maxHP, float curHP) // cur/max
     {
-        Debug.Log($"{nameof(UpdateHUDUIHP)} È£Ãâ");
+        Debug.Log($"{nameof(UpdateHUDUIHP)} È£ï¿½ï¿½");
 
         float targetFill = curHP / maxHP;
         targetFill = Mathf.Clamp01(targetFill);
@@ -30,6 +30,9 @@ public class HUDBarPanel : MonoBehaviour
     public void UpdateHUDUIStamina(float maxStamina, float curStamina) // cur/max
     {
         Debug.Log($"{nameof(UpdateHUDUIStamina)}");
+
+        if (curStamina <= 0)
+            curStamina = 0f;
 
         float targetFill = curStamina / maxStamina;
         targetFill = Mathf.Clamp01(targetFill);

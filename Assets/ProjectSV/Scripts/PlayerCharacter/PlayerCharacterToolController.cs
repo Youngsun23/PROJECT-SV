@@ -69,15 +69,23 @@ public class PlayerCharacterToolController : MonoBehaviour
 
     public bool UseToolWorld()
     {
-        Vector2 position = rigidBody.position + character.lastMoveVector * offsetDistance;
-
         Item item = toolBarController.GetCurrentHoldingItem();
         if (item == null || item.OnToolAction == null)
             return false;
 
-        // item¸¶´Ù Trigger ¹ºÁö string(enumType)À¸·Î µÖ¼­ ¾Ö´Ï¸ÞÀÌ¼Ç È£Ãâ? ±×³É item.nameÀ¸·Î?
+        // itemï¿½ï¿½ï¿½ï¿½ Trigger ï¿½ï¿½ï¿½ï¿½ string(enumType)ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ È£ï¿½ï¿½? ï¿½×³ï¿½ item.nameï¿½ï¿½ï¿½ï¿½?
         animator.SetTrigger(item.TriggerType.ToString());
+
+        if (PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.Stamina) <= 0f)
+            return false;
+
+        Vector2 position = rigidBody.position + character.lastMoveVector * offsetDistance;
         bool actionComplete = item.OnToolAction.OnApply(position, item);
+        if(actionComplete)
+        {
+            item.OnToolAction.OnComplete();
+        }
+
         return actionComplete;
     }
 
@@ -101,11 +109,16 @@ public class PlayerCharacterToolController : MonoBehaviour
 
             //Debug.Log("ToolAction type: " + item.OnToolActionTileMap.GetType());
 
-            // animator.SetTrigger("Act");
+            animator.SetTrigger("Act");
+
+            if (PlayerCharacter.Singleton.CharacterAttributeComponent.GetAttributeCurrentValue(AttributeTypes.Stamina) <= 0f)
+                return;
+
             bool actionComplete = item.OnToolActionTileMap.OnApplyTileMap(selectedTilePos, tileData, item);
             if(actionComplete)
             {
                 item.OnToolActionTileMap.OnItemUsed(item, GameManager.Singleton.Inventory);
+                item.OnToolActionTileMap.OnComplete();
             }
         }
     }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Android.Types;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -126,7 +125,7 @@ public class MonsterCombatBase : MonoBehaviour, IActor, IDamage
     {
         Debug.Log($"{this.gameObject.name} - {nameof(Attack)}");
 
-        // ¾îÅÃ ¾Ö´Ï¸ÞÀÌ¼Ç, ÀÌÆåÆ®
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½, ï¿½ï¿½ï¿½ï¿½Æ®
         if(attackAvailable)
             animator.SetTrigger("Attack");
 
@@ -201,10 +200,10 @@ public class MonsterCombatBase : MonoBehaviour, IActor, IDamage
         if (isDead)
             return;
 
-        // ¾Ö´Ï¸ÞÀÌÅÍ
-        // ÀÌÆåÆ®
-        // Ä«¸Þ¶ó ½¦ÀÌÅ©
-        // ´ë¹ÌÁö ÀÎµðÄÉÀÌÅÍ
+        // ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½Æ®
+        // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½Å©
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         OnScreenMessageManager.Singleton.ShowMessageOnScreen(transform.position, damage.ToString());
 
         currentHP -= damage;

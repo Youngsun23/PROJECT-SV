@@ -35155,6 +35155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterSlime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3129746515349558432, guid: 4b0fab2b0fb3acb4ba8329681af16b5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5251342519109888591, guid: 4b0fab2b0fb3acb4ba8329681af16b5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12864804
