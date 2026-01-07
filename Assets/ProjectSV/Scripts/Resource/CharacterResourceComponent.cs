@@ -2,22 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ResourceTypes
-{
-    Coin,
-    // ÀÌ·±Àú·± °ª ÇÏ³ªÂ¥¸® ÀçÈ­µé
-    SpringOrb,
-    SummerOrb,
-    FallOrb,
-    WinterOrb,
-
-    EndField,
-}
-
-
 public class CharacterResourceComponent : MonoBehaviour
 {
-    public Dictionary<ResourceTypes, CharacterResource> resources = new Dictionary<ResourceTypes, CharacterResource>(); // ·Îµå -> ÀçÈ­ º° °ª ÀúÀå, º¯°æ (·±Å¸ÀÓ) -> ÀúÀå
+    public Dictionary<ResourceTypes, CharacterResource> resources = new Dictionary<ResourceTypes, CharacterResource>(); // ï¿½Îµï¿½ -> ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Å¸ï¿½ï¿½) -> ï¿½ï¿½ï¿½ï¿½
 
     public void RegisterEvent(ResourceTypes type, System.Action<int> onChanged)
     {
@@ -37,9 +24,12 @@ public class CharacterResourceComponent : MonoBehaviour
         }
     }
 
-    public void Initialize(Dictionary<ResourceTypes, CharacterResource> savedResource)
+    public void Initialize(List<CharacterResourceData> savedResource)
     {
-        resources = savedResource;
+        foreach(CharacterResourceData resource in savedResource)
+        {
+            resources[resource.Type].SetValue(resource.Count);
+        }
 
         for(int i = 0; i < (int)ResourceTypes.EndField; i++)
         {
@@ -47,26 +37,38 @@ public class CharacterResourceComponent : MonoBehaviour
         }
     }
 
+    public void SaveCharacterResourceData()
+    {
+        List<CharacterResourceData> dataList = new List<CharacterResourceData>();
+        foreach(var resource in resources)
+        {
+            CharacterResourceData data = new CharacterResourceData(resource.Key, resource.Value.Value);
+            dataList.Add(data);
+        }
+        UserDataManager.Singleton.UpdateUserDataResource(dataList);
+    }
+
     public CharacterResource GetResource(ResourceTypes type)
     {
         return resources[type];
     }
 
-    public float GetResourceValue(ResourceTypes type)
+    public int GetResourceValue(ResourceTypes type)
     {
         return resources[type].Value;
     }
 
     public void SetResource(ResourceTypes type, int value)
     {
-        resources[type].Value = value;
+        resources[type].SetValue(value);
 
         resources[type].OnChanged?.Invoke(resources[type].Value);
     }
 
     public void ChangeResource(ResourceTypes type, int value)
     {
-        resources[type].Value += value;
+        int previousValue = resources[type].Value;
+        resources[type].SetValue(previousValue + value);
 
         resources[type].OnChanged?.Invoke(resources[type].Value);
     }

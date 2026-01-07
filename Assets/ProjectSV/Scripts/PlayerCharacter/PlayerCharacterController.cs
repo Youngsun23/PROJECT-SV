@@ -75,9 +75,9 @@ public class PlayerCharacterController : SingletonBase<PlayerCharacterController
     {
         // uiTabController.ToggleCraftTab();
 
-        // ¸¶ÀÎÅ©·¡ÇÁÆ® Crafting
+        // ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½Æ® Crafting
         // UIManager.Singleton.ToggleUI<CraftUI>(UIType.TempCraft);
-        // ±âÈ¹ Crafting
+        // ï¿½ï¿½È¹ Crafting
         UIManager.Singleton.ToggleUI<CraftingUI>(UIType.Crafting);
     }
 

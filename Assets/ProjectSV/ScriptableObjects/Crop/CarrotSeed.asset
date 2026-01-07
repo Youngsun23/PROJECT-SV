@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
-  m_Name: CopperIngot
+  m_Name: CarrotSeed
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 6
-  itemName: CopperIngot
-  itemInfo: 
+  <UniqueID>k__BackingField: 4
+  itemName: CarrotSeed
+  itemInfo: "\uC2EC\uACE0 \uC2DC\uAC04\uC774 \uC9C0\uB098\uBA74 \uC218\uD655\uD560
+    \uC218 \uC788\uB2E4."
   stackable: 1
-  icon: {fileID: 1812897632, guid: 15b4a903882e7e040a358ef8823406fa, type: 3}
+  icon: {fileID: -1242778746, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
+  buyPrice: 130
+  sellPrice: 120
   onToolAction: {fileID: 0}
-  onToolActionTileMap: {fileID: 0}
-  crop: {fileID: 0}
+  onToolActionTileMap: {fileID: 11400000, guid: cfdc9c765649e2c4dab34ee8c48aa11e, type: 2}
+  crop: {fileID: 11400000, guid: e7515f749e3873e438a69f22636ec016, type: 2}
   type: 5
   placeable: 0
   itemPrefab: {fileID: 0}

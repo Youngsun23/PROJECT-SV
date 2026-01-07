@@ -5,7 +5,7 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
 {
     private UserDataDTO UserData = new UserDataDTO();
 
-    public void UpdateUserDataResource(Dictionary<ResourceTypes, CharacterResource> resources)
+    public void UpdateUserDataResource(List<CharacterResourceData> resources)
     {
         UserData.resource = resources;
     }
@@ -78,7 +78,8 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
         UserData.placedItems = _placedItems;
     }
 
-    public Dictionary<ResourceTypes, CharacterResource> GetUserDataResource() => UserData.resource;
+    // public Dictionary<ResourceTypes, CharacterResource> GetUserDataResource() => UserData.resource;
+    public List<CharacterResourceData> GetUserDataResource() => UserData.resource;
     public int GetUserDataLevel() => UserData.level;
     public int GetUserDataEXP() => UserData.exp;
     public int GetUserDataSkillPoint() => UserData.skillPoint;
@@ -96,7 +97,8 @@ public partial class UserDataManager : SingletonBase<UserDataManager>
 [System.Serializable]
 public class UserDataDTO
 {
-    public Dictionary<ResourceTypes, CharacterResource> resource;
+    // public Dictionary<ResourceTypes, CharacterResource> resource;
+    public List<CharacterResourceData> resource;
     public int level;
     public int exp;
     public int skillPoint;

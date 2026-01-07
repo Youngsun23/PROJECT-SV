@@ -24,6 +24,7 @@ public enum UIType
     TempEquipment,
     Crafting,
     ChestInventory,
+    Trade,
 
     POPUP_END,
 }

@@ -6,17 +6,17 @@ public class SaveInteraction : MonoBehaviour, IInteractable
 {
     public void Interact(PlayerCharacterController character)
     {
-        // Debug.Log("UserData¸¦ ÀúÀåÇÕ´Ï´Ù.");
+        // Debug.Log("UserDataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 
-        // Àá Àß °ÅÀÓ? ¹°¾îº¸´Â UI ¶ç¿ì°í, OK ´©¸£¸é ÄÚ·çÆ¾ È£Ãâ
+        // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½? ï¿½ï¿½ï¿½îº¸ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½, OK ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾ È£ï¿½ï¿½
 
         StartCoroutine(BedSave());
     }
 
     IEnumerator BedSave()
     {
-        // Ä§´ë¿¡ µé¾î°¡ ÀáÀÚ´Â ¾Ö´Ï¸ÞÀÌ¼Ç Æ²°í, 
-        // ±â´Ù·È´Ù°¡,
+        // Ä§ï¿½ë¿¡ ï¿½ï¿½î°¡ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ Æ²ï¿½ï¿½, 
+        // ï¿½ï¿½Ù·È´Ù°ï¿½,
 
         PlayerCharacter.Singleton.DisableCharacterControl.DisableControl();
 
@@ -27,6 +27,7 @@ public class SaveInteraction : MonoBehaviour, IInteractable
 
         CropManager.Singleton.TileMapCropManger.SaveCropTilesData();
         PlaceableObjectsManager.Singleton.SavePlacedItemsData();
+        PlayerCharacter.Singleton.CharacterResourceComponent.SaveCharacterResourceData();
         UserDataManager.Singleton.Save();
 
         PlayerCharacter.Singleton.WakeUp();

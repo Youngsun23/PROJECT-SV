@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
-  m_Name: Cabbage
+  m_Name: CopperIngot
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 1
-  itemName: Cabbage
-  itemInfo: "\uAC74\uAC15\uC5D0 \uC88B\uB2E4."
+  <UniqueID>k__BackingField: 6
+  itemName: CopperIngot
+  itemInfo: 
   stackable: 1
-  icon: {fileID: 114299732, guid: eed3a6f160999bc4590c1ed99e0199f3, type: 3}
+  icon: {fileID: 1812897632, guid: 15b4a903882e7e040a358ef8823406fa, type: 3}
+  buyPrice: 50
+  sellPrice: 40
   onToolAction: {fileID: 0}
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}

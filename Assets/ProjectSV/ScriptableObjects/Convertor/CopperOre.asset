@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
-  m_Name: Carrot
+  m_Name: CopperOre
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 3
-  itemName: Carrot
-  itemInfo: "\uB2F9\uB098\uADC0\uC758 \uAC04\uC2DD"
+  <UniqueID>k__BackingField: 7
+  itemName: IronOre
+  itemInfo: 
   stackable: 1
-  icon: {fileID: 1757625618, guid: 0511df9d464714c4db2a494adec441e2, type: 3}
+  icon: {fileID: 2140948208, guid: 15b4a903882e7e040a358ef8823406fa, type: 3}
+  buyPrice: 10
+  sellPrice: 5
   onToolAction: {fileID: 0}
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}

@@ -17,6 +17,8 @@ MonoBehaviour:
   itemInfo: "\uD3C9\uBC94\uD55C \uB3C4\uB07C"
   stackable: 0
   icon: {fileID: 21300000, guid: 21fc7e007201f49479bf635e293a9a81, type: 3}
+  buyPrice: 100
+  sellPrice: 90
   onToolAction: {fileID: 11400000, guid: 90835ffc930303d4c823e8ad9367dcfd, type: 2}
   onToolActionTileMap: {fileID: 0}
   crop: {fileID: 0}

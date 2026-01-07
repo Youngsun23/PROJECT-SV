@@ -4,17 +4,17 @@ using UnityEngine;
 public class GameManager : SingletonBase<GameManager>
 {
     public GameObject Player => player;
-    public ItemContainer Inventory => inventory;
     [SerializeField] private GameObject player;
+    public ItemContainer Inventory => inventory;
     [SerializeField] private ItemContainer origin_inventory;
     public ItemDragDropController ItemDragDropController { get; private set; }
     [SerializeField] private ItemContainer inventory;
-
     public DialogueManager DialogueManager => dialogueManager;
     private DialogueManager dialogueManager;
-
     public PlaceableItemHighlight PlaceableItemHighlight => placeableHighlight;
     [SerializeField] private PlaceableItemHighlight placeableHighlight;
+    public TradeManager TradeManager => tradeManager;
+    [SerializeField] private TradeManager tradeManager;
 
     private bool initialized = false;
 
@@ -30,7 +30,7 @@ public class GameManager : SingletonBase<GameManager>
         StartCoroutine(DelayedInitialize());
     }
 
-    private IEnumerator DelayedInitialize() // Å¸ÀÌ¹Ö ¹®Á¦?
+    private IEnumerator DelayedInitialize() // Å¸ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½?
     {
         yield return null;
 

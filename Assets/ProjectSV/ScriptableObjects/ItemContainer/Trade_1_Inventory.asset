@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c2e26339c7f8a4abb3912621505d1b, type: 3}
-  m_Name: NPC_Trade1_Speaker
+  m_Script: {fileID: 11500000, guid: 4b0aca47261c5d24b9ebe2948b149a43, type: 3}
+  m_Name: Trade_1_Inventory
   m_EditorClassIdentifier: 
   <UniqueID>k__BackingField: 
-  portrait: {fileID: -1734762112, guid: 225671695a653554985794dfae39e085, type: 3}
-  speakerName: NPC_Trade1
+  itemSlots:
+  - item: {fileID: 11400000, guid: 22a3057276a813748af0f6e1cd1e190f, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: a395cb02dda347c4cbf7df3f0ffd50d6, type: 2}
+    count: 1

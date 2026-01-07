@@ -8,6 +8,7 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
     public CharacterAttributeComponent CharacterAttributeComponent => characterAttributeComponent;
     private CharacterAttributeComponent characterAttributeComponent;
     [SerializeField] private CharacterGameData characterData;
+    public CharacterResourceComponent CharacterResourceComponent => characterResourceComponent; 
     private CharacterResourceComponent characterResourceComponent;
     public DisableCharacterControl DisableCharacterControl => disableCharacterControl;
     private DisableCharacterControl disableCharacterControl;
@@ -57,8 +58,8 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
     {
         Dictionary<AttributeTypes, float> totalEquipmentModifier = new();
 
-        // ÀÔÀº Àåºñ Ã¼Å©
-        // ÇâÈÄ -> EquipItem ÀúÀåÇÏ´Â ´ë½Å ID(int) List·Î ÀúÀåÇØ¼­ GameDataManager¿¡ µî·ÏÇÑ ¾ÆÀÌÅÛ List¿¡ Á¢±Ù, Á¤º¸ »©¿À±â?
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ã¼Å©
+        // ï¿½ï¿½ï¿½ï¿½ -> EquipItem ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ID(int) Listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ GameDataManagerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
         foreach (EquipItem item in UserDataManager.Singleton.GetUserDataEquippedItems())
         {
             if (item == null || item.Effects == null) continue;
@@ -86,7 +87,7 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
 
     public void Attack(Item usedWeapon)
     {
-        // usedWeaponÀÇ Á¤º¸ °¡Á®¿Í¼­ ±×¸¸Å­ÀÇ »ç°Å¸®, ¼Óµµ, ´ë¹ÌÁö
+        // usedWeaponï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½×¸ï¿½Å­ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½, ï¿½Óµï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½
         WeaponItem weapon = usedWeapon as WeaponItem;
         Collider2D[] overlapObjects = Physics2D.OverlapCircleAll(transform.position, weapon.Radius);
 
@@ -94,7 +95,7 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
 
         for (int i = 0; i < overlapObjects.Length; i++)
         {
-            // ¹öÀü1) Ä³¸¯ÅÍ°¡ ¹Ù¶óº¸°í ÀÖ´Â ¹æÇâ ±âÁØ ³»Àû 0.5f ÀÌ³» ºÎÃ¤²Ã ¹üÀ§
+            // ï¿½ï¿½ï¿½ï¿½1) Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ù¶óº¸°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0.5f ï¿½Ì³ï¿½ ï¿½ï¿½Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             //Vector2 position = overlapObjects[i].transform.position;
             //Vector2 direction = (position - (Vector2)transform.position).normalized;
 
@@ -106,12 +107,12 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
             //    {
             //        var damageInterface = overlapObjects[i].GetComponent<IDamage>();
             //        damageInterface.TakeDamage(this, weapon.Damage);
-            //        Debug.Log($"{overlapObjects[i].name}¿¡°Ô {weapon.Damage}¸¸Å­ÀÇ ÇÇÇØ");
+            //        Debug.Log($"{overlapObjects[i].name}ï¿½ï¿½ï¿½ï¿½ {weapon.Damage}ï¿½ï¿½Å­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             //    }
             //}
 
-            // ¹öÀü2) ¾Ö´Ï¸ÞÀÌ¼ÇÀÌ ¿ìÃø 90µµ, ÁÂÃø 30µµ, ÃÑÇÕ 120 Á¤µµ·Î Ä¡¿ìÃÄ ÀÖ¾î¼­ ±×°Å¶û ¸ÂÃß±â À§ÇØ ¿ÜÀû±îÁö Ãß°¡ÇÑ ¹öÀü
-            // ¾óÃß ¸Â´Âµ¥, ¿ÏÀü ÀÏÄ¡ÇÏ°Ô ÇÏ·Á¸é °ñÄ¡ ¾ÆÇÂ Á¶Á¤ÀÌ ÇÊ¿äÇÒµí...´ëÃ¼ ¿Ö ¾Ö´Ï¸ÞÀÌ¼ÇÀÌ ÁÂ¿ì´ëÄªÀÌ ¾Æ´Ñ°É±î
+            // ï¿½ï¿½ï¿½ï¿½2) ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 90ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ 30ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ 120 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½×°Å¶ï¿½ ï¿½ï¿½ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Â´Âµï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï°ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Òµï¿½...ï¿½ï¿½Ã¼ ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½Â¿ï¿½ï¿½Äªï¿½ï¿½ ï¿½Æ´Ñ°É±ï¿½
             Vector2 forward = PlayerCharacterController.Singleton.lastMoveVector;
             Vector2 targetPos = overlapObjects[i].transform.position;
             Vector2 toTarget = (targetPos - (Vector2)transform.position).normalized;
@@ -119,10 +120,10 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
             float dot = Vector2.Dot(forward, toTarget);
             float cross = forward.x * toTarget.y - forward.y * toTarget.x;
             bool hit = false;
-            // ¿À¸¥ÂÊ 80µµ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 80ï¿½ï¿½
             if (cross < 0 && dot > Mathf.Cos(80f * Mathf.Deg2Rad))
                 hit = true;
-            // ¿ÞÂÊ 40µµ
+            // ï¿½ï¿½ï¿½ï¿½ 40ï¿½ï¿½
             if (cross > 0 && dot > Mathf.Cos(40f * Mathf.Deg2Rad))
                 hit = true;
 
@@ -134,7 +135,7 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
                 {
                     var damageInterface = overlapObjects[i].GetComponent<IDamage>();
                     damageInterface.TakeDamage(this, weapon.Damage);
-                    Debug.Log($"{overlapObjects[i].name}¿¡°Ô {weapon.Damage}¸¸Å­ÀÇ ÇÇÇØ");
+                    Debug.Log($"{overlapObjects[i].name}ï¿½ï¿½ï¿½ï¿½ {weapon.Damage}ï¿½ï¿½Å­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
                 }
             }
         }
@@ -146,11 +147,11 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
 
         float halfFOV = fovAngle / 2f;
 
-        // ¿ÞÂÊ ³¡ ¹æÇâ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Vector2 leftDir = Quaternion.Euler(0, 0, -halfFOV) * forward;
         Debug.DrawLine(transform.position, (Vector2)transform.position + leftDir * radius, Color.red);
 
-        // ¿À¸¥ÂÊ ³¡ ¹æÇâ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Vector2 rightDir = Quaternion.Euler(0, 0, halfFOV) * forward;
         Debug.DrawLine(transform.position, (Vector2)transform.position + rightDir * radius, Color.red);
     }
@@ -159,11 +160,11 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
     {
         Vector2 forward = PlayerCharacterController.Singleton.lastMoveVector;
 
-        // ¿ÞÂÊ ³¡
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         Vector2 leftDir = Quaternion.Euler(0, 0, leftAngle) * forward;
         Debug.DrawLine(transform.position, (Vector2)transform.position + leftDir * radius, Color.yellow);
 
-        // ¿À¸¥ÂÊ ³¡
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         Vector2 rightDir = Quaternion.Euler(0, 0, -rightAngle) * forward;
         Debug.DrawLine(transform.position, (Vector2)transform.position + rightDir * radius, Color.yellow);
     }
@@ -182,20 +183,20 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         if (isInvincible)
             return;
 
-        // ¾Ö´Ï¸ÞÀÌÅÍ
-        // ÀÌÆåÆ®
-        // Ä«¸Þ¶ó ½¦ÀÌÅ©
-        // ´ë¹ÌÁö
+        // ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½Æ®
+        // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½Å©
+        // ï¿½ï¿½ï¿½ï¿½ï¿½
         OnScreenMessageManager.Singleton.ShowMessageOnScreen(transform.position, damage.ToString());
 
         characterAttributeComponent.ChangeBuffedAttribute(AttributeTypes.HP, -damage);
         float currentHP = characterAttributeComponent.GetAttribute(AttributeTypes.HP).CurrentValue;
 
-        // ¹«Àû
+        // ï¿½ï¿½ï¿½ï¿½
         isInvincible = true;
         invincibleTimer = 0f;
         
-        // HUD UI °»½Å
+        // HUD UI ï¿½ï¿½ï¿½ï¿½
 
         if(currentHP <= 0f)
         {
@@ -257,7 +258,7 @@ public class PlayerCharacter : SingletonBase<PlayerCharacter>, IActor, IDamage
         characterAttributeComponent.ChangeBuffedAttribute(AttributeTypes.Stamina, -val);
         float currentStamina = characterAttributeComponent.GetAttribute(AttributeTypes.Stamina).CurrentValue;
 
-        // HUD UI °»½Å
+        // HUD UI ï¿½ï¿½ï¿½ï¿½
 
         if (currentStamina <= 0f)
         {

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5954a72d89042164f8d7f5ced6192032, type: 3}
-  m_Name: Rock
+  m_Name: Furnace
   m_EditorClassIdentifier: 
-  <UniqueID>k__BackingField: 
-  itemName: Rock
+  <UniqueID>k__BackingField: 8
+  itemName: Furnace
   itemInfo: 
   stackable: 0
-  icon: {fileID: 0}
-  buyPrice: 10
-  sellPrice: 5
+  icon: {fileID: -992527182, guid: a11dc616aa5e28549b23b7964ea8fef1, type: 3}
+  buyPrice: 100
+  sellPrice: 90
   onToolAction: {fileID: 0}
   onToolActionTileMap: {fileID: 11400000, guid: 3de52c40e66593549ab2d4871146d250, type: 2}
   crop: {fileID: 0}
-  type: 0
-  placeable: 0
-  itemPrefab: {fileID: 3645114646323432775, guid: 6e66df25355a1d846b99f7aeebdd0ea1, type: 3}
+  type: 5
+  placeable: 1
+  itemPrefab: {fileID: 7511843243587858732, guid: 3c6117197bd9acc4a8f69ac14609ee4d, type: 3}

@@ -36,6 +36,8 @@ public class Item : GameDataBase
     public string Info => itemInfo;
     public bool Stackable => stackable;
     public Sprite Icon => icon;
+    public int BuyPrice => buyPrice;
+    public int SellPrice => sellPrice;
     public ToolAction OnToolAction => onToolAction;
     public ToolAction OnToolActionTileMap => onToolActionTileMap;
     public CropData CropData => crop;
@@ -47,6 +49,8 @@ public class Item : GameDataBase
     [SerializeField] private string itemInfo;
     [SerializeField] private bool stackable;
     [SerializeField] private Sprite icon;
+    [SerializeField] private int buyPrice;
+    [SerializeField] private int sellPrice;
     [SerializeField] private ToolAction onToolAction;
     [SerializeField] private ToolAction onToolActionTileMap;
     [SerializeField] private CropData crop;
